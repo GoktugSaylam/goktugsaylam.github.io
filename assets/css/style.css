@@ -143,8 +143,7 @@ header {
 }
 
 .logo span {
-    color: var(--text-muted);
-    /* Muted suffix for monochrome look */
+    color: var(--text-main);
 }
 
 .nav-links {
