@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Başlığı | Göktuğ Saylam</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Göktuğ<span>Saylam</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#hakkimda">Hakkımda</a></li>
+                    <li><a href="index.html#projeler">Projeler</a></li>
+                    <li><a href="index.html#iletisim">İletişim</a></li>
+                </ul>
+            </nav>
+            <a href="en/blog-post-template.html" class="lang-switch">EN</a>
+        </div>
+    </header>
+
+    <!-- Blog Content -->
+    <article class="section" style="padding-top: 2rem;">
+        <div class="container blog-content">
+            <p style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">KATEGORİ</p>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Blog Yazısı Başlığı Buraya Gelecek</h1>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">8 Şubat 2026 • 5 dk okuma</p>
+
+            <div style="line-height: 1.8;">
+                <p>Buraya blog yazısının giriş paragrafı gelecek. Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                <h2 style="font-size: 1.5rem; margin-top: 2rem;">Alt Başlık</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+
+                <!-- Örnek Kod Bloğu -->
+                <pre
+                    style="background: #0d1117; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; border: 1px solid var(--border-color);">
+<code style="color: #e6edf3; font-family: monospace;">console.log("Hello, World!");</code></pre>
+
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur.</p>
+            </div>
+        </div>
+    </article>
+
+    <!-- Giscus Comments Section -->
+    <section class="container">
+        <div class="comments-section">
+            <h2 class="comments-title">Yorumlar</h2>
+            <div class="giscus-frame">
+                <script src="https://giscus.app/client.js" data-repo="[BURAYA_REPO_ADINI_GIRECEKSINIZ]"
+                    data-repo-id="[BURAYA_REPO_ID_GIRECEKSINIZ]" data-category="[BURAYA_CATEGORY_ADINI_GIRECEKSINIZ]"
+                    data-category-id="[BURAYA_CATEGORY_ID_GIRECEKSINIZ]" data-mapping="pathname" data-strict="0"
+                    data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom"
+                    data-theme="transparent_dark" data-lang="tr" crossorigin="anonymous" async>
+                    </script>
+                <!-- 
+                    NOT: İngilizce sayfa için (en/blog-post.html):
+                    data-lang="en" olarak değiştirilmelidir.
+                 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Göktuğ Saylam. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
