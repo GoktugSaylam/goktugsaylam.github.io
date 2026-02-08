@@ -242,20 +242,28 @@ header {
     gap: 1rem;
 }
 
-.btn-text {
+.cv-text {
     color: var(--text-muted);
     font-size: 0.95rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-md);
-    transition: var(--transition);
-    border: 1px solid transparent;
+    text-align: center;
+    max-width: 500px;
 }
 
-.btn-text:hover {
+.cv-text a {
     color: var(--text-main);
-    border-color: var(--border-color);
-    background-color: var(--bg-card);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.cv-text a:hover {
+    color: var(--primary-hover);
+}
+
+.file-info {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-left: 0.3rem;
 }
 
 /* Grid Layouts */
