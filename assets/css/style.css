@@ -2,32 +2,34 @@
  * Professional Dark Mode Portfolio - Design System
  * 
  * Palette:
- * - Background: Deep Anthracite / Night Blue (#0f172a)
- * - Surface: Lighter Anthracite (#1e293b)
- * - Text: Off-white (#f1f5f9)
- * - Muted: Blue-ish Gray (#94a3b8)
- * - Accent: Electric Blue (#3b82f6)
+ * - Background: Pure Dark / Charcoal (#121212)
+ * - Surface: Dark Gray (#1e1e20)
+ * - Text: Pure White (#ffffff)
+ * - Muted: Light Gray (#a1a1aa)
+ * - Accent: White / Silver (#ffffff / #e4e4e7)
  */
 
 :root {
     /* Colors */
-    --bg-body: #0f172a;
-    /* Deep Night Blue/Anthracite */
-    --bg-card: #1e293b;
-    /* Lighter Surface */
-    --bg-card-hover: #334155;
-    /* Hover State */
+    --bg-body: #121212;
+    /* Very Dark Gray for background */
+    --bg-card: #1e1e20;
+    /* Slightly lighter for cards */
+    --bg-card-hover: #27272a;
+    /* Lighter for hover state */
 
-    --text-main: #f1f5f9;
-    /* Off-white */
-    --text-muted: #94a3b8;
-    /* Readable Gray */
+    --text-main: #ffffff;
+    /* Pure White for main text */
+    --text-muted: #a1a1aa;
+    /* Neutral Gray for secondary text */
 
-    --primary: #3b82f6;
-    /* Electric Blue */
-    --primary-hover: #60a5fa;
+    --primary: #ffffff;
+    /* White for primary actions/links */
+    --primary-hover: #d4d4d8;
+    /* Light Gray for hover */
 
-    --border-color: #334155;
+    --border-color: #27272a;
+    /* Subtle border color */
 
     /* Spacing & Layout */
     --container-width: 1000px;
@@ -35,8 +37,8 @@
     --gap-md: 2rem;
 
     /* Effects */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
     --radius-md: 0.5rem;
     --transition: all 0.3s ease;
 }
@@ -87,7 +89,7 @@ h1 {
 h2 {
     font-size: 2rem;
     font-weight: 700;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5rem;
     margin-top: 3rem;
 }
@@ -116,7 +118,7 @@ p {
 /* Header */
 header {
     height: var(--header-height);
-    background-color: rgba(15, 23, 42, 0.8);
+    background-color: rgba(18, 18, 18, 0.8);
     /* Glass effect base */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
@@ -141,12 +143,17 @@ header {
 }
 
 .logo span {
-    color: var(--primary);
+    color: var(--text-muted);
+    /* Muted suffix for monochrome look */
 }
 
 .nav-links {
     display: flex;
     gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-muted);
 }
 
 .nav-links a:hover,
@@ -160,6 +167,7 @@ header {
     border: 1px solid var(--border-color);
     padding: 0.25rem 0.75rem;
     border-radius: var(--radius-md);
+    color: var(--text-muted);
 }
 
 .lang-switch:hover {
@@ -180,9 +188,9 @@ header {
 .hero h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
-    background: linear-gradient(to right, #fff, #94a3b8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: none;
+    /* Removed gradient for cleaner monochrome */
+    color: var(--text-main);
 }
 
 .hero p {
@@ -194,17 +202,19 @@ header {
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: var(--primary);
-    color: white;
+    background-color: var(--text-main);
+    /* White button */
+    color: var(--bg-body);
+    /* Dark text */
     border-radius: var(--radius-md);
-    font-weight: 600;
+    font-weight: 700;
     transition: var(--transition);
 }
 
 .btn:hover {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
 }
 
 .btn-outline {
@@ -245,12 +255,33 @@ header {
 .card:hover {
     transform: translateY(-5px);
     border-color: var(--primary);
+    /* Hover border becomes white */
     box-shadow: var(--shadow-md);
     background-color: var(--bg-card-hover);
 }
 
 .card h3 {
     margin-bottom: 0.5rem;
+}
+
+.card h3 a {
+    color: var(--text-main);
+}
+
+.card h3 a:hover {
+    text-decoration: underline;
+}
+
+.card-link-action {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    border-bottom: 1px solid transparent;
+}
+
+.card-link-action:hover {
+    border-bottom-color: var(--text-main);
 }
 
 /* Footer */
@@ -277,16 +308,14 @@ footer {
 }
 
 .comments-title {
-    color: var(--primary);
+    color: var(--text-main);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     border-bottom: none;
-    /* Override default h2 border */
 }
 
 .giscus-frame {
     min-height: 200px;
-    /* Prevent layout shift */
     width: 100%;
 }
 
@@ -303,6 +332,4 @@ footer {
     .nav-links {
         display: none;
     }
-
-    /* Simplified for this phase */
 }
