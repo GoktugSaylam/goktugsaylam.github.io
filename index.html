@@ -11,6 +11,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            const hasIndex = window.location.pathname.endsWith('index.html');
+            const hasHash = window.location.hash.length > 0;
+            if (hasIndex || hasHash) {
+                const hash = window.location.hash;
+                let newPath = window.location.pathname.replace(/index\.html$/, '');
+                if (newPath === '') newPath = '/';
+                window.history.replaceState(null, null, newPath + window.location.search);
+                if (hasHash) {
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const target = document.querySelector(hash);
+                        if (target) {
+                            setTimeout(() => { target.scrollIntoView({ behavior: 'smooth' }); }, 10);
+                        }
+                    });
+                }
+            }
+        })();
+    </script>
 </head>
 
 <body>
@@ -147,15 +167,7 @@
             });
         });
 
-        window.addEventListener('load', () => {
-            if (window.location.hash || window.location.pathname.endsWith('index.html')) {
-                setTimeout(() => {
-                    let newPath = window.location.pathname.replace(/index\.html$/, '');
-                    if (newPath === '') newPath = '/';
-                    history.replaceState(null, null, newPath + window.location.search);
-                }, 10);
-            }
-        });
+
     </script>
 </body>
 
