@@ -5,31 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Göktuğ Saylam</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        (function () {
-            const hasHtmlExt = window.location.pathname.endsWith('.html');
-            const hasHash = window.location.hash.length > 0;
-            if (hasHtmlExt || hasHash) {
-                const hash = window.location.hash;
-                let newPath = window.location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
-                if (newPath === '') newPath = '/';
-                window.history.replaceState(null, null, newPath + window.location.search);
-                if (hasHash) {
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const target = document.querySelector(hash);
-                        if (target) {
-                            setTimeout(() => { target.scrollIntoView({ behavior: 'smooth' }); }, 10);
-                        }
-                    });
-                }
-            }
-        })();
-    </script>
 </head>
 
 <body>
@@ -37,16 +17,16 @@
     <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Göktuğ <span>Saylam</span></a>
+            <a href="/" class="logo">Göktuğ <span>Saylam</span></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html#hakkimda">Hakkımda</a></li>
-                    <li><a href="index.html#portfolio">Portfolyo</a></li>
-                    <li><a href="index.html#iletisim">İletişim</a></li>
-                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="/#hakkimda">Hakkımda</a></li>
+                    <li><a href="/#portfolio">Portfolyo</a></li>
+                    <li><a href="/#iletisim">İletişim</a></li>
+                    <li><a href="/blog/" class="active">Blog</a></li>
                 </ul>
             </nav>
-            <a href="en/blog.html" class="lang-switch">EN</a>
+            <a href="/en/blog/" class="lang-switch">EN</a>
         </div>
     </header>
 
@@ -60,13 +40,13 @@
                 <article class="card">
                     <span
                         style="color: var(--primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Teknoloji</span>
-                    <h3 style="margin-top: 0.5rem;"><a href="blog-post-template.html">Örnek Blog Yazısı Başlığı</a></h3>
+                    <h3 style="margin-top: 0.5rem;"><a href="/blog-post-template/">Örnek Blog Yazısı Başlığı</a></h3>
                     <p style="font-size: 0.95rem;">Bu yazının kısa bir özeti buraya gelecek. Okuyucunun ilgisini çekecek
                         giriş cümlesi ve içeriğin ipuçları.</p>
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
                         <span style="color: var(--text-muted); font-size: 0.85rem;">8 Şubat 2026</span>
-                        <a href="blog-post-template.html"
+                        <a href="/blog-post-template/"
                             style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Devamını Oku &rarr;</a>
                     </div>
                 </article>

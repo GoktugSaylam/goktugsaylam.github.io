@@ -6,31 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Göktuğ Saylam | Kişisel Portfolyo</title>
     <!-- Cache Bust: 2026-02-08 -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        (function () {
-            const hasHtmlExt = window.location.pathname.endsWith('.html');
-            const hasHash = window.location.hash.length > 0;
-            if (hasHtmlExt || hasHash) {
-                const hash = window.location.hash;
-                let newPath = window.location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
-                if (newPath === '') newPath = '/';
-                window.history.replaceState(null, null, newPath + window.location.search);
-                if (hasHash) {
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const target = document.querySelector(hash);
-                        if (target) {
-                            setTimeout(() => { target.scrollIntoView({ behavior: 'smooth' }); }, 10);
-                        }
-                    });
-                }
-            }
-        })();
-    </script>
 </head>
 
 <body>
@@ -44,10 +24,10 @@
                     <li><a href="#hakkimda">Hakkımda</a></li>
                     <li><a href="#portfolio">Portfolyo</a></li>
                     <li><a href="#iletisim">İletişim</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                 </ul>
             </nav>
-            <a href="en/index.html" class="lang-switch">EN</a>
+            <a href="/en/" class="lang-switch">EN</a>
         </div>
     </header>
 
@@ -63,7 +43,7 @@
                     <a href="#iletisim" class="btn">İletişime Geç</a>
                 </div>
                 <p class="cv-text">
-                    Vaktiniz kısıtlıysa, hikayemin 'özet' sürümü burada: <a href="cv.pdf" target="_blank">CV'yi
+                    Vaktiniz kısıtlıysa, hikayemin 'özet' sürümü burada: <a href="/cv.pdf" target="_blank">CV'yi
                         Görüntüle</a>
                     <span class="file-info">(PDF, ~250KB)</span>
                 </p>

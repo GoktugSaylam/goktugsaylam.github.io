@@ -5,31 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Göktuğ Saylam | Personal Portfolio</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        (function () {
-            const hasHtmlExt = window.location.pathname.endsWith('.html');
-            const hasHash = window.location.hash.length > 0;
-            if (hasHtmlExt || hasHash) {
-                const hash = window.location.hash;
-                let newPath = window.location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
-                if (newPath === '') newPath = '/';
-                window.history.replaceState(null, null, newPath + window.location.search);
-                if (hasHash) {
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const target = document.querySelector(hash);
-                        if (target) {
-                            setTimeout(() => { target.scrollIntoView({ behavior: 'smooth' }); }, 10);
-                        }
-                    });
-                }
-            }
-        })();
-    </script>
 </head>
 
 <body>
@@ -43,10 +23,10 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="/en/blog/">Blog</a></li>
                 </ul>
             </nav>
-            <a href="../index.html" class="lang-switch">TR</a>
+            <a href="/" class="lang-switch">TR</a>
         </div>
     </header>
 
@@ -64,7 +44,7 @@
                 <p class="cv-text">
                     Short on time? Here's the 'summary' of my journey:
                     <span class="cv-link-block">
-                        <a href="../cv.pdf" target="_blank">View CV</a>
+                        <a href="/cv.pdf" target="_blank">View CV</a>
                         <span class="file-info">(PDF, ~250KB)</span>
                     </span>
                 </p>
