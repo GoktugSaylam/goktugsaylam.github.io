@@ -11,6 +11,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            if (window.location.hash) {
+                const hash = window.location.hash;
+                window.history.replaceState(null, null, window.location.pathname + window.location.search);
+                document.addEventListener('DOMContentLoaded', () => {
+                    const target = document.querySelector(hash);
+                    if (target) {
+                        setTimeout(() => { target.scrollIntoView({ behavior: 'smooth' }); }, 10);
+                    }
+                });
+            }
+        })();
+    </script>
 </head>
 
 <body>
