@@ -139,6 +139,7 @@
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         targetElement.scrollIntoView({ behavior: 'smooth' });
+                        history.pushState('', document.title, window.location.pathname + window.location.search);
                     }
                 }
             });
