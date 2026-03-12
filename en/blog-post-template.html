@@ -97,6 +97,14 @@
                 e.preventDefault();
             });
         });
+
+        window.addEventListener('load', () => {
+            if (window.location.hash) {
+                setTimeout(() => {
+                    history.replaceState(null, null, window.location.pathname + window.location.search);
+                }, 10);
+            }
+        });
     </script>
 </body>
 
