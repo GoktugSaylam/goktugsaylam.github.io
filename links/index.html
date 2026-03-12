@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for sharing -->
+    <meta property="og:title" content="Göktuğ Saylam | Bağlantılar">
+    <meta property="og:description" content="Tüm projelerim ve sosyal medya hesaplarım tek bir yerde.">
+    
+    <title>Göktuğ Saylam | Bağlantılar</title>
+    
+    <!-- Link to global styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Links page specific overrides for a "Linktree" vibe */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: var(--bg-color); /* Matches main theme */
+            text-align: center;
+        }
+
+        .links-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem 2rem 1.5rem;
+            flex: 1;
+        }
+
+        .profile-area {
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--border-color);
+            background-color: var(--surface-color); /* Fallback */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .profile-bio {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .link-item {
+            display: block;
+            width: 100%;
+            padding: 1.25rem 1rem;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15); /* Purple glow */
+        }
+
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .link-item:hover::before {
+            opacity: 1;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 8px;
+            fill: currentColor;
+        }
+
+        /* Branding link */
+        .website-link {
+            margin-top: 3rem;
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .website-link:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="links-container">
+        
+        <!-- Profile Section -->
+        <div class="profile-area">
+            <!-- If you have an image, replace "GS" with an <img> tag -->
+            <div class="profile-img">GS</div>
+            <h1 class="profile-name">Göktuğ Saylam</h1>
+            <p class="profile-bio">Yazılım Geliştirici & Mühendis</p>
+        </div>
+
+        <!-- Links List -->
+        <ul class="links-list">
+            <li>
+                <a href="/" class="link-item">
+                    Ana Sayfama Git (Portfolyo)
+                </a>
+            </li>
+            <li>
+                <a href="/blog/" class="link-item">
+                    Teknoloji Blogum
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/GoktugSaylam" target="_blank" rel="noopener noreferrer" class="link-item">
+                    GitHub
+                </a>
+            </li>
+            <li>
+                <a href="https://linkedin.com/in/YOUR_LINKEDIN_HERE" target="_blank" rel="noopener noreferrer" class="link-item">
+                    LinkedIn
+                </a>
+            </li>
+            <li>
+                <a href="/cv.pdf" target="_blank" class="link-item">
+                    Özgeçmişimi İncele (CV)
+                </a>
+            </li>
+            <li>
+                <a href="mailto:email@example.com" class="link-item">
+                    Bana E-Posta Gönder
+                </a>
+            </li>
+        </ul>
+
+        <!-- Footer Link -->
+        <a href="/" class="website-link">goktugsaylam.github.io</a>
+
+    </main>
+
+</body>
+</html>
