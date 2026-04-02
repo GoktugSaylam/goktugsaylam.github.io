@@ -329,6 +329,18 @@ header {
     border-bottom-color: var(--text-main);
 }
 
+.text-link {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--text-main);
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.text-link:hover {
+    border-bottom-color: var(--text-main);
+}
+
 /* Footer */
 footer {
     padding: 2rem 0;
