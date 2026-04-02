@@ -103,6 +103,47 @@
         .link-item:hover::before {
             opacity: 1;
         }
+
+        .details-menu {
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .summary-btn {
+            display: block;
+            width: 100%;
+            padding: 1.25rem 1rem;
+            background-color: transparent;
+            border: 1px dashed var(--border-color, #4b5563);
+            border-radius: 12px;
+            color: var(--text-muted, #9ca3af);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+            list-style: none; /* Hide default marker */
+        }
+
+        /* Hide summary marker for webkit */
+        .summary-btn::-webkit-details-marker {
+            display: none;
+        }
+
+        .summary-btn:hover {
+            border-color: var(--text-color, #e5e7eb);
+            color: var(--text-color, #e5e7eb);
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .details-menu[open] .summary-btn {
+            margin-bottom: 1rem;
+        }
+
+        .link-item.link-item-small {
+            padding: 1rem 1rem;
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 
@@ -120,39 +161,60 @@
                 <p class="profile-bio">Software Engineer</p>
             </div>
 
-            <!-- Links List -->
+            <!-- Ana Vitrin -->
             <ul class="links-list">
                 <li>
-                    <a href="/" class="link-item">
-                        Home / Portfolio
+                    <a href="https://goktugsaylam.com" class="link-item" target="_blank" rel="noopener noreferrer">
+                        Web Sitem
                     </a>
                 </li>
                 <li>
-                    <a href="/blog/" class="link-item">
-                        Tech Blog
+                    <a href="https://instagram.com/goktugsaylam" class="link-item" target="_blank" rel="noopener noreferrer">
+                        Instagram
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/GoktugSaylam" target="_blank" rel="noopener noreferrer" class="link-item">
-                        GitHub
+                    <a href="https://x.com/saylamgoktug" class="link-item" target="_blank" rel="noopener noreferrer">
+                        X
                     </a>
                 </li>
                 <li>
-                    <a href="https://linkedin.com/in/YOUR_LINKEDIN_HERE" target="_blank" rel="noopener noreferrer" class="link-item">
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="/cv.pdf" target="_blank" class="link-item">
-                        Resume / CV
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:email@example.com" class="link-item">
-                        Email Me
+                    <a href="https://reddit.com/user/GoktugSaylam" class="link-item" target="_blank" rel="noopener noreferrer">
+                        Reddit
                     </a>
                 </li>
             </ul>
+
+            <!-- Açılır Menü -->
+            <details class="details-menu">
+                <summary class="summary-btn">Diğer Ağlar & İletişim &darr;</summary>
+                <ul class="links-list">
+                    <li>
+                        <a href="https://linkedin.com/in/goktugsaylam" class="link-item link-item-small" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/goktugsaylam" class="link-item link-item-small" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </li>
+                    <li>
+                        <a href="https://itch.io/profile/goktugsaylam" class="link-item link-item-small" target="_blank" rel="noopener noreferrer">Itch.io</a>
+                    </li>
+                    <li>
+                        <a href="https://bsky.app/profile/goktugsaylam.bsky.social" class="link-item link-item-small" target="_blank" rel="noopener noreferrer">Bluesky</a>
+                    </li>
+                    <li>
+                        <a href="https://steamcommunity.com/id/goktugsaylam/" class="link-item link-item-small" target="_blank" rel="noopener noreferrer">Steam</a>
+                    </li>
+                    <li>
+                        <a href="https://open.spotify.com/user/78igo43dw4ht5c8m19wui6vpl?si=Cq-DPwkiTt63ASfwl2eDlw" class="link-item link-item-small" target="_blank" rel="noopener noreferrer">Spotify</a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/goktugsaylam" class="link-item link-item-small" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    </li>
+                    <li>
+                        <a href="mailto:saylamgoktug@gmail.com" class="link-item link-item-small">E-posta</a>
+                    </li>
+                </ul>
+            </details>
         </div>
     </section>
 
