@@ -144,6 +144,21 @@
             padding: 1rem 1rem;
             font-size: 0.95rem;
         }
+
+        .sub-links-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        @media (max-width: 400px) {
+            .sub-links-list {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -188,7 +203,7 @@
             <!-- Açılır Menü -->
             <details class="details-menu">
                 <summary class="summary-btn">Diğer Ağlar & İletişim &darr;</summary>
-                <ul class="links-list">
+                <ul class="sub-links-list">
                     <li>
                         <a href="https://linkedin.com/in/goktugsaylam" class="link-item link-item-small" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </li>
