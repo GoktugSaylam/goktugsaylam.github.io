@@ -217,10 +217,13 @@ header {
 }
 
 .btn-outline {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-md);
     background-color: transparent;
     border: 1px solid var(--border-color);
     color: var(--text-main);
-    margin-left: 1rem;
+    transition: var(--transition);
 }
 
 .btn-outline:hover {
