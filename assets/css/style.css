@@ -139,11 +139,11 @@ header {
 .logo {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--text-main);
+    color: #ffffff;
 }
 
 .logo span {
-    color: var(--primary);
+    color: #ffffff;
 }
 
 .nav-links {
