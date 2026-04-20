@@ -88,7 +88,8 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Göktuğ Saylam. Tüm hakları saklıdır.</p>
+            <p>&copy; <span id="year">2026</span> Göktuğ Saylam. Tüm hakları saklıdır.</p>
+            <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
         </div>
     </footer>
 

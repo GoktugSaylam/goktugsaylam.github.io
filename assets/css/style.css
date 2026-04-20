@@ -10,23 +10,23 @@
  */
 
 :root {
-    /* Colors */
-    --bg-body: #121212;
-    /* Very Dark Gray for background */
-    --bg-card: #1e1e20;
-    /* Slightly lighter for cards */
-    --bg-card-hover: #27272a;
-    /* Lighter for hover state */
+    /* Colors (60-30-10 Design Rule) */
+    --bg-dominant: #121212;   /* 60% - Dominant Background */
+    --text-secondary: #EAE9E9; /* 30% - Secondary Text */
+    --color-accent: #766DD6;   /* 10% - Accent Vurgu */
 
-    --text-main: #ffffff;
-    /* Pure White for main text */
-    --text-muted: #a1a1aa;
-    /* Neutral Gray for secondary text */
+    /* Backgrounds */
+    --bg-body: var(--bg-dominant);
+    --bg-card: #181818; /* Subtle offset for cards */
+    --bg-card-hover: #1f1f1f;
 
-    --primary: #ffffff;
-    /* White for primary actions/links */
-    --primary-hover: #d4d4d8;
-    /* Light Gray for hover */
+    /* Texts */
+    --text-main: var(--text-secondary);
+    --text-muted: rgba(234, 233, 233, 0.65); /* Softened secondary text */
+
+    /* Brand / Actions */
+    --primary: var(--color-accent);
+    --primary-hover: #8a81eb; /* Lighter purple for hover */
 
     --border-color: #27272a;
     /* Subtle border color */
@@ -143,7 +143,7 @@ header {
 }
 
 .logo span {
-    color: var(--text-main);
+    color: var(--primary);
 }
 
 .nav-links {
@@ -201,10 +201,10 @@ header {
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: var(--text-main);
-    /* White button */
-    color: var(--bg-body);
-    /* Dark text */
+    background-color: var(--primary);
+    /* Accent button */
+    color: #ffffff;
+    /* White text for contrast */
     border-radius: var(--radius-md);
     font-weight: 700;
     transition: var(--transition);
@@ -213,7 +213,7 @@ header {
 .btn:hover {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(118, 109, 214, 0.25);
 }
 
 .btn-outline {
@@ -221,14 +221,15 @@ header {
     padding: 0.6rem 1.2rem;
     border-radius: var(--radius-md);
     background-color: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
+    border: 1px solid var(--primary);
+    color: var(--primary);
     transition: var(--transition);
 }
 
 .btn-outline:hover {
-    border-color: var(--text-main);
-    background-color: var(--bg-card);
+    border-color: var(--primary-hover);
+    color: #ffffff;
+    background-color: var(--primary-hover);
 }
 
 /* CTA Hierarchy */
@@ -258,7 +259,7 @@ header {
 }
 
 .cv-text a {
-    color: var(--text-main);
+    color: var(--primary);
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -314,6 +315,7 @@ header {
 }
 
 .card h3 a:hover {
+    color: var(--primary);
     text-decoration: underline;
 }
 
@@ -321,24 +323,25 @@ header {
     display: inline-block;
     margin-top: 1rem;
     font-weight: 600;
-    color: var(--text-main);
+    color: var(--primary);
     border-bottom: 1px solid transparent;
 }
 
 .card-link-action:hover {
-    border-bottom-color: var(--text-main);
+    border-bottom-color: var(--primary);
 }
 
 .text-link {
     display: inline-block;
     font-weight: 600;
-    color: var(--text-main);
+    color: var(--primary);
     border-bottom: 1px solid transparent;
     transition: var(--transition);
 }
 
 .text-link:hover {
-    border-bottom-color: var(--text-main);
+    border-bottom-color: var(--primary);
+    color: var(--primary-hover);
 }
 
 /* Footer */
