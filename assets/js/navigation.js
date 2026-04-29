@@ -68,9 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Parallax fade-out and color transition effect for hero section
+    // 4. Parallax fade-out effect for hero section
     const hero = document.querySelector('.hero');
     const heroContainer = document.querySelector('.hero .container');
+    const header = document.querySelector('header');
+    
     if (hero && heroContainer) {
         const updateHeroStyles = () => {
             const scrollPos = window.scrollY;
@@ -82,6 +84,17 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Text fade out still happens smoothly
             heroContainer.style.opacity = 1 - scrollProgress;
+            
+            // Header color transition
+            if (header) {
+                if (scrollPos > 10) {
+                    header.style.backgroundColor = 'rgba(18, 18, 18, 0.8)';
+                    header.style.borderColor = 'var(--border-color)';
+                } else {
+                    header.style.backgroundColor = 'var(--primary)';
+                    header.style.borderColor = 'transparent';
+                }
+            }
         };
         
         window.addEventListener('scroll', updateHeroStyles);
