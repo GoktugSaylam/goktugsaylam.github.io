@@ -176,12 +176,24 @@ header {
 
 /* Hero Section */
 .hero {
-    min-height: 80vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.content-wrapper {
+    position: relative;
+    margin-top: calc(80vh + var(--header-height));
+    background-color: var(--bg-body);
+    z-index: 20;
 }
 
 .hero h1 {

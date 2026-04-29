@@ -67,4 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = path || '/';
         }
     });
+
+    // 4. Parallax fade-out effect for hero section
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            const fadePoint = window.innerHeight * 0.8; // Same as 80vh
+            
+            let opacity = 1 - (scrollPos / fadePoint);
+            
+            if (opacity < 0) opacity = 0;
+            if (opacity > 1) opacity = 1;
+            
+            hero.style.opacity = opacity;
+        });
+    }
 });
