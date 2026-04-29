@@ -118,7 +118,7 @@ p {
 /* Header */
 header {
     height: var(--header-height);
-    background-color: var(--dyn-header-bg, var(--primary));
+    background-color: rgba(118, 109, 214, 0.95); /* Fixed purple header */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--dyn-border, transparent);
     position: sticky;

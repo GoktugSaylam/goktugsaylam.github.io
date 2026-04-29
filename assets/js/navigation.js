@@ -89,14 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isScrolled) {
                 // Purple state
                 hero.style.backgroundColor = `rgb(118, 109, 214)`;
-                document.documentElement.style.setProperty('--dyn-header-bg', `rgba(118, 109, 214, 1)`);
                 document.documentElement.style.setProperty('--dyn-border', `rgba(39, 39, 42, 0)`);
                 document.documentElement.style.setProperty('--dyn-btn-bg', `rgb(255, 255, 255)`);
                 document.documentElement.style.setProperty('--dyn-btn-text', `rgb(118, 109, 214)`);
             } else {
                 // Gray state
                 hero.style.backgroundColor = `rgb(18, 18, 18)`;
-                document.documentElement.style.setProperty('--dyn-header-bg', `rgba(18, 18, 18, 0.8)`);
                 document.documentElement.style.setProperty('--dyn-border', `rgba(39, 39, 42, 1)`);
                 document.documentElement.style.setProperty('--dyn-btn-bg', `rgb(118, 109, 214)`);
                 document.documentElement.style.setProperty('--dyn-btn-text', `rgb(255, 255, 255)`);
