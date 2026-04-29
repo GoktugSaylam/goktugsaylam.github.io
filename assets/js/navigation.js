@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hero = document.querySelector('.hero');
     const heroContainer = document.querySelector('.hero .container');
     if (hero && heroContainer) {
-        window.addEventListener('scroll', () => {
+        const updateHeroStyles = () => {
             const scrollPos = window.scrollY;
             const fadePoint = window.innerHeight; // Fade over 100vh
             
@@ -85,11 +85,32 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Background color transition from Purple (#766DD6 -> rgb(118, 109, 214)) 
             // to Dark Gray (#121212 -> rgb(18, 18, 18))
-            const r = Math.round(118 + (18 - 118) * scrollProgress);
-            const g = Math.round(109 + (18 - 109) * scrollProgress);
-            const b = Math.round(214 + (18 - 214) * scrollProgress);
+            const rBg = Math.round(118 + (18 - 118) * scrollProgress);
+            const gBg = Math.round(109 + (18 - 109) * scrollProgress);
+            const bBg = Math.round(214 + (18 - 214) * scrollProgress);
             
-            hero.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-        });
+            // Header transition: Solid purple (alpha 1) to Gray (alpha 0.8)
+            const headerAlpha = 1 - (0.2 * scrollProgress);
+            const borderAlpha = scrollProgress;
+            
+            // Button transition: White (255, 255, 255) to Purple (118, 109, 214)
+            const rBtn = Math.round(255 + (118 - 255) * scrollProgress);
+            const gBtn = Math.round(255 + (109 - 255) * scrollProgress);
+            const bBtn = Math.round(255 + (214 - 255) * scrollProgress);
+            
+            // Button Text transition: Purple (118, 109, 214) to White (255, 255, 255)
+            const rText = Math.round(118 + (255 - 118) * scrollProgress);
+            const gText = Math.round(109 + (255 - 109) * scrollProgress);
+            const bText = Math.round(214 + (255 - 214) * scrollProgress);
+
+            hero.style.backgroundColor = `rgb(${rBg}, ${gBg}, ${bBg})`;
+            document.documentElement.style.setProperty('--dyn-header-bg', `rgba(${rBg}, ${gBg}, ${bBg}, ${headerAlpha})`);
+            document.documentElement.style.setProperty('--dyn-border', `rgba(39, 39, 42, ${borderAlpha})`);
+            document.documentElement.style.setProperty('--dyn-btn-bg', `rgb(${rBtn}, ${gBtn}, ${bBtn})`);
+            document.documentElement.style.setProperty('--dyn-btn-text', `rgb(${rText}, ${gText}, ${bText})`);
+        };
+        
+        window.addEventListener('scroll', updateHeroStyles);
+        updateHeroStyles(); // Initialize on load
     }
 });

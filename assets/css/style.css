@@ -118,10 +118,9 @@ p {
 /* Header */
 header {
     height: var(--header-height);
-    background-color: rgba(18, 18, 18, 0.8);
-    /* Glass effect base */
+    background-color: var(--dyn-header-bg, var(--primary));
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--dyn-border, transparent);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -192,23 +191,25 @@ header {
 }
 
 .hero .btn {
-    background-color: #ffffff;
-    color: var(--primary);
+    background-color: var(--dyn-btn-bg, #ffffff);
+    color: var(--dyn-btn-text, var(--primary));
 }
 
 .hero .btn:hover {
-    background-color: #f0f0f0;
-    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    filter: brightness(0.9);
 }
 
 .hero .btn-outline {
-    border-color: #ffffff;
-    color: #ffffff;
+    background-color: transparent;
+    border-color: var(--dyn-btn-bg, #ffffff);
+    color: var(--dyn-btn-bg, #ffffff);
 }
 
 .hero .btn-outline:hover {
-    background-color: #ffffff;
-    color: var(--primary);
+    background-color: var(--dyn-btn-bg, #ffffff);
+    color: var(--dyn-btn-text, var(--primary));
 }
 
 .content-wrapper {
