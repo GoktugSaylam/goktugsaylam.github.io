@@ -176,22 +176,32 @@ header {
 
 /* Hero Section */
 .hero {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
     position: fixed;
-    top: var(--header-height);
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
+    padding-top: var(--header-height);
+    background: linear-gradient(-45deg, #121212, #1c1a3b, #121212, #1a1a24);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .content-wrapper {
     position: relative;
-    margin-top: calc(80vh + var(--header-height));
+    margin-top: 100vh;
     background-color: var(--bg-body);
     z-index: 20;
 }

@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hero) {
         window.addEventListener('scroll', () => {
             const scrollPos = window.scrollY;
-            const fadePoint = window.innerHeight * 0.8; // Same as 80vh
+            const fadePoint = window.innerHeight; // Fade over 100vh
             
             let opacity = 1 - (scrollPos / fadePoint);
             
