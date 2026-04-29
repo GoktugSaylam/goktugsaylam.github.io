@@ -118,8 +118,7 @@ p {
 /* Header */
 header {
     height: var(--header-height);
-    background-color: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(10px);
+    background-color: #121212;
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;

@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Header color transition
             if (header) {
                 if (scrollPos > 10) {
-                    header.style.backgroundColor = 'rgba(18, 18, 18, 0.8)';
+                    header.style.backgroundColor = '#121212';
                     header.style.borderColor = 'var(--border-color)';
                 } else {
                     header.style.backgroundColor = 'var(--primary)';
