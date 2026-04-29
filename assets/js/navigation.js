@@ -68,19 +68,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Parallax fade-out effect for hero section
+    // 4. Parallax fade-out and color transition effect for hero section
     const hero = document.querySelector('.hero');
-    if (hero) {
+    const heroContainer = document.querySelector('.hero .container');
+    if (hero && heroContainer) {
         window.addEventListener('scroll', () => {
             const scrollPos = window.scrollY;
             const fadePoint = window.innerHeight; // Fade over 100vh
             
-            let opacity = 1 - (scrollPos / fadePoint);
+            let scrollProgress = scrollPos / fadePoint;
+            if (scrollProgress < 0) scrollProgress = 0;
+            if (scrollProgress > 1) scrollProgress = 1;
             
-            if (opacity < 0) opacity = 0;
-            if (opacity > 1) opacity = 1;
+            // Text fade out
+            heroContainer.style.opacity = 1 - scrollProgress;
             
-            hero.style.opacity = opacity;
+            // Background color transition from Purple (#766DD6 -> rgb(118, 109, 214)) 
+            // to Dark Gray (#121212 -> rgb(18, 18, 18))
+            const r = Math.round(118 + (18 - 118) * scrollProgress);
+            const g = Math.round(109 + (18 - 109) * scrollProgress);
+            const b = Math.round(214 + (18 - 214) * scrollProgress);
+            
+            hero.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         });
     }
 });

@@ -188,15 +188,27 @@ header {
     width: 100%;
     z-index: 10;
     padding-top: var(--header-height);
-    background: linear-gradient(-45deg, #121212, #1c1a3b, #121212, #1a1a24);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background-color: var(--primary); /* Start with purple */
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.hero .btn {
+    background-color: #ffffff;
+    color: var(--primary);
+}
+
+.hero .btn:hover {
+    background-color: #f0f0f0;
+    color: var(--primary);
+}
+
+.hero .btn-outline {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.hero .btn-outline:hover {
+    background-color: #ffffff;
+    color: var(--primary);
 }
 
 .content-wrapper {
