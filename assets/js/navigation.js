@@ -100,4 +100,36 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateHeroStyles);
         updateHeroStyles(); // Initialize on load
     }
+
+    // 5. Fade-out effect for footer text
+    const footerContainer = document.querySelector('footer .container');
+    if (footerContainer) {
+        const updateFooterStyles = () => {
+            // Document height can change, so calculate inside
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const currentScroll = window.scrollY;
+            
+            // Avoid issues on very short pages
+            if (maxScroll <= 0) {
+                footerContainer.style.opacity = 1;
+                return;
+            }
+
+            const fadeRange = 200; // Pixels from bottom to start fading
+            let distanceToBottom = maxScroll - currentScroll;
+            
+            // Allow a tiny margin for fractional scrolling issues
+            if (distanceToBottom < 2) distanceToBottom = 0;
+
+            let opacity = 1 - (distanceToBottom / fadeRange);
+            if (opacity < 0) opacity = 0;
+            if (opacity > 1) opacity = 1;
+
+            footerContainer.style.opacity = opacity;
+        };
+
+        window.addEventListener('scroll', updateFooterStyles);
+        window.addEventListener('resize', updateFooterStyles);
+        updateFooterStyles();
+    }
 });
