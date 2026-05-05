@@ -45,11 +45,11 @@
 
 [data-theme="light"] {
     --bg-dominant: #ffffff;
-    --bg-card: #ffffff;
-    --bg-card-hover: #f8f9fa; /* Slight hover distinction */
+    --bg-card: #f0f0f0;        /* Slightly grey so cards stand out from white bg */
+    --bg-card-hover: #e8e8e8;
     --text-secondary: #000000; /* Pure black text */
     --text-muted: #000000;
-    --border-color: #dee2e6;
+    --border-color: #cccccc;
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
