@@ -384,8 +384,13 @@ footer {
     padding: 1.5rem 0;
     text-align: center;
     color: #ffffff;
+    background-color: var(--primary);
     position: relative;
     z-index: 20;
+}
+
+footer p {
+    margin-bottom: 0;
 }
 
 /* Blog Detail & Comments */
