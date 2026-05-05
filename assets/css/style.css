@@ -265,14 +265,15 @@ header {
     font-size: 4rem;
     margin-bottom: 1rem;
     background: none;
-    /* Removed gradient for cleaner monochrome */
-    color: var(--text-main);
+    color: #ffffff; /* Always white - hero is always on purple bg */
 }
 
-.hero p {
+.hero p,
+.hero .cv-text {
     font-size: 1.25rem;
     max-width: 600px;
     margin: 0 auto 2rem;
+    color: #ffffff; /* Always white - hero is always on purple bg */
 }
 
 .btn {
