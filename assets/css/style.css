@@ -12,7 +12,7 @@
 :root {
     /* Colors (60-30-10 Design Rule) */
     --bg-dominant: #121212;   /* 60% - Dominant Background */
-    --text-secondary: #EAE9E9; /* 30% - Secondary Text */
+    --text-secondary: #ffffff; /* 30% - Secondary Text */
     --color-accent: #7068CC;   /* 10% - Accent Vurgu */
 
     /* Backgrounds */
@@ -22,7 +22,7 @@
 
     /* Texts */
     --text-main: var(--text-secondary);
-    --text-muted: rgba(234, 233, 233, 0.65); /* Softened secondary text */
+    --text-muted: rgba(255, 255, 255, 0.65); /* Softened secondary text */
 
     /* Brand / Actions */
     --primary: var(--color-accent);
@@ -44,11 +44,11 @@
 }
 
 [data-theme="light"] {
-    --bg-dominant: #f8f9fa;
+    --bg-dominant: #ffffff;
     --bg-card: #ffffff;
-    --bg-card-hover: #f1f3f5;
-    --text-secondary: #212529;
-    --text-muted: rgba(33, 37, 41, 0.65);
+    --bg-card-hover: #f8f9fa; /* Slight hover distinction */
+    --text-secondary: #000000; /* Pure black text */
+    --text-muted: rgba(0, 0, 0, 0.65);
     --border-color: #dee2e6;
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
