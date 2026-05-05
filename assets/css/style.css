@@ -22,7 +22,7 @@
 
     /* Texts */
     --text-main: var(--text-secondary);
-    --text-muted: rgba(255, 255, 255, 0.65); /* Softened secondary text */
+    --text-muted: #ffffff; /* Same as text-main */
 
     /* Brand / Actions */
     --primary: var(--color-accent);
@@ -48,7 +48,7 @@
     --bg-card: #ffffff;
     --bg-card-hover: #f8f9fa; /* Slight hover distinction */
     --text-secondary: #000000; /* Pure black text */
-    --text-muted: rgba(0, 0, 0, 0.65);
+    --text-muted: #000000;
     --border-color: #dee2e6;
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -344,12 +344,11 @@ header {
 }
 
 .cv-text a:hover {
-    opacity: 0.8;
+    text-decoration: none;
 }
 
 .file-info {
     font-size: 0.8rem;
-    opacity: 0.7;
     margin-left: 0.3rem;
 }
 
