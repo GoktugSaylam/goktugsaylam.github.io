@@ -26,7 +26,7 @@
 
     /* Brand / Actions */
     --primary: var(--color-accent);
-    --primary-hover: #8a81eb; /* Lighter purple for hover */
+    --primary-hover: #766DD6; /* Kept same tone as requested */
 
     --border-color: #27272a;
     /* Subtle border color */
