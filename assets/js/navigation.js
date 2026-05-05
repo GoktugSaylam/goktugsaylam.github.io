@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Header color transition
             if (header) {
                 if (scrollPos > 10) {
-                    header.style.backgroundColor = '#121212';
+                    header.style.backgroundColor = 'var(--bg-dominant)';
                     header.style.borderColor = 'var(--border-color)';
                 } else {
                     header.style.backgroundColor = 'var(--primary)';
@@ -132,4 +132,36 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', updateFooterStyles);
         updateFooterStyles();
     }
+
+    // 6. Theme Toggle Logic (Light / Dark)
+    const initTheme = () => {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeToggleIcon(savedTheme);
+    };
+
+    const updateThemeToggleIcon = (theme) => {
+        const toggles = document.querySelectorAll('.theme-toggle');
+        toggles.forEach(toggle => {
+            toggle.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+        });
+    };
+
+    const toggleTheme = () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeToggleIcon(newTheme);
+    };
+
+    // Initialize theme
+    initTheme();
+
+    // Attach click listeners to all theme toggles
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.theme-toggle')) {
+            toggleTheme();
+        }
+    });
 });

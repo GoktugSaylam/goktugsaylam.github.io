@@ -13,7 +13,7 @@
     /* Colors (60-30-10 Design Rule) */
     --bg-dominant: #121212;   /* 60% - Dominant Background */
     --text-secondary: #EAE9E9; /* 30% - Secondary Text */
-    --color-accent: #766DD6;   /* 10% - Accent Vurgu */
+    --color-accent: #7068CC;   /* 10% - Accent Vurgu */
 
     /* Backgrounds */
     --bg-body: var(--bg-dominant);
@@ -26,7 +26,7 @@
 
     /* Brand / Actions */
     --primary: var(--color-accent);
-    --primary-hover: #766DD6; /* Kept same tone as requested */
+    --primary-hover: #7068CC; /* Kept same tone as requested */
 
     --border-color: #27272a;
     /* Subtle border color */
@@ -41,6 +41,17 @@
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
     --radius-md: 0.5rem;
     --transition: all 0.3s ease;
+}
+
+[data-theme="light"] {
+    --bg-dominant: #f8f9fa;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f3f5;
+    --text-secondary: #212529;
+    --text-muted: rgba(33, 37, 41, 0.65);
+    --border-color: #dee2e6;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 /* Reset & Base */
@@ -118,7 +129,7 @@ p {
 /* Header */
 header {
     height: var(--header-height);
-    background-color: #121212;
+    background-color: var(--bg-dominant);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
@@ -138,11 +149,11 @@ header {
 .logo {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-main);
 }
 
 .logo span {
-    color: #ffffff;
+    color: var(--text-main);
 }
 
 .nav-links {
@@ -159,18 +170,45 @@ header {
     color: var(--primary);
 }
 
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--border-color);
+    color: var(--text-main);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
 .lang-switch {
     font-size: 0.9rem;
-    font-weight: 600;
-    border: 1px solid var(--border-color);
-    padding: 0.25rem 0.75rem;
+    font-weight: 700;
+    border: 2px solid var(--border-color);
+    padding: 0.4rem 0.8rem;
     border-radius: var(--radius-md);
-    color: var(--text-muted);
+    color: var(--text-main);
+    transition: var(--transition);
 }
 
 .lang-switch:hover {
     border-color: var(--primary);
-    color: var(--primary);
+    color: #ffffff;
+    background-color: var(--primary);
 }
 
 /* Hero Section */
@@ -248,7 +286,7 @@ header {
 .btn:hover {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(118, 109, 214, 0.25);
+    box-shadow: 0 4px 12px rgba(112, 104, 204, 0.25);
 }
 
 .btn-outline {
