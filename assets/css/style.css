@@ -336,14 +336,15 @@ header {
 }
 
 .cv-text a {
-    color: var(--primary);
+    color: #ffffff;
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 4px;
+    transition: opacity 0.3s ease;
 }
 
 .cv-text a:hover {
-    color: var(--primary-hover);
+    opacity: 0.8;
 }
 
 .file-info {
