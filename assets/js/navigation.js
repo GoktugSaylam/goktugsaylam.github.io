@@ -157,4 +157,24 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleTheme();
         }
     });
+
+    // Fetch last updated time from GitHub API
+    const lastUpdatedElement = document.getElementById('last-updated');
+    if (lastUpdatedElement) {
+        fetch('https://api.github.com/repos/GoktugSaylam/goktugsaylam.github.io/commits?per_page=1')
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.length > 0) {
+                    const commitDate = new Date(data[0].commit.committer.date);
+                    const isEnglish = window.location.pathname.includes('/en/');
+                    
+                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                    const formattedDate = commitDate.toLocaleDateString(isEnglish ? 'en-US' : 'tr-TR', options);
+                    
+                    const prefix = isEnglish ? 'Last Updated: ' : 'Son Güncelleme: ';
+                    lastUpdatedElement.textContent = prefix + formattedDate;
+                }
+            })
+            .catch(error => console.error('Error fetching last updated date:', error));
+    }
 });
