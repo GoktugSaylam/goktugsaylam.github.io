@@ -533,6 +533,7 @@ footer {
 
 footer p {
     margin-bottom: 0;
+    color: var(--on-primary);
 }
 
 /* Blog Detail & Comments */
