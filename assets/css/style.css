@@ -185,14 +185,14 @@ header {
 
 .theme-toggle {
     background: none;
-    border: 2px solid var(--border-color);
+    border: 1.5px solid transparent;
     color: var(--text-main);
     font-size: 1.25rem;
     line-height: 1;
     cursor: pointer;
     padding: 0.35rem;
     border-radius: var(--radius-md);
-    transition: var(--transition);
+    transition: border-color 0.25s ease, background-color 0.25s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -224,7 +224,6 @@ header {
 /* When header is over purple hero, make toggle white like nav links */
 .is-hero .theme-toggle {
     color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .is-hero .theme-toggle:hover {
@@ -282,11 +281,11 @@ header {
 .lang-switch {
     font-size: 0.9rem;
     font-weight: 700;
-    border: 2px solid var(--border-color);
+    border: 1.5px solid transparent;
     padding: 0.4rem 0.8rem;
     border-radius: var(--radius-md);
     color: var(--text-main);
-    transition: var(--transition);
+    transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 
 .lang-switch:hover {
@@ -298,7 +297,6 @@ header {
 /* When header is over purple hero, make lang-switch white like nav links */
 .is-hero .lang-switch {
     color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .is-hero .lang-switch:hover {
@@ -521,8 +519,9 @@ header {
 footer {
     padding: 1.5rem 0;
     text-align: center;
-    color: #ffffff;
-    background-color: var(--primary);
+    color: var(--text-main);
+    background-color: var(--bg-dominant);
+    border-top: 1px solid var(--border-color);
     position: relative;
     z-index: 20;
 }
