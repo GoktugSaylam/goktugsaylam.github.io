@@ -276,32 +276,11 @@ header {
     width: 100%;
     z-index: 10;
     padding-top: var(--header-height);
-    background-color: var(--primary); /* Start with purple */
+    background-color: var(--bg-dominant);
+    transition: background-color 0.3s ease;
 }
 
-.hero .btn {
-    background-color: #ffffff;
-    color: var(--primary);
-}
-
-.hero .btn:hover {
-    background-color: #ffffff;
-    color: var(--primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    filter: brightness(0.9);
-}
-
-.hero .btn-outline {
-    background-color: transparent;
-    border-color: #ffffff;
-    color: #ffffff;
-}
-
-.hero .btn-outline:hover {
-    background-color: #ffffff;
-    color: var(--primary);
-}
+/* Hero buttons use default .btn and .btn-outline styles (theme-aware) */
 
 .content-wrapper {
     position: relative;
@@ -314,7 +293,7 @@ header {
     font-size: 4rem;
     margin-bottom: 1rem;
     background: none;
-    color: #ffffff; /* Always white - hero is always on purple bg */
+    color: var(--text-main);
 }
 
 .hero p,
@@ -322,7 +301,7 @@ header {
     font-size: 1.25rem;
     max-width: 600px;
     margin: 0 auto 2rem;
-    color: #ffffff; /* Always white - hero is always on purple bg */
+    color: var(--text-muted);
 }
 
 .btn {
@@ -386,7 +365,7 @@ header {
 }
 
 .cv-text a {
-    color: #ffffff;
+    color: var(--primary);
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 4px;
