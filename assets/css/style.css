@@ -199,6 +199,19 @@ header {
     opacity: 0.65;
 }
 
+/* When header is over purple hero: ALL elements forced white */
+.is-hero .logo,
+.is-hero .logo span,
+.is-hero .nav-links a {
+    color: #ffffff;
+}
+
+.is-hero .nav-links a:hover,
+.is-hero .nav-links a.active {
+    color: #ffffff;
+    opacity: 0.65;
+}
+
 /* When header is over purple hero, make toggle white like nav links */
 .is-hero .theme-toggle {
     color: #ffffff;
