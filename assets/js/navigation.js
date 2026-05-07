@@ -137,14 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const initTheme = () => {
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeToggleIcon(savedTheme);
-    };
-
-    const updateThemeToggleIcon = (theme) => {
-        const toggles = document.querySelectorAll('.theme-toggle');
-        toggles.forEach(toggle => {
-            toggle.innerHTML = theme === 'dark' ? '☀️' : '🌙';
-        });
     };
 
     const toggleTheme = () => {
@@ -152,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-        updateThemeToggleIcon(newTheme);
     };
 
     // Initialize theme

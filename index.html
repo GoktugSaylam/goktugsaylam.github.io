@@ -29,7 +29,26 @@
                 </ul>
             </nav>
             <div class="header-controls">
-                <button class="theme-toggle" aria-label="Toggle Theme">🌙</button>
+                <button class="theme-toggle" type="button" title="Toggle theme" aria-label="Toggle theme">
+      <svg width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+        <defs>
+          <clipPath id="toggle-clip-1">
+            <path class="toggle-mask" d="M0 0h25a1 1 0 0010 10v14H0Z"/>
+          </clipPath>
+        </defs>
+        <g stroke="currentColor" stroke-linecap="round">
+          <circle cx="12" cy="12" r="5" fill="currentColor" clip-path="url(#toggle-clip-1)" class="toggle-circle"/>
+          <path class="toggle-ray" d="M12 1.4v2.4" fill="none" stroke-width="2" stroke-linejoin="round"/>
+          <path class="toggle-ray" d="m20.3 3.7-2.5 2.5" fill="none" stroke-width="2" stroke-linejoin="round"/>
+          <path class="toggle-ray" d="M22.6 12h-2.4" fill="none" stroke-width="2" stroke-linejoin="round"/>
+          <path class="toggle-ray" d="M12 22.6v-2.4" fill="none" stroke-width="2" stroke-linejoin="round"/>
+          <path class="toggle-ray" d="M1.4 12h2.4" fill="none" stroke-width="2" stroke-linejoin="round"/>
+          <path class="toggle-ray" d="m20.3 20.3-2.5-2.5" fill="none" stroke-width="2" stroke-linejoin="round"/>
+          <path class="toggle-ray" d="m3.7 20.3 2.5-2.5" fill="none" stroke-width="2" stroke-linejoin="round"/>
+          <path class="toggle-ray" d="m3.7 3.7 2.5 2.5" fill="none" stroke-width="2" stroke-linejoin="round"/>
+        </g>
+      </svg>
+      </button>
                 <a href="/en/" class="lang-switch">EN</a>
             </div>
         </div>
