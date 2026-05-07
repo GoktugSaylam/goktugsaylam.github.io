@@ -159,7 +159,8 @@ header {
 }
 
 .logo span {
-    color: var(--text-main);
+    color: inherit;
+    transition: inherit;
 }
 
 .nav-links {
@@ -212,7 +213,6 @@ header {
 
 /* When header is over purple hero: ALL elements use --on-primary */
 .is-hero .logo,
-.is-hero .logo span,
 .is-hero .nav-links a {
     color: var(--on-primary);
 }
