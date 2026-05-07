@@ -163,13 +163,18 @@ header {
 
 .nav-links a {
     color: var(--text-main);
-    transition: opacity 0.3s ease;
+    padding: 0.3rem 0.65rem;
+    border-radius: var(--radius-md);
+    border: 1.5px solid transparent;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--text-main);
-    opacity: 0.65;
+    border-color: rgba(128, 128, 128, 0.35);
+    background-color: rgba(128, 128, 128, 0.08);
+    opacity: 1;
 }
 
 .header-controls {
@@ -196,7 +201,9 @@ header {
 }
 
 .theme-toggle:hover {
-    opacity: 0.65;
+    border-color: rgba(128, 128, 128, 0.5);
+    background-color: rgba(128, 128, 128, 0.08);
+    opacity: 1;
 }
 
 /* When header is over purple hero: ALL elements forced white */
@@ -209,18 +216,21 @@ header {
 .is-hero .nav-links a:hover,
 .is-hero .nav-links a.active {
     color: #ffffff;
-    opacity: 0.65;
+    border-color: rgba(255, 255, 255, 0.35);
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 1;
 }
 
 /* When header is over purple hero, make toggle white like nav links */
 .is-hero .theme-toggle {
     color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .is-hero .theme-toggle:hover {
-    opacity: 0.65;
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 1;
 }
 
 /* Classic Sun/Moon SVG Toggle Animations */
@@ -280,17 +290,21 @@ header {
 }
 
 .lang-switch:hover {
-    opacity: 0.65;
+    border-color: rgba(128, 128, 128, 0.5);
+    background-color: rgba(128, 128, 128, 0.08);
+    opacity: 1;
 }
 
 /* When header is over purple hero, make lang-switch white like nav links */
 .is-hero .lang-switch {
     color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .is-hero .lang-switch:hover {
-    opacity: 0.65;
+    border-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 1;
 }
 
 /* Hero Section */
