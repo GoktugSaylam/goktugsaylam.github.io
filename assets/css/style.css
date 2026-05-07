@@ -26,7 +26,10 @@
 
     /* Brand / Actions */
     --primary: var(--color-accent);
-    --primary-hover: #7068CC; /* Kept same tone as requested */
+    --primary-hover: #7068CC;
+    --on-primary: #000000; /* Dark mode: text on purple background = black */
+    --on-primary-hover-bg: rgba(0, 0, 0, 0.1);
+    --on-primary-hover-border: rgba(0, 0, 0, 0.35);
 
     --border-color: #27272a;
     /* Subtle border color */
@@ -45,13 +48,16 @@
 
 [data-theme="light"] {
     --bg-dominant: #ffffff;
-    --bg-card: #f0f0f0;        /* Slightly grey so cards stand out from white bg */
+    --bg-card: #f0f0f0;
     --bg-card-hover: #e8e8e8;
-    --text-secondary: #000000; /* Pure black text */
+    --text-secondary: #000000;
     --text-muted: #000000;
     --border-color: #cccccc;
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --on-primary: #ffffff; /* Light mode: text on purple background = white */
+    --on-primary-hover-bg: rgba(255, 255, 255, 0.1);
+    --on-primary-hover-border: rgba(255, 255, 255, 0.5);
 }
 
 /* Reset & Base */
@@ -206,29 +212,29 @@ header {
     opacity: 1;
 }
 
-/* When header is over purple hero: ALL elements forced white */
+/* When header is over purple hero: ALL elements use --on-primary */
 .is-hero .logo,
 .is-hero .logo span,
 .is-hero .nav-links a {
-    color: #ffffff;
+    color: var(--on-primary);
 }
 
 .is-hero .nav-links a:hover,
 .is-hero .nav-links a.active {
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.35);
-    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--on-primary);
+    border-color: var(--on-primary-hover-border);
+    background-color: var(--on-primary-hover-bg);
     opacity: 1;
 }
 
-/* When header is over purple hero, make toggle white like nav links */
+/* When header is over purple hero, make toggle use --on-primary */
 .is-hero .theme-toggle {
-    color: #ffffff;
+    color: var(--on-primary);
 }
 
 .is-hero .theme-toggle:hover {
-    border-color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--on-primary-hover-border);
+    background-color: var(--on-primary-hover-bg);
     opacity: 1;
 }
 
@@ -294,14 +300,14 @@ header {
     opacity: 1;
 }
 
-/* When header is over purple hero, make lang-switch white like nav links */
+/* When header is over purple hero, make lang-switch use --on-primary */
 .is-hero .lang-switch {
-    color: #ffffff;
+    color: var(--on-primary);
 }
 
 .is-hero .lang-switch:hover {
-    border-color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--on-primary-hover-border);
+    background-color: var(--on-primary-hover-bg);
     opacity: 1;
 }
 
@@ -324,12 +330,12 @@ header {
 }
 
 .hero .btn {
-    background-color: #ffffff;
+    background-color: var(--on-primary);
     color: var(--primary);
 }
 
 .hero .btn:hover {
-    background-color: #ffffff;
+    background-color: var(--on-primary);
     color: var(--primary);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
@@ -338,12 +344,12 @@ header {
 
 .hero .btn-outline {
     background-color: transparent;
-    border-color: #ffffff;
-    color: #ffffff;
+    border-color: var(--on-primary);
+    color: var(--on-primary);
 }
 
 .hero .btn-outline:hover {
-    background-color: #ffffff;
+    background-color: var(--on-primary);
     color: var(--primary);
 }
 
@@ -358,7 +364,7 @@ header {
     font-size: 4rem;
     margin-bottom: 1rem;
     background: none;
-    color: #ffffff;
+    color: var(--on-primary);
 }
 
 .hero p,
@@ -366,7 +372,7 @@ header {
     font-size: 1.25rem;
     max-width: 600px;
     margin: 0 auto 2rem;
-    color: #ffffff;
+    color: var(--on-primary);
 }
 
 .btn {
@@ -430,7 +436,7 @@ header {
 }
 
 .cv-text a {
-    color: #ffffff;
+    color: var(--on-primary);
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 4px;
