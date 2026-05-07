@@ -280,9 +280,7 @@ header {
 }
 
 .lang-switch:hover {
-    border-color: var(--primary);
-    color: #ffffff;
-    background-color: var(--primary);
+    opacity: 0.65;
 }
 
 /* When header is over purple hero, make lang-switch white like nav links */
@@ -292,9 +290,7 @@ header {
 }
 
 .is-hero .lang-switch:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: #ffffff;
-    color: #ffffff;
+    opacity: 0.65;
 }
 
 /* Hero Section */
