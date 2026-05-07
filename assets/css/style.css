@@ -525,9 +525,8 @@ header {
 footer {
     padding: 1.5rem 0;
     text-align: center;
-    color: var(--text-main);
-    background-color: var(--bg-dominant);
-    border-top: 1px solid var(--border-color);
+    color: var(--on-primary);
+    background-color: var(--primary);
     position: relative;
     z-index: 20;
 }
