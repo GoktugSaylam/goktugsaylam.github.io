@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     header.style.backgroundColor = 'var(--bg-dominant)';
                     header.style.borderColor = 'var(--border-color)';
                 } else {
-                    header.style.backgroundColor = 'var(--bg-dominant)';
+                    header.style.backgroundColor = 'var(--primary)';
                     header.style.borderColor = 'transparent';
                 }
             }
