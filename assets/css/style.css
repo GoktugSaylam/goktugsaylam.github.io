@@ -196,8 +196,18 @@ header {
 }
 
 .theme-toggle:hover {
-    border-color: var(--primary);
-    color: var(--primary);
+    opacity: 0.65;
+}
+
+/* When header is over purple hero, make toggle white like nav links */
+.is-hero .theme-toggle {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.is-hero .theme-toggle:hover {
+    opacity: 0.65;
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Classic Sun/Moon SVG Toggle Animations */
@@ -260,6 +270,18 @@ header {
     border-color: var(--primary);
     color: #ffffff;
     background-color: var(--primary);
+}
+
+/* When header is over purple hero, make lang-switch white like nav links */
+.is-hero .lang-switch {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.is-hero .lang-switch:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
 /* Hero Section */

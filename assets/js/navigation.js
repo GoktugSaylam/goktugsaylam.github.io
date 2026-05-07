@@ -90,9 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (scrollPos > 10) {
                     header.style.backgroundColor = 'var(--bg-dominant)';
                     header.style.borderColor = 'var(--border-color)';
+                    header.classList.remove('is-hero');
                 } else {
                     header.style.backgroundColor = 'var(--primary)';
                     header.style.borderColor = 'transparent';
+                    header.classList.add('is-hero');
                 }
             }
         };
