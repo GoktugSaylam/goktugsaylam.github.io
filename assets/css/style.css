@@ -171,15 +171,14 @@ header {
     color: var(--text-main);
     padding: 0.3rem 0.65rem;
     border-radius: var(--radius-md);
-    border: 1.5px solid transparent;
-    transition: border-color 0.25s ease, background-color 0.25s ease;
+    transition: background-color 0.25s ease;
+    outline: none;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--text-main);
-    border-color: rgba(128, 128, 128, 0.35);
-    background-color: rgba(128, 128, 128, 0.08);
+    background-color: rgba(128, 128, 128, 0.15);
     opacity: 1;
 }
 
@@ -191,14 +190,15 @@ header {
 
 .theme-toggle {
     background: none;
-    border: 1.5px solid transparent;
+    border: none;
+    outline: none;
     color: var(--text-main);
     font-size: 1.25rem;
     line-height: 1;
     cursor: pointer;
     padding: 0.35rem;
     border-radius: var(--radius-md);
-    transition: border-color 0.25s ease, background-color 0.25s ease;
+    transition: background-color 0.25s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -207,9 +207,7 @@ header {
 }
 
 .theme-toggle:hover {
-    border-color: rgba(128, 128, 128, 0.5);
-    background-color: rgba(128, 128, 128, 0.08);
-    opacity: 1;
+    background-color: rgba(128, 128, 128, 0.15);
 }
 
 /* When header is over purple hero: ALL elements use --on-primary */
@@ -222,7 +220,6 @@ header {
 .is-hero .nav-links a:hover,
 .is-hero .nav-links a.active {
     color: var(--on-primary);
-    border-color: var(--on-primary-hover-border);
     background-color: var(--on-primary-hover-bg);
     opacity: 1;
 }
@@ -233,7 +230,6 @@ header {
 }
 
 .is-hero .theme-toggle:hover {
-    border-color: var(--on-primary-hover-border);
     background-color: var(--on-primary-hover-bg);
     opacity: 1;
 }
@@ -287,17 +283,16 @@ header {
 .lang-switch {
     font-size: 0.9rem;
     font-weight: 700;
-    border: 1.5px solid transparent;
+    border: none;
+    outline: none;
     padding: 0.4rem 0.8rem;
     border-radius: var(--radius-md);
     color: var(--text-main);
-    transition: border-color 0.25s ease, background-color 0.25s ease;
+    transition: background-color 0.25s ease;
 }
 
 .lang-switch:hover {
-    border-color: rgba(128, 128, 128, 0.5);
-    background-color: rgba(128, 128, 128, 0.08);
-    opacity: 1;
+    background-color: rgba(128, 128, 128, 0.15);
 }
 
 /* When header is over purple hero, make lang-switch use --on-primary */
@@ -306,7 +301,6 @@ header {
 }
 
 .is-hero .lang-switch:hover {
-    border-color: var(--on-primary-hover-border);
     background-color: var(--on-primary-hover-bg);
     opacity: 1;
 }
