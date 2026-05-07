@@ -530,6 +530,12 @@ footer p {
     color: var(--on-primary);
 }
 
+.footer-credit {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
 /* Blog Detail & Comments */
 .blog-content {
     max-width: 800px;
