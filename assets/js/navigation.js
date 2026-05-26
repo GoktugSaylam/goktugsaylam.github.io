@@ -84,19 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Text fade out still happens smoothly
             heroContainer.style.opacity = 1 - scrollProgress;
-            
-            // Header color transition
-            if (header) {
-                if (scrollPos > 10) {
-                    header.style.backgroundColor = 'var(--bg-dominant)';
-                    header.style.borderColor = 'var(--border-color)';
-                    header.classList.remove('is-hero');
-                } else {
-                    header.style.backgroundColor = 'var(--primary)';
-                    header.style.borderColor = 'transparent';
-                    header.classList.add('is-hero');
-                }
-            }
         };
         
         window.addEventListener('scroll', updateHeroStyles);

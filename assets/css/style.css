@@ -11,18 +11,19 @@
 
 :root {
     /* Colors (60-30-10 Design Rule) */
-    --bg-dominant: #121212;   /* 60% - Dominant Background */
-    --text-secondary: #ffffff; /* 30% - Secondary Text */
+    --bg-dominant: #0B0B0F;   /* 60% - Dominant Background */
+    --bg-header: rgba(11, 11, 15, 0.7); /* Header Glassmorphism */
+    --text-secondary: #F4F4F5; /* 30% - Secondary Text */
     --color-accent: #7068CC;   /* 10% - Accent Vurgu */
 
     /* Backgrounds */
     --bg-body: var(--bg-dominant);
-    --bg-card: #181818; /* Subtle offset for cards */
-    --bg-card-hover: #1f1f1f;
+    --bg-card: #16161D; /* Subtle offset for cards */
+    --bg-card-hover: #1D1D26;
 
     /* Texts */
     --text-main: var(--text-secondary);
-    --text-muted: #ffffff; /* Same as text-main */
+    --text-muted: #A1A1AA; /* Muted text */
 
     /* Brand / Actions */
     --primary: var(--color-accent);
@@ -31,7 +32,7 @@
     --on-primary-hover-bg: rgba(0, 0, 0, 0.1);
     --on-primary-hover-border: rgba(0, 0, 0, 0.35);
 
-    --border-color: #27272a;
+    --border-color: #2A2A35;
     /* Subtle border color */
 
     /* Spacing & Layout */
@@ -48,6 +49,7 @@
 
 [data-theme="light"] {
     --bg-dominant: #ffffff;
+    --bg-header: rgba(255, 255, 255, 0.7);
     --bg-card: #f0f0f0;
     --bg-card-hover: #e8e8e8;
     --text-secondary: #000000;
@@ -135,14 +137,16 @@ p {
 /* Header */
 header {
     height: var(--header-height);
-    background-color: var(--bg-dominant);
+    background-color: var(--bg-header);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 100;
     display: flex;
     align-items: center;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .nav-container {
@@ -211,28 +215,7 @@ header {
     background-color: rgba(128, 128, 128, 0.15);
 }
 
-/* When header is over purple hero: ALL elements use --on-primary */
-.is-hero .logo,
-.is-hero .nav-links a {
-    color: var(--on-primary);
-}
-
-.is-hero .nav-links a:hover,
-.is-hero .nav-links a.active {
-    color: var(--on-primary);
-    background-color: var(--on-primary-hover-bg);
-    opacity: 1;
-}
-
-/* When header is over purple hero, make toggle use --on-primary */
-.is-hero .theme-toggle {
-    color: var(--on-primary);
-}
-
-.is-hero .theme-toggle:hover {
-    background-color: var(--on-primary-hover-bg);
-    opacity: 1;
-}
+/* Hero overrides removed */
 
 /* Classic Sun/Moon SVG Toggle Animations */
 .theme-toggle svg {
@@ -295,15 +278,7 @@ header {
     background-color: rgba(128, 128, 128, 0.15);
 }
 
-/* When header is over purple hero, make lang-switch use --on-primary */
-.is-hero .lang-switch {
-    color: var(--on-primary);
-}
-
-.is-hero .lang-switch:hover {
-    background-color: var(--on-primary-hover-bg);
-    opacity: 1;
-}
+/* Lang switch hero override removed */
 
 .menu-toggle {
     display: none;
@@ -323,32 +298,21 @@ header {
     width: 100%;
     z-index: 10;
     padding-top: var(--header-height);
-    background-color: var(--primary);
+    background-color: var(--bg-body);
     transition: background-color 0.3s ease;
-}
-
-.hero .btn {
-    background-color: var(--on-primary);
-    color: var(--primary);
-}
-
-.hero .btn:hover {
-    background-color: var(--on-primary);
-    color: var(--primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    filter: brightness(0.9);
 }
 
 .hero .btn-outline {
     background-color: transparent;
-    border-color: var(--on-primary);
-    color: var(--on-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
 }
 
 .hero .btn-outline:hover {
-    background-color: var(--on-primary);
+    background-color: transparent;
+    border-color: var(--primary);
     color: var(--primary);
+    box-shadow: 0 0 12px rgba(112, 104, 204, 0.3);
 }
 
 .content-wrapper {
@@ -362,7 +326,7 @@ header {
     font-size: 4rem;
     margin-bottom: 1rem;
     background: none;
-    color: var(--on-primary);
+    color: var(--text-main);
 }
 
 .hero p,
@@ -370,7 +334,7 @@ header {
     font-size: 1.25rem;
     max-width: 600px;
     margin: 0 auto 2rem;
-    color: var(--on-primary);
+    color: var(--text-muted);
 }
 
 .btn {
@@ -434,7 +398,7 @@ header {
 }
 
 .cv-text a {
-    color: var(--on-primary);
+    color: var(--primary);
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -474,10 +438,10 @@ header {
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: var(--primary);
-    /* Hover border becomes white */
-    box-shadow: var(--shadow-md);
+    /* Hover border becomes primary */
+    box-shadow: 0 8px 24px rgba(112, 104, 204, 0.15);
     background-color: var(--bg-card-hover);
 }
 
@@ -523,15 +487,16 @@ header {
 footer {
     padding: 1.5rem 0;
     text-align: center;
-    color: var(--on-primary);
-    background-color: var(--primary);
+    color: var(--text-muted);
+    background-color: var(--bg-dominant);
+    border-top: 1px solid var(--border-color);
     position: relative;
     z-index: 20;
 }
 
 footer p {
     margin-bottom: 0;
-    color: var(--on-primary);
+    color: var(--text-muted);
 }
 
 .footer-credit {
@@ -540,15 +505,16 @@ footer p {
 }
 
 .footer-credit a {
-    color: var(--on-primary);
+    color: var(--text-main);
     text-decoration: underline;
     text-underline-offset: 3px;
     font-weight: 600;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 .footer-credit a:hover {
-    opacity: 0.7;
+    color: var(--primary);
+    opacity: 1;
 }
 
 /* Blog Detail & Comments */
@@ -621,13 +587,7 @@ footer p {
         background-color: rgba(128, 128, 128, 0.15);
     }
 
-    .is-hero .menu-toggle {
-        color: var(--on-primary);
-    }
-
-    .is-hero .menu-toggle:hover {
-        background-color: var(--on-primary-hover-bg);
-    }
+    /* Hero overrides removed */
 
     .menu-toggle svg {
         display: block;
@@ -688,11 +648,7 @@ footer p {
         visibility: visible;
     }
 
-    .is-hero .nav-links {
-        background-color: var(--primary);
-        border-bottom-color: transparent;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    }
+    /* Hero overrides removed */
 
     .cta-container {
         width: 100%;
