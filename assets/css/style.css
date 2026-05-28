@@ -714,3 +714,94 @@ footer p {
         /* Reset margin for vertical stack */
     }
 }
+
+/* Carousel Styles */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-container:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+.carousel-track > article {
+    width: 320px; /* Fixed width for consistent scrolling */
+    flex-shrink: 0;
+}
+
+.org-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain; /* Keep original aspect ratio within bounds */
+    background-color: rgba(0,0,0,0.05); /* subtle backdrop */
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    display: block;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.org-card-img:hover {
+    opacity: 0.85;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move left by exactly half the width (since we will double the items) */
+        transform: translateX(calc(-50% - 1rem));
+    }
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lightbox-close:hover {
+    color: var(--primary);
+}
