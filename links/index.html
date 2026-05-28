@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -156,14 +156,14 @@
             }
         }
 
-        /* Masaüstü ekranlarda (Desktop) font ve ikonları büyütme */
+        /* Desktop specific styles */
         @media (min-width: 768px) {
             .link-item {
                 font-size: 1.15rem;
                 padding: 1.5rem 1.25rem;
             }
             .link-item i {
-                font-size: 1.4rem; /* İkonlar belirgin şekilde büyük */
+                font-size: 1.4rem; 
             }
             
             .link-item.link-item-small {
@@ -193,10 +193,10 @@
             <a href="/" class="logo">Göktuğ <span>Saylam</span></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/#organizasyonlar">Organizasyonlar</a></li>
-                    <li><a href="/#iletisim">İletişim</a></li>
+                    <li><a href="/#organizations">Organizations</a></li>
+                    <li><a href="/#contact">Contact</a></li>
                     <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/links/" class="active">Sosyal Ağlar</a></li>
+                    <li><a href="/links/" class="active">Socials</a></li>
                 </ul>
             </nav>
             <div class="header-controls">
@@ -220,7 +220,7 @@
         </g>
       </svg>
       </button>
-                                <a href="/en/links/" class="lang-switch">EN</a>
+                                <a href="/tr/links/" class="lang-switch">TR</a>
                 <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
                     <svg fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
                         <line class="line-1" x1="4" x2="20" y1="6" y2="6"></line>
@@ -241,11 +241,11 @@
                 <h1 class="profile-name">Göktuğ Saylam</h1>
             </div>
 
-            <!-- Ana Vitrin -->
+            <!-- Main Showcase -->
             <ul class="links-list">
                 <li>
                     <a href="https://goktugsaylam.com" class="link-item" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-globe"></i> Web Sitem
+                        <i class="fa-solid fa-globe"></i> My Website
                     </a>
                 </li>
                 <li>
@@ -265,9 +265,9 @@
                 </li>
             </ul>
 
-            <!-- Açılır Menü -->
+            <!-- Dropdown Menu -->
             <details class="details-menu">
-                <summary class="summary-btn">Diğer Ağlar & İletişim &darr;</summary>
+                <summary class="summary-btn">Other Networks & Contact &darr;</summary>
                 <ul class="sub-links-list">
                     <li>
                         <a href="https://linkedin.com/in/goktugsaylam" class="link-item link-item-small" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
@@ -291,7 +291,7 @@
                         <a href="https://t.me/goktugsaylam" class="link-item link-item-small" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i> Telegram</a>
                     </li>
                     <li>
-                        <a href="mailto:goktugsaylam@hotmail.com" class="link-item link-item-small"><i class="fa-solid fa-envelope"></i> E-posta</a>
+                        <a href="mailto:goktugsaylam@hotmail.com" class="link-item link-item-small"><i class="fa-solid fa-envelope"></i> Email</a>
                     </li>
                 </ul>
             </details>
@@ -301,8 +301,8 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; <span id="year">2026</span> Göktuğ Saylam. Tüm hakları saklıdır. &bull; <span id="last-updated"></span></p>
-            <p class="footer-credit">Yapay zeka ile kodlandı. <a href="https://github.com/GoktugSaylam/goktugsaylam.github.io" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub Pages</a> üzerinde barındırılıyor.</p>
+            <p>&copy; <span id="year">2026</span> Göktuğ Saylam. All rights reserved. &bull; <span id="last-updated"></span></p>
+            <p class="footer-credit">Coded with AI. Hosted on <a href="https://github.com/GoktugSaylam/goktugsaylam.github.io" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub Pages</a>.</p>
             <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
         </div>
     </footer>
