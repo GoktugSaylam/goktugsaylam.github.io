@@ -297,7 +297,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 10;
-    padding-top: var(--header-height);
+    /* padding-top removed for perfect vertical centering */
     background-color: var(--bg-body);
     transition: background-color 0.3s ease;
 }
@@ -327,6 +327,7 @@ header {
     margin-bottom: 1rem;
     background: none;
     color: var(--text-main);
+    text-align: center;
 }
 
 .hero p,
@@ -466,6 +467,10 @@ header {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+}
+
+.org-card-content h3 {
+    text-align: center;
 }
 
 .badge {
