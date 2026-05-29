@@ -232,3 +232,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+    // Carousel Logic
+    const carouselTracks = document.querySelectorAll('.carousel-track');
+    carouselTracks.forEach(track => {
+        const wrapper = track.parentElement;
+        const btnPrev = wrapper.querySelector('.btn-prev');
+        const btnNext = wrapper.querySelector('.btn-next');
+
+        if (btnPrev && btnNext) {
+            btnPrev.addEventListener('click', () => {
+                const slideWidth = track.querySelector('.carousel-slide').clientWidth + 32; // Include gap
+                track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+            });
+
+            btnNext.addEventListener('click', () => {
+                const slideWidth = track.querySelector('.carousel-slide').clientWidth + 32; // Include gap
+                track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+            });
+        }
+    });
