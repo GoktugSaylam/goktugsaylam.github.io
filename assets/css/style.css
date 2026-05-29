@@ -792,7 +792,9 @@ footer p {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none; /* Firefox için gizle */
+    padding-top: 1rem;
     padding-bottom: 1rem;
+    margin-top: -1rem; /* Hover anında kartın üstten kesilmemesi için boşluk */
 }
 .carousel-track::-webkit-scrollbar { 
     display: none; /* Chrome/Safari için gizle */
