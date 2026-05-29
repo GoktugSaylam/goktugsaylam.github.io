@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 if (data && data.length > 0) {
                     const commitDate = new Date(data[0].commit.committer.date);
-                    const isEnglish = window.location.pathname.includes('/en/');
+                    const isEnglish = !window.location.pathname.includes('/tr/');
                     
                     const options = { year: 'numeric', month: 'long', day: 'numeric' };
                     const formattedDate = commitDate.toLocaleDateString(isEnglish ? 'en-US' : 'tr-TR', options);
