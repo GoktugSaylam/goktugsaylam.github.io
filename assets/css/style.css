@@ -802,31 +802,31 @@ footer p {
     scroll-snap-align: start;
     min-width: 0;
 }
+
 .carousel-btn {
     position: absolute;
     top: 40%;
     transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--bg-dominant);
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: var(--text-muted);
     cursor: pointer;
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 2.5rem; /* İkonu büyüttük */
+    padding: 0;
 }
 .carousel-btn:hover {
-    border-color: var(--primary);
-    color: var(--primary);
+    color: var(--text-main);
+    transform: translateY(-50%) scale(1.1); /* Sadece hafifçe büyür */
+    border: none; /* Önceki hover'dan kalma border varsa ezmek için */
 }
-.btn-prev { left: -22px; }
-.btn-next { right: -22px; }
+.btn-prev { left: -40px; }
+.btn-next { right: -40px; }
 
 /* Mobil Ekranlarda Tekli Kart Görünümü */
 @media (max-width: 768px) {
