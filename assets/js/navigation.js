@@ -187,24 +187,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fetch last updated time from GitHub API
+    // Fetch last updated time from GitHub API with fallback
     const lastUpdatedElement = document.getElementById('last-updated');
     if (lastUpdatedElement) {
+        const isEnglish = !window.location.pathname.includes('/tr/');
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        
+        const setDate = (date) => {
+            const formattedDate = date.toLocaleDateString(isEnglish ? 'en-US' : 'tr-TR', options);
+            const prefix = isEnglish ? 'Last Updated: ' : 'Son Güncelleme: ';
+            lastUpdatedElement.textContent = prefix + formattedDate;
+        };
+
         fetch('https://api.github.com/repos/GoktugSaylam/goktugsaylam.github.io/commits?per_page=1')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) throw new Error('API limit or network error');
+                return response.json();
+            })
             .then(data => {
-                if (data && data.length > 0) {
+                if (data && Array.isArray(data) && data.length > 0 && data[0].commit) {
                     const commitDate = new Date(data[0].commit.committer.date);
-                    const isEnglish = !window.location.pathname.includes('/tr/');
-                    
-                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                    const formattedDate = commitDate.toLocaleDateString(isEnglish ? 'en-US' : 'tr-TR', options);
-                    
-                    const prefix = isEnglish ? 'Last Updated: ' : 'Son Güncelleme: ';
-                    lastUpdatedElement.textContent = prefix + formattedDate;
+                    setDate(commitDate);
+                } else {
+                    throw new Error('Invalid response structure');
                 }
             })
-            .catch(error => console.error('Error fetching last updated date:', error));
+            .catch(error => {
+                console.warn('Error fetching last updated date from API, using document.lastModified fallback:', error);
+                if (document.lastModified) {
+                    const localDate = new Date(document.lastModified);
+                    if (!isNaN(localDate.getTime())) {
+                        setDate(localDate);
+                    }
+                }
+            });
     }
 
     // Lightbox Logic
