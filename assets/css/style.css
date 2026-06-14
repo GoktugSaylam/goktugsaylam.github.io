@@ -172,6 +172,7 @@ header {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--text-main);
+    white-space: nowrap;
 }
 
 .logo span {
@@ -182,6 +183,7 @@ header {
 .nav-links {
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-links a {
@@ -190,6 +192,16 @@ header {
     border-radius: var(--radius-md);
     transition: background-color 0.25s ease;
     outline: none;
+    white-space: nowrap;
+}
+
+.nav-separator {
+    color: var(--text-muted);
+    opacity: 0.4;
+    font-weight: 300;
+    font-size: 1.1rem;
+    user-select: none;
+    pointer-events: none;
 }
 
 .nav-links a:hover,
@@ -586,6 +598,29 @@ footer p {
     width: 100%;
 }
 
+/* Intermediate Desktop/Tablet Responsive styling to prevent header breakage */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 1.25rem;
+    }
+    .header-controls {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 920px) {
+    .nav-links {
+        gap: 0.75rem;
+    }
+    .nav-links a {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.95rem;
+    }
+    .logo {
+        font-size: 1.15rem;
+    }
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     h1 {
@@ -689,6 +724,10 @@ footer p {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+    }
+
+    .nav-separator {
+        display: none;
     }
 
     /* Hero overrides removed */
