@@ -241,14 +241,42 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnNext = wrapper.querySelector('.btn-next');
 
         if (btnPrev && btnNext) {
+            const updateButtons = () => {
+                if (track.scrollLeft <= 0) {
+                    btnPrev.innerHTML = '<span style="font-weight: 300; font-family: sans-serif;">|</span>';
+                    btnPrev.style.cursor = 'default';
+                } else {
+                    btnPrev.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+                    btnPrev.style.cursor = 'pointer';
+                }
+
+                if (Math.ceil(track.scrollLeft + track.clientWidth) >= track.scrollWidth) {
+                    btnNext.innerHTML = '<span style="font-weight: 300; font-family: sans-serif;">|</span>';
+                    btnNext.style.cursor = 'default';
+                } else {
+                    btnNext.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+                    btnNext.style.cursor = 'pointer';
+                }
+            };
+
+            updateButtons();
+            track.addEventListener('scroll', updateButtons);
+            window.addEventListener('resize', updateButtons);
+            // Re-check after images load
+            window.addEventListener('load', updateButtons);
+
             btnPrev.addEventListener('click', () => {
-                const slideWidth = track.querySelector('.carousel-slide').clientWidth + 32; // Include gap
-                track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+                if (track.scrollLeft > 0) {
+                    const slideWidth = track.querySelector('.carousel-slide').clientWidth + 32; // Include gap
+                    track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+                }
             });
 
             btnNext.addEventListener('click', () => {
-                const slideWidth = track.querySelector('.carousel-slide').clientWidth + 32; // Include gap
-                track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+                if (Math.ceil(track.scrollLeft + track.clientWidth) < track.scrollWidth) {
+                    const slideWidth = track.querySelector('.carousel-slide').clientWidth + 32; // Include gap
+                    track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+                }
             });
         }
     });
