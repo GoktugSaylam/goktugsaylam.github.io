@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btnPrev && btnNext) {
             const updateButtons = () => {
                 if (track.scrollLeft <= 0) {
-                    btnPrev.innerHTML = '<span style="font-weight: 300; font-family: sans-serif;">|</span>';
+                    btnPrev.innerHTML = '<i class="fa-solid fa-minus" style="transform: rotate(90deg);"></i>';
                     btnPrev.style.cursor = 'default';
                 } else {
                     btnPrev.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (Math.ceil(track.scrollLeft + track.clientWidth) >= track.scrollWidth) {
-                    btnNext.innerHTML = '<span style="font-weight: 300; font-family: sans-serif;">|</span>';
+                    btnNext.innerHTML = '<i class="fa-solid fa-minus" style="transform: rotate(90deg);"></i>';
                     btnNext.style.cursor = 'default';
                 } else {
                     btnNext.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
