@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const href = anchor.getAttribute('href');
         if (!href || !href.includes('#')) return;
 
-        // Skip interception if it's pointing to a completely different domain
-        if (anchor.hostname !== window.location.hostname) return;
+        // Skip interception if it's pointing to a completely different domain or if we are in an iframe
+        if (anchor.hostname !== window.location.hostname || window.self !== window.top) return;
 
         // Special case: Scroll to top links
         if (href === '#' || href === '/#' || href === '/en/#') {
