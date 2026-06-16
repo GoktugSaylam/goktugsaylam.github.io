@@ -135,37 +135,6 @@
     <script>
         var v = Math.floor(Date.now() / (1000 * 60 * 60));
         document.write('<script src="https://goktugsaylam.com/assets/js/navigation.js?v=' + v + '"><\/script>');
-        
-        // Dynamically restore language state based on the main site visit
-        if (localStorage.getItem('lang') === 'en') {
-            // Update URLs to point to English version
-            document.querySelectorAll('.nav-links a').forEach(a => {
-                if (a.href.includes('goktugsaylam.com/tr/#')) {
-                    a.href = a.href.replace('goktugsaylam.com/tr/#', 'goktugsaylam.com/#');
-                } else if (a.href === 'https://goktugsaylam.com/tr/') {
-                    a.href = 'https://goktugsaylam.com/';
-                }
-            });
-            // Update Logo URL
-            const logo = document.querySelector('.logo');
-            if(logo && logo.href === 'https://goktugsaylam.com/tr/') {
-                logo.href = 'https://goktugsaylam.com/';
-            }
-            
-            // Translate navigation labels
-            const labels = {
-                'Organizasyonlar': 'Organizations',
-                'Projeler': 'Projects',
-                'Dereceler': 'Awards',
-                'İletişim': 'Contact',
-                'Sosyal Ağlar': 'Socials'
-            };
-            document.querySelectorAll('.nav-links a').forEach(a => {
-                if (labels[a.textContent]) {
-                    a.textContent = labels[a.textContent];
-                }
-            });
-        }
     </script>
 </body>
 </html>
