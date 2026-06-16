@@ -26,6 +26,8 @@
         }
     </style>
     <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
         if (sessionStorage.getItem('langScrollPos')) {
             document.documentElement.classList.add('hide-for-scroll');
         }
