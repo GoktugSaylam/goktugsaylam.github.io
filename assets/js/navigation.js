@@ -193,10 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.removeItem('langScrollPos');
         requestAnimationFrame(() => {
             window.scrollTo({ top: parseInt(langScrollPos), behavior: 'instant' });
-            document.documentElement.style.transition = 'opacity 0.15s ease-in';
-            document.documentElement.style.opacity = '1';
+            document.documentElement.classList.replace('hide-for-scroll', 'fade-in-scroll');
             setTimeout(() => {
-                document.documentElement.style.transition = '';
+                document.documentElement.classList.remove('fade-in-scroll');
             }, 150);
         });
     }

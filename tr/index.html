@@ -15,9 +15,20 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+    <style>
+        html.hide-for-scroll body::after {
+            content: ''; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: var(--bg-body, #0f172a); z-index: 999999;
+        }
+        html.fade-in-scroll body::after {
+            content: ''; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: var(--bg-body, #0f172a); z-index: 999999;
+            opacity: 0; pointer-events: none; transition: opacity 0.15s ease-in;
+        }
+    </style>
     <script>
         if (sessionStorage.getItem('langScrollPos')) {
-            document.documentElement.style.opacity = '0';
+            document.documentElement.classList.add('hide-for-scroll');
         }
     </script>
 </head>
@@ -357,7 +368,7 @@
         <img class="lightbox-content" id="lightbox-img">
     </div>
 
-    <script src="/assets/js/navigation.js?v=6"></script>
+    <script src="/assets/js/navigation.js?v=7"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const orgImages = document.querySelectorAll('.org-card-img');
