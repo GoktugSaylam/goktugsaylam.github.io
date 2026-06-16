@@ -266,7 +266,6 @@ const initNavigation = () => {
             }
         });
     }
-});
 
     // Carousel Logic
     const carouselTracks = document.querySelectorAll('.carousel-track');
