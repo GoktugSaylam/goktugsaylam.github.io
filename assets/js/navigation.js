@@ -187,6 +187,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 8. Handle language switch scroll position retention
+    const langScrollPos = sessionStorage.getItem('langScrollPos');
+    if (langScrollPos) {
+        sessionStorage.removeItem('langScrollPos');
+        setTimeout(() => {
+            window.scrollTo({ top: parseInt(langScrollPos), behavior: 'instant' });
+        }, 50);
+    }
+
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.lang-switch')) {
+            sessionStorage.setItem('langScrollPos', window.scrollY);
+        }
+    });
+
     // Fetch last updated time from GitHub API with fallback
     const lastUpdatedElement = document.getElementById('last-updated');
     if (lastUpdatedElement) {
