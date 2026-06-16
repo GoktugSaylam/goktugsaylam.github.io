@@ -191,9 +191,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const langScrollPos = sessionStorage.getItem('langScrollPos');
     if (langScrollPos) {
         sessionStorage.removeItem('langScrollPos');
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             window.scrollTo({ top: parseInt(langScrollPos), behavior: 'instant' });
-        }, 50);
+            document.documentElement.style.transition = 'opacity 0.15s ease-in';
+            document.documentElement.style.opacity = '1';
+            setTimeout(() => {
+                document.documentElement.style.transition = '';
+            }, 150);
+        });
     }
 
     document.addEventListener('click', (e) => {
