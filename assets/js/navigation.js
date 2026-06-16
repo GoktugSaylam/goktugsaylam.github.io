@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initNavigation = () => {
     // 1. Handle pending smooth scroll from cross-page navigation
     const pendingScroll = sessionStorage.getItem('pendingScroll');
     if (pendingScroll) {
@@ -315,3 +315,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavigation);
+} else {
+    initNavigation();
+}
