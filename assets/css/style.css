@@ -217,16 +217,85 @@ header {
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    margin-left: 1rem;
+    position: absolute;
+    right: 3rem;
+}
+
+.settings-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.settings-toggle {
+    background: none;
+    border: none;
+    color: var(--text-main);
+    cursor: pointer;
+    padding: 0.35rem;
+    display: flex;
+    align-items: center;
+    border-radius: var(--radius-md);
+    transition: background-color 0.25s ease;
+}
+
+.settings-toggle:hover {
+    background-color: rgba(128, 128, 128, 0.15);
+}
+
+.settings-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 0.5rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 100;
+}
+
+.settings-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.settings-menu button,
+.settings-menu a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+.settings-menu button:last-child,
+.settings-menu a:last-child {
+    border-bottom: none;
+}
+
+.settings-menu button:hover,
+.settings-menu a:hover {
+    background-color: var(--bg-card-hover);
 }
 
 .theme-toggle {
-    background: none;
-    border: none;
-    outline: none;
-    color: var(--text-main);
-    font-size: 1.25rem;
-    line-height: 1;
     cursor: pointer;
     padding: 0.35rem;
     border-radius: var(--radius-md);
@@ -730,6 +799,7 @@ footer p {
     .header-controls {
         margin-left: 0;
         gap: 0.75rem;
+        position: static;
     }
 
     /* Hero overrides removed */

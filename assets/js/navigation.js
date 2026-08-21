@@ -123,9 +123,21 @@ const initNavigation = () => {
     }
 
     // 6. Theme Toggle Logic (Light / Dark)
+    const updateThemeSwitchText = (theme) => {
+        const isEnglish = !window.location.pathname.includes('/tr/');
+        document.querySelectorAll('.theme-switch').forEach(btn => {
+            if (isEnglish) {
+                btn.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
+            } else {
+                btn.textContent = theme === 'dark' ? 'AYDINLIK' : 'KARANLIK';
+            }
+        });
+    };
+
     const initTheme = () => {
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeSwitchText(savedTheme);
     };
 
     const toggleTheme = () => {
@@ -133,15 +145,36 @@ const initNavigation = () => {
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+        updateThemeSwitchText(newTheme);
     };
 
     // Initialize theme
     initTheme();
 
-    // Attach click listeners to all theme toggles
+    // Attach click listeners to all theme switches
     document.addEventListener('click', (e) => {
-        if (e.target.closest('.theme-toggle')) {
+        if (e.target.closest('.theme-switch')) {
             toggleTheme();
+        }
+    });
+
+    // 9. Settings Dropdown Logic
+    const settingsToggles = document.querySelectorAll('.settings-toggle');
+    settingsToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const menu = toggle.nextElementSibling;
+            if (menu && menu.classList.contains('settings-menu')) {
+                menu.classList.toggle('active');
+            }
+        });
+    });
+    
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.settings-dropdown')) {
+            document.querySelectorAll('.settings-menu.active').forEach(menu => {
+                menu.classList.remove('active');
+            });
         }
     });
 
