@@ -206,6 +206,10 @@ header {
     margin: 0 1rem;
 }
 
+.mobile-settings {
+    display: none;
+}
+
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--text-main);
@@ -683,7 +687,7 @@ footer p {
 }
 
 /* Mobile Responsive */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     h1 {
         font-size: 2.5rem;
     }
@@ -789,6 +793,42 @@ footer p {
 
     .nav-separator {
         display: none;
+    }
+
+    .settings-dropdown {
+        display: none !important;
+    }
+
+    .mobile-settings {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+        margin: 0 auto;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--border-color);
+        width: 120px;
+    }
+
+    .mobile-settings button,
+    .mobile-settings a {
+        width: 100%;
+        padding: 0.3rem 0.65rem;
+        text-align: center;
+        background-color: transparent;
+        color: var(--text-main);
+        border: none;
+        border-radius: var(--radius-md);
+        font-weight: inherit;
+        font-size: 0.95rem;
+        font-family: inherit;
+        cursor: pointer;
+        transition: background-color 0.25s ease;
+    }
+
+    .mobile-settings button:hover,
+    .mobile-settings a:hover {
+        background-color: rgba(128, 128, 128, 0.15);
     }
 
     .nav-container {
@@ -942,8 +982,8 @@ footer p {
 .btn-next { right: -40px; }
 
 /* Mobil Ekranlarda Tekli Kart Görünümü */
-@media (max-width: 768px) {
-    .carousel-slide { flex: 0 0 100%; }
-    .btn-prev { left: 0; }
-    .btn-next { right: 0; }
+@media (max-width: 850px) {
+    .carousel-slide { flex: 0 0 90%; }
+    .carousel-track { gap: 1rem; } /* Reduce gap slightly on mobile so the next card is more visible */
+    .carousel-btn { display: none !important; }
 }
