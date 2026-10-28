@@ -2,18 +2,18 @@
   "items": [
     {
       "title": "Hooks & Books",
-      "role": "Bağımsız Oyun Tasarımcısı",
-      "tag": "Çok Yakında",
-      "description": "Büyülü balık tutma, zar atma ve acımasız bir pazar ekonomisi içeren rekabetçi bir masa oyunu.",
+      "role": "Indie Game Designer",
+      "tag": "Coming Soon",
+      "description": "A competitive board game featuring magical fishing, dice rolling, and a ruthless market economy.",
       "links": {
         "github": "https://github.com/GoktugSaylam/hooks-and-books"
       }
     },
     {
       "title": "İksir ve Kahve",
-      "role": "Yapımcı ve Sunucu",
-      "tag": "Çok Yakında",
-      "description": "Oyun geliştirmeye, tasarıma ve oyun kültürüne dair bağımsız bir podcast.",
+      "role": "Producer & Host",
+      "tag": "Coming Soon",
+      "description": "An independent podcast exploring game development, game design, and gaming culture.",
       "links": {
         "youtube": "https://www.youtube.com/@iksirvekahve"
       }

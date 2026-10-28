@@ -3,108 +3,108 @@ backend:
   repo: GoktugSaylam/goktugsaylam.github.io
   branch: main
 
-# Yerel test desteği (npx decap-server ile yerel test yapılabilir)
+# Local backend support (local test with npx decap-server)
 local_backend: true
 
-# Medya Yüklemeleri
+# Media Uploads
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-# Panel Gösterim Ayarları
+# Panel Display Settings
 display_url: "https://goktugsaylam.com"
-locale: "tr"
+locale: "en"
 
-# Koleksiyonlar
+# Collections
 collections:
   - name: "pages"
-    label: "Sayfalar ve İçerikler"
+    label: "Pages and Content"
     delete: false
     editor:
       preview: false
     files:
       - name: "about"
-        label: "00 // Hakkımda"
+        label: "00 // About"
         file: "content/about.json"
         format: "json"
         fields:
-          - { label: "İsim", name: "name", widget: "string", default: "Göktuğ Saylam" }
-          - { label: "Alt Başlık", name: "subtitle", widget: "string", default: "Endüstri Mühendisliği" }
-          - { label: "Rol / Odak Alanı", name: "role", widget: "string", default: "Hackathon & Game Jam • Organizasyon • Pixel Art" }
-          - { label: "Bölüm Başlığı", name: "sectionTitle", widget: "string", default: "BİYOGRAFİ" }
-          - { label: "Biyografi Metni", name: "bio", widget: "text" }
+          - { label: "Name", name: "name", widget: "string", default: "Göktuğ Saylam" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", default: "Industrial Engineering" }
+          - { label: "Role / Focus Area", name: "role", widget: "string", default: "Hackathon & Game Jam • Organization • Pixel Art" }
+          - { label: "Section Title", name: "sectionTitle", widget: "string", default: "BIOGRAPHY" }
+          - { label: "Biography Text", name: "bio", widget: "text" }
 
       - name: "organizations"
-        label: "01 // Organizasyonlar"
+        label: "01 // Organizations"
         file: "content/organizations.json"
         format: "json"
         fields:
-          - label: "Organizasyonlar Listesi"
+          - label: "Organizations List"
             name: "items"
             widget: "list"
             fields:
-              - { label: "Etkinlik Adı", name: "title", widget: "string" }
-              - { label: "Rol", name: "role", widget: "string" }
-              - { label: "Tarih", name: "date", widget: "string" }
-              - { label: "Kulüp / Organizatör", name: "sub", widget: "string" }
-              - label: "Bağlantılar"
+              - { label: "Event Name", name: "title", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Club / Organizer", name: "sub", widget: "string" }
+              - label: "Links"
                 name: "links"
                 widget: "object"
                 required: false
                 fields:
-                  - { label: "Itch.io Linki", name: "itch", widget: "string", required: false }
-                  - { label: "LinkedIn Linki", name: "linkedin", widget: "string", required: false }
+                  - { label: "Itch.io Link", name: "itch", widget: "string", required: false }
+                  - { label: "LinkedIn Link", name: "linkedin", widget: "string", required: false }
 
       - name: "projects"
-        label: "02 // Kişisel Projeler"
+        label: "02 // Personal Projects"
         file: "content/projects.json"
         format: "json"
         fields:
-          - label: "Projeler Listesi"
+          - label: "Projects List"
             name: "items"
             widget: "list"
             fields:
-              - { label: "Proje Adı", name: "title", widget: "string" }
-              - { label: "Rol", name: "role", widget: "string" }
-              - { label: "Durum / Etiket", name: "tag", widget: "string", default: "Çok Yakında" }
-              - { label: "Açıklama", name: "description", widget: "text" }
-              - label: "Bağlantılar"
+              - { label: "Project Name", name: "title", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Status / Tag", name: "tag", widget: "string", default: "Coming Soon" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Links"
                 name: "links"
                 widget: "object"
                 required: false
                 fields:
-                  - { label: "GitHub Linki", name: "github", widget: "string", required: false }
-                  - { label: "YouTube Linki", name: "youtube", widget: "string", required: false }
+                  - { label: "GitHub Link", name: "github", widget: "string", required: false }
+                  - { label: "YouTube Link", name: "youtube", widget: "string", required: false }
 
       - name: "awards"
-        label: "03 // Dereceler"
+        label: "03 // Awards"
         file: "content/awards.json"
         format: "json"
         fields:
-          - label: "Dereceler Listesi"
+          - label: "Awards List"
             name: "items"
             widget: "list"
             fields:
-              - { label: "Yarışma / Game Jam Adı", name: "title", widget: "string" }
-              - { label: "Rol & Tarih", name: "role", widget: "string" }
-              - { label: "Ödül / Başarı Açıklaması", name: "description", widget: "text" }
-              - label: "Bağlantılar"
+              - { label: "Competition / Game Jam Name", name: "title", widget: "string" }
+              - { label: "Role & Date", name: "role", widget: "string" }
+              - { label: "Award / Achievement Description", name: "description", widget: "text" }
+              - label: "Links"
                 name: "links"
                 widget: "object"
                 required: false
                 fields:
-                  - { label: "Itch.io Linki", name: "itch", widget: "string", required: false }
+                  - { label: "Itch.io Link", name: "itch", widget: "string", required: false }
 
       - name: "contact"
-        label: "04 // İletişim"
+        label: "04 // Contact"
         file: "content/contact.json"
         format: "json"
         fields:
-          - { label: "Açıklama Metni", name: "description", widget: "string", default: "Projeleriniz veya iş birlikleriniz için benimle iletişime geçmekten çekinmeyin." }
-          - { label: "E-Posta Adresi", name: "email", widget: "string", default: "hello@goktugsaylam.com" }
-          - label: "Bağlantılar"
+          - { label: "Description Text", name: "description", widget: "string", default: "Feel free to reach out for projects, collaborations, or just to say hi." }
+          - { label: "Email Address", name: "email", widget: "string", default: "hello@goktugsaylam.com" }
+          - label: "Links"
             name: "links"
             widget: "object"
             fields:
-              - { label: "Bento / Linkler URL", name: "bento", widget: "string", default: "https://links.goktugsaylam.com/" }
+              - { label: "Bento / Links URL", name: "bento", widget: "string", default: "https://links.goktugsaylam.com/" }
               - { label: "GitHub URL", name: "github", widget: "string", default: "https://github.com/GoktugSaylam" }
               - { label: "LinkedIn URL", name: "linkedin", widget: "string", default: "https://www.linkedin.com/in/goktugsaylam/" }
