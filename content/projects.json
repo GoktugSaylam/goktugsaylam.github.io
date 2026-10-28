@@ -2,11 +2,12 @@
   "items": [
     {
       "title": "Hooks & Books",
-      "role": "Indie Game Designer",
+      "role": "Game Designer",
       "tag": "Coming Soon",
       "description": "A competitive board game featuring magical fishing, dice rolling, and a ruthless market economy.",
       "links": {
-        "github": "https://github.com/GoktugSaylam/hooks-and-books"
+        "github": "https://github.com/GoktugSaylam/hooks-and-books",
+        "youtube": ""
       }
     },
     {
@@ -15,6 +16,7 @@
       "tag": "Coming Soon",
       "description": "An independent podcast exploring game development, game design, and gaming culture.",
       "links": {
+        "github": "",
         "youtube": "https://www.youtube.com/@iksirvekahve"
       }
     }
