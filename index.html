@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Göktuğ Saylam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=36">
+</head>
+<body>
+    <main class="page-layout">
+        <!-- Hero Başlık Alanı -->
+        <header class="hero">
+            <h1 class="text-container"><span class="white-text">H</span><span class="white-text">e</span><span class="white-text">l</span><span class="white-text">l</span><span class="white-text">o</span><span class="white-text">,</span><span>&nbsp;</span><span class="white-text">I</span><span class="white-text">'</span><span class="white-text">m</span><span>&nbsp;</span><span class="accent-text">G</span><span class="accent-text">ö</span><span class="accent-text">k</span><span class="accent-text">t</span><span class="accent-text">u</span><span class="accent-text">ğ</span></h1>
+            <div class="sub-bar"><span class="sub-label">mostly online as</span><span class="handle" id="handle">@goktugsaylam</span></div>
+        </header>
+
+        <!-- Arşiv Klasörü -->
+        <section class="binder-wrapper" aria-label="Arşiv Klasörü">
+            <!-- Sol Kenardaki Ayrac Kulakçıkları (00'dan 04'e) -->
+            <nav class="binder-tabs" role="tablist">
+                <button class="binder-tab tab-00 active" data-tab="about" role="tab" aria-selected="true" title="00 // Hakkımda">
+                    <span class="tab-code">00</span>
+                </button>
+                <button class="binder-tab tab-01" data-tab="organizations" role="tab" aria-selected="false" title="01 // Organizasyonlar">
+                    <span class="tab-code">01</span>
+                </button>
+                <button class="binder-tab tab-02" data-tab="projects" role="tab" aria-selected="false" title="02 // Projeler">
+                    <span class="tab-code">02</span>
+                </button>
+                <button class="binder-tab tab-03" data-tab="awards" role="tab" aria-selected="false" title="03 // Dereceler">
+                    <span class="tab-code">03</span>
+                </button>
+                <button class="binder-tab tab-04" data-tab="contact" role="tab" aria-selected="false" title="04 // İletişim">
+                    <span class="tab-code">04</span>
+                </button>
+            </nav>
+
+            <!-- Klasör Gövdesi (Açık Çift Sayfa) -->
+            <div class="binder-book">
+                <div class="binder-spread">
+                    
+                    <!-- 00: HAKKIMDA -->
+                    <div class="sheet-spread active" id="sheet-about" role="tabpanel">
+                        <div class="page-half left-page">
+                            <div class="page-inner">
+                                <div class="page-header">
+                                    <span class="dossier-code">00 // HAKKIMDA</span>
+                                </div>
+                                <div class="page-body">
+                                    <h2 class="dossier-name">Göktuğ Saylam</h2>
+                                    <p class="dossier-subtitle">Endüstri Mühendisliği</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-half right-page">
+                            <div class="page-inner">
+                                <div class="page-header">
+                                    <span class="section-title">BİYOGRAFİ</span>
+                                </div>
+                                <div class="page-body">
+                                    <div class="layered-sheet active solo-sheet">
+                                        <p class="sheet-text">
+                                            Endüstri Mühendisliği 2. sınıf öğrencisiyim. Hackathon ve game jam'lerde projeler geliştiriyor, üniversite kulüpleriyle etkinlikler organize ediyor ve boş zamanlarımda pixel art yapıyorum.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 01: ORGANİZASYONLAR -->
+                    <div class="sheet-spread" id="sheet-organizations" role="tabpanel">
+                        <div class="page-half left-page">
+                            <div class="page-inner">
+                                <div class="page-header">
+                                    <span class="dossier-code">01 // ORGANİZASYONLAR</span>
+                                </div>
+                                <div class="page-body">
+                                    <h2 class="dossier-name">Organizasyonlar</h2>
+                                    <p class="dossier-subtitle">Topluluk Etkinlikleri</p>
+                                    <p class="dossier-role">Jam &amp; Topluluk Koordinasyonu</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-half right-page">
+                            <div class="page-inner">
+                                <!-- Üst Başlık Seçim Barı (Kaydırma Oklarıyla) -->
+                                <div class="sub-tabs-bar">
+                                    <button class="tab-arrow-btn prev-tab" aria-label="Önceki">&lsaquo;</button>
+                                    <nav class="sub-tabs" role="tablist">
+                                        <button class="sub-tab active" data-sub="org-1">OSTİMTECH Jam 2026</button>
+                                        <button class="sub-tab" data-sub="org-2">AYAZJAM'25</button>
+                                        <button class="sub-tab" data-sub="org-3">OSTİMTECH Jam 2025</button>
+                                    </nav>
+                                    <button class="tab-arrow-btn next-tab" aria-label="Sonraki">&rsaquo;</button>
+                                </div>
+                                <!-- Katman Katman Duran Dosyalar -->
+                                <div class="layered-stack">
+                                    <div class="layered-sheet active" id="subpane-org-1">
+                                        <div class="sheet-meta-row">
+                                            <span class="sheet-role">Ekip Lideri</span>
+                                            <span class="sheet-date">Şubat 2026</span>
+                                        </div>
+                                        <h3 class="sheet-title">OSTİMTECH Jam 2026</h3>
+                                        <p class="sheet-sub">OSTİMTECH Software Club</p>
+                                    </div>
+                                    <div class="layered-sheet" id="subpane-org-2">
+                                        <div class="sheet-meta-row">
+                                            <span class="sheet-role">Ekip Üyesi</span>
+                                            <span class="sheet-date">Aralık 2025</span>
+                                        </div>
+                                        <h3 class="sheet-title">AYAZJAM'25</h3>
+                                        <p class="sheet-sub">ACM Gazi</p>
+                                    </div>
+                                    <div class="layered-sheet" id="subpane-org-3">
+                                        <div class="sheet-meta-row">
+                                            <span class="sheet-role">Ekip Üyesi</span>
+                                            <span class="sheet-date">Mayıs 2025</span>
+                                        </div>
+                                        <h3 class="sheet-title">OSTİMTECH Jam 2025</h3>
+                                        <p class="sheet-sub">OSTİMTECH Software Club</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 01 Organizasyonlar Sarkan Kırlangıç Flamaları -->
+                        <aside class="binder-bottom-pennants" aria-label="Etkinlik Bağlantıları">
+                            <div class="pennant-subgroup active" id="pennants-org-1">
+                                <a href="https://itch.io/jam/ostimtechjam26" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-itch" title="Itch.io">
+                                    <svg viewBox="0 0 24 24"><path d="M4.5 4A2.5 2.5 0 0 0 2 6.5v1.2a4.4 4.4 0 0 0 1.4 3.2L4 18.5A2.5 2.5 0 0 0 6.5 21h11a2.5 2.5 0 0 0 2.5-2.5l.6-7.6a4.4 4.4 0 0 0 1.4-3.2V6.5A2.5 2.5 0 0 0 19.5 4h-15zm3.5 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm8 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM9 16h6v1.5H9V16z"/></svg>
+                                </a>
+                            </div>
+                            <div class="pennant-subgroup" id="pennants-org-2">
+                                <a href="https://www.linkedin.com/posts/goktugsaylam_tr-aylard%C4%B1r-%C3%BCzerinde-%C3%A7al%C4%B1%C5%9Ft%C4%B1%C4%9F%C4%B1m%C4%B1z-ayaz-activity-7405935751911174144-DQ40" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-linkedin" title="LinkedIn">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                                </a>
+                                <a href="https://itch.io/jam/ayazjam25" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-itch" title="Itch.io">
+                                    <svg viewBox="0 0 24 24"><path d="M4.5 4A2.5 2.5 0 0 0 2 6.5v1.2a4.4 4.4 0 0 0 1.4 3.2L4 18.5A2.5 2.5 0 0 0 6.5 21h11a2.5 2.5 0 0 0 2.5-2.5l.6-7.6a4.4 4.4 0 0 0 1.4-3.2V6.5A2.5 2.5 0 0 0 19.5 4h-15zm3.5 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm8 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM9 16h6v1.5H9V16z"/></svg>
+                                </a>
+                            </div>
+                            <div class="pennant-subgroup" id="pennants-org-3">
+                                <a href="https://www.linkedin.com/posts/goktugsaylam_uzun-s%C3%BCredir-%C3%BCzerinde-%C3%A7al%C4%B1%C5%9Ft%C4%B1%C4%9F%C4%B1m%C4%B1z-osti%CC%87mtech-activity-7328120182038487042-T5qf" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-linkedin" title="LinkedIn">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                                </a>
+                                <a href="https://itch.io/jam/ostimtech-jam-2025" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-itch" title="Itch.io">
+                                    <svg viewBox="0 0 24 24"><path d="M4.5 4A2.5 2.5 0 0 0 2 6.5v1.2a4.4 4.4 0 0 0 1.4 3.2L4 18.5A2.5 2.5 0 0 0 6.5 21h11a2.5 2.5 0 0 0 2.5-2.5l.6-7.6a4.4 4.4 0 0 0 1.4-3.2V6.5A2.5 2.5 0 0 0 19.5 4h-15zm3.5 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm8 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM9 16h6v1.5H9V16z"/></svg>
+                                </a>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <!-- 02: KİŞİSEL PROJELER -->
+                    <div class="sheet-spread" id="sheet-projects" role="tabpanel">
+                        <div class="page-half left-page">
+                            <div class="page-inner">
+                                <div class="page-header">
+                                    <span class="dossier-code">02 // KİŞİSEL PROJELER</span>
+                                </div>
+                                <div class="page-body">
+                                    <h2 class="dossier-name">Kişisel Projeler</h2>
+                                    <p class="dossier-subtitle">Oyun &amp; İçerik Tasarımı</p>
+                                    <p class="dossier-role">Game Art • Podcast • Masa Oyunu</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-half right-page">
+                            <div class="page-inner">
+                                <!-- Üst Başlık Seçim Barı -->
+                                <div class="sub-tabs-bar">
+                                    <button class="tab-arrow-btn prev-tab" aria-label="Önceki">&lsaquo;</button>
+                                    <nav class="sub-tabs" role="tablist">
+                                        <button class="sub-tab active" data-sub="proj-1">Hooks &amp; Books</button>
+                                        <button class="sub-tab" data-sub="proj-2">İksir ve Kahve</button>
+                                    </nav>
+                                    <button class="tab-arrow-btn next-tab" aria-label="Sonraki">&rsaquo;</button>
+                                </div>
+                                <!-- Katman Katman Duran Dosyalar -->
+                                <div class="layered-stack">
+                                    <div class="layered-sheet active" id="subpane-proj-1">
+                                        <div class="sheet-meta-row">
+                                            <span class="sheet-role">Bağımsız Oyun Tasarımcısı</span>
+                                            <span class="sheet-tag">Çok Yakında</span>
+                                        </div>
+                                        <h3 class="sheet-title">Hooks &amp; Books</h3>
+                                        <p class="sheet-text">Büyülü balık tutma, zar atma ve acımasız bir pazar ekonomisi içeren rekabetçi bir masa oyunu.</p>
+                                    </div>
+                                    <div class="layered-sheet" id="subpane-proj-2">
+                                        <div class="sheet-meta-row">
+                                            <span class="sheet-role">Yapımcı ve Sunucu</span>
+                                            <span class="sheet-tag">Çok Yakında</span>
+                                        </div>
+                                        <h3 class="sheet-title">İksir ve Kahve</h3>
+                                        <p class="sheet-text">Oyun geliştirmeye, tasarıma ve oyun kültürüne dair bağımsız bir podcast.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 02 Projeler Sarkan Kırlangıç Flamaları -->
+                        <aside class="binder-bottom-pennants" aria-label="Etkinlik Bağlantıları">
+                            <div class="pennant-subgroup active" id="pennants-proj-1">
+                                <a href="https://github.com/GoktugSaylam/hooks-and-books" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-github" title="GitHub">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                </a>
+                            </div>
+                            <div class="pennant-subgroup" id="pennants-proj-2">
+                                <a href="https://www.youtube.com/@iksirvekahve" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-youtube" title="YouTube">
+                                    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                </a>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <!-- 03: DERECELER -->
+                    <div class="sheet-spread" id="sheet-awards" role="tabpanel">
+                        <div class="page-half left-page">
+                            <div class="page-inner">
+                                <div class="page-header">
+                                    <span class="dossier-code">03 // DERECELER</span>
+                                </div>
+                                <div class="page-body">
+                                    <h2 class="dossier-name">Dereceler</h2>
+                                    <p class="dossier-subtitle">Ödüller &amp; Başarılar</p>
+                                    <p class="dossier-role">Game Jam Dereceleri</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-half right-page">
+                            <div class="page-inner">
+                                <!-- Üst Başlık Seçim Barı -->
+                                <div class="sub-tabs-bar">
+                                    <button class="tab-arrow-btn prev-tab" aria-label="Önceki">&lsaquo;</button>
+                                    <nav class="sub-tabs" role="tablist">
+                                        <button class="sub-tab active" data-sub="award-1">Turkic Game Jam 2026</button>
+                                        <button class="sub-tab" data-sub="award-2">TEDU Jam 2025</button>
+                                    </nav>
+                                    <button class="tab-arrow-btn next-tab" aria-label="Sonraki">&rsaquo;</button>
+                                </div>
+                                <!-- Katman Katman Duran Dosyalar -->
+                                <div class="layered-stack">
+                                    <div class="layered-sheet active" id="subpane-award-1">
+                                        <div class="sheet-meta-row">
+                                            <span class="sheet-role">Pixel Artist &bull; Haziran 2026</span>
+                                        </div>
+                                        <h3 class="sheet-title">Turkic Game Jam 2026</h3>
+                                        <p class="sheet-text">Halay Yılanı projesiyle Birincilik Ödülü.</p>
+                                    </div>
+                                    <div class="layered-sheet" id="subpane-award-2">
+                                        <div class="sheet-meta-row">
+                                            <span class="sheet-role">Pixel Artist &bull; Şubat 2025</span>
+                                        </div>
+                                        <h3 class="sheet-title">TEDU Jam 2025</h3>
+                                        <p class="sheet-text">SaboteLight projesiyle İkincilik (2.'lik) ve En Orijinal Oyun Mekaniği Ödülü.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 03 Dereceler Sarkan Kırlangıç Flamaları -->
+                        <aside class="binder-bottom-pennants" aria-label="Etkinlik Bağlantıları">
+                            <div class="pennant-subgroup active" id="pennants-award-1">
+                                <a href="https://goktugsaylam.itch.io/halay-yilani" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-itch" title="Itch.io">
+                                    <svg viewBox="0 0 24 24"><path d="M4.5 4A2.5 2.5 0 0 0 2 6.5v1.2a4.4 4.4 0 0 0 1.4 3.2L4 18.5A2.5 2.5 0 0 0 6.5 21h11a2.5 2.5 0 0 0 2.5-2.5l.6-7.6a4.4 4.4 0 0 0 1.4-3.2V6.5A2.5 2.5 0 0 0 19.5 4h-15zm3.5 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm8 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM9 16h6v1.5H9V16z"/></svg>
+                                </a>
+                            </div>
+                            <div class="pennant-subgroup" id="pennants-award-2">
+                                <a href="https://glassofwhiskey.itch.io/sabotelight" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-itch" title="Itch.io">
+                                    <svg viewBox="0 0 24 24"><path d="M4.5 4A2.5 2.5 0 0 0 2 6.5v1.2a4.4 4.4 0 0 0 1.4 3.2L4 18.5A2.5 2.5 0 0 0 6.5 21h11a2.5 2.5 0 0 0 2.5-2.5l.6-7.6a4.4 4.4 0 0 0 1.4-3.2V6.5A2.5 2.5 0 0 0 19.5 4h-15zm3.5 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm8 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM9 16h6v1.5H9V16z"/></svg>
+                                </a>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <!-- 04: İLETİŞİM -->
+                    <div class="sheet-spread" id="sheet-contact" role="tabpanel">
+                        <div class="page-half left-page">
+                            <div class="page-inner">
+                                <div class="page-header">
+                                    <span class="dossier-code">04 // İLETİŞİM</span>
+                                </div>
+                                <div class="page-body">
+                                    <h2 class="dossier-name">İletişim</h2>
+                                    <p class="dossier-subtitle">Bağlantılar &amp; İrtibat</p>
+                                    <p class="dossier-role">Ankara, Türkiye</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-half right-page">
+                            <div class="page-inner">
+                                <div class="page-header">
+                                    <span class="section-title">İLETİŞİM</span>
+                                </div>
+                                <div class="page-body contact-plain">
+                                    <p class="contact-desc">Projeleriniz veya iş birlikleriniz için benimle iletişime geçmekten çekinmeyin.</p>
+                                    <a href="mailto:hello@goktugsaylam.com" class="contact-mail">hello@goktugsaylam.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 04 İletişim Sarkan Kırlangıç Flamaları -->
+                        <aside class="binder-bottom-pennants" aria-label="İletişim Bağlantıları">
+                            <div class="pennant-subgroup active">
+                                <a href="mailto:hello@goktugsaylam.com" class="binder-pennant pennant-email" title="E-Posta">
+                                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                </a>
+                                <a href="https://links.goktugsaylam.com/" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-socials" title="Bento / Sosyal Bağlantılar">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                                </a>
+                                <a href="https://github.com/GoktugSaylam" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-github" title="GitHub">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                </a>
+                                <a href="https://www.linkedin.com/in/goktugsaylam/" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-linkedin" title="LinkedIn">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                                </a>
+                            </div>
+                        </aside>
+                    </div>
+
+                </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js?v=21"></script>
+</body>
+</html>
