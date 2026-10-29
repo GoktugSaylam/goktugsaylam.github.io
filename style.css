@@ -9,11 +9,24 @@ html, body {
     height: 100vh;
     height: 100dvh;
     overflow: hidden;
-    background-color: #0E0E0E;
+    background-color: #121213;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Inter', sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 44px 44px;
+    background-position: center center;
 }
 
 /* Page Layout */
