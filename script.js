@@ -476,6 +476,10 @@ function renderHero(greeting, name) {
     }
     textContainer.innerHTML = html;
     spans = document.querySelectorAll('.text-container span');
+    try {
+        localStorage.setItem('site_hero_greeting', greeting);
+        localStorage.setItem('site_hero_name', name);
+    } catch(e){}
 }
 
 function renderAbout(data) {
@@ -664,6 +668,9 @@ function renderContact(data) {
 // --- Dynamic Theme & Colors Engine ---
 function applyTheme(theme) {
     if (!theme) return;
+    try {
+        localStorage.setItem('site_theme', JSON.stringify(theme));
+    } catch(e){}
     const root = document.documentElement;
     if (theme.base) {
         if (theme.base.bg) root.style.setProperty('--color-bg', theme.base.bg);

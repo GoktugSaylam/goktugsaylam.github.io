@@ -7,13 +7,55 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=49">
+    <link rel="stylesheet" href="style.css?v=50">
+    <script>
+        // Pre-paint hydration cache: zero flicker for custom title & theme
+        (function() {
+            try {
+                const t = JSON.parse(localStorage.getItem('site_theme') || 'null');
+                if (t && t.base) {
+                    const r = document.documentElement.style;
+                    if (t.base.bg) r.setProperty('--color-bg', t.base.bg);
+                    if (t.base.heroAccent) r.setProperty('--color-hero-accent', t.base.heroAccent);
+                    if (t.base.accent) r.setProperty('--color-accent', t.base.accent);
+                    if (t.base.role) r.setProperty('--color-role', t.base.role);
+                    if (t.base.folder) r.setProperty('--color-folder', t.base.folder);
+                    if (t.base.textMain) r.setProperty('--color-text-main', t.base.textMain);
+                    if (t.base.gridEnabled !== undefined) r.setProperty('--grid-display', t.base.gridEnabled ? 'block' : 'none');
+                    if (t.base.gridLine) r.setProperty('--color-grid-line', t.base.gridLine);
+                }
+            } catch(e){}
+        })();
+    </script>
 </head>
 <body>
     <main class="page-layout">
         <!-- Hero Header -->
         <header class="hero">
-            <h1 class="text-container"><span class="white-text">H</span><span class="white-text">e</span><span class="white-text">l</span><span class="white-text">l</span><span class="white-text">o</span><span class="white-text">,</span><span>&nbsp;</span><span class="white-text">I</span><span class="white-text">'</span><span class="white-text">m</span><span>&nbsp;</span><span class="accent-text">G</span><span class="accent-text">ö</span><span class="accent-text">k</span><span class="accent-text">t</span><span class="accent-text">u</span><span class="accent-text">ğ</span><span>&nbsp;</span><span class="accent-text">S</span><span class="accent-text">a</span><span class="accent-text">y</span><span class="accent-text">l</span><span class="accent-text">a</span><span class="accent-text">m</span></h1>
+            <h1 class="text-container"><span class="white-text">H</span><span class="white-text">e</span><span class="white-text">l</span><span class="white-text">l</span><span class="white-text">o</span><span class="white-text">,</span><span>&nbsp;</span><span class="white-text">I</span><span class="white-text">'</span><span class="white-text">m</span><span>&nbsp;</span><span class="accent-text">G</span><span class="accent-text">ö</span><span class="accent-text">k</span><span class="accent-text">t</span><span class="accent-text">u</span><span class="accent-text">ğ</span></h1>
+            <script>
+                // Instant hero text hydration from local cache
+                (function() {
+                    try {
+                        const g = localStorage.getItem('site_hero_greeting');
+                        const n = localStorage.getItem('site_hero_name');
+                        if (g !== null && n !== null) {
+                            const tc = document.querySelector('.text-container');
+                            if (tc) {
+                                let h = '';
+                                for (let i = 0; i < g.length; i++) {
+                                    h += g[i] === ' ' ? '<span>&nbsp;</span>' : '<span class="white-text">' + g[i] + '</span>';
+                                }
+                                if (g && n) h += '<span>&nbsp;</span>';
+                                for (let i = 0; i < n.length; i++) {
+                                    h += n[i] === ' ' ? '<span>&nbsp;</span>' : '<span class="accent-text">' + n[i] + '</span>';
+                                }
+                                tc.innerHTML = h;
+                            }
+                        }
+                    } catch(e){}
+                })();
+            </script>
             <div class="sub-bar"><span class="sub-label">mostly online as</span><span class="handle" id="handle">@goktugsaylam</span></div>
         </header>
 
@@ -328,6 +370,6 @@
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="script.js?v=33"></script>
+    <script src="script.js?v=34"></script>
 </body>
 </html>
