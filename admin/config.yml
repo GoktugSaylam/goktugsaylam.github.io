@@ -216,6 +216,8 @@ collections:
               - { label: "Sayfa Arka Plani (Page Background)", name: "bg", widget: "color", default: "#030303" }
               - { label: "Klasor Govdesi Rengi (Folder Binder Body)", name: "folder", widget: "color", default: "#24272D" }
               - { label: "Ana Metin ve Basliklar (Main Text & Titles)", name: "textMain", widget: "color", default: "#FFFFFF" }
+
+              - { label: "Hero Baslik ve Handle Vurgu Rengi (Kirmizi)", name: "heroAccent", widget: "color", default: "#E63D19" }
               - { label: "Birincil Vurgu Rengi (Primary Accent / Headers & Links)", name: "accent", widget: "color", default: "#F2AD21" }
               - { label: "Rol ve Ikincil Vurgu (Role & Secondary Accent)", name: "role", widget: "color", default: "#A4C723" }
           - label: "2. Klasor Dizin Sekmeleri (Dossier Tabs & Scramble Pool)"

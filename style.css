@@ -7,7 +7,8 @@
     /* 1. Temel Arayüz Renkleri (Base UI Colors) */
     --color-bg: #030303;          /* Sayfa Arka Planı (Derin Siyah) */
     --color-folder: #24272D;      /* Klasör & Dosya Rengi (Koyu Gri) */
-    --color-text-main: #FFFFFF;   /* Ana Metin & Başlıklar (Beyaz) */
+    --color-text-main: #FFFFFF;
+    --color-hero-accent: #E63D19;   /* Ana Metin & Başlıklar (Beyaz) */
     --color-accent: #F2AD21;      /* Birincil Vurgu Rengi (Sıcak Altın Sarı) */
     --color-role: #A4C723;        /* Rol & İkincil Vurgu (Fıstık Yeşili) */
 
@@ -105,7 +106,7 @@ body::before {
 }
 
 .text-container span.accent-text {
-    color: var(--color-accent, #F2AD21);
+    color: var(--color-hero-accent, #E63D19);
 }
 
 .sub-bar {
@@ -126,7 +127,7 @@ body::before {
 }
 
 .handle {
-    color: var(--color-accent, #F2AD21);
+    color: var(--color-hero-accent, #E63D19);
     font-family: 'JetBrains Mono', monospace;
     font-size: inherit;
     font-weight: 500;

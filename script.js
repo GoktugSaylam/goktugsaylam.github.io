@@ -60,11 +60,12 @@ const symbols = '!@#$%^&*()_+-=<>?/\\';
 
 // 5 Belirlenmiş Renk Havuzu
 let colors = [
+    '#E63D19', // Canli Kirmizi
     '#F2AD21', // Sicak Altin Sari
     '#A4C723', // Acik Fistik Yesili
     '#1D9E99', // Petrol / Camgobegi
     '#7C26CB', // Mor
-    '#E63D19'  // Canli Kirmizi
+    '#FFFFFF'  // Beyaz
 ];
 
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
@@ -637,6 +638,7 @@ function applyTheme(theme) {
         if (theme.base.textMain) root.style.setProperty('--color-text-main', theme.base.textMain);
         if (theme.base.accent) root.style.setProperty('--color-accent', theme.base.accent);
         if (theme.base.role) root.style.setProperty('--color-role', theme.base.role);
+        if (theme.base.heroAccent) root.style.setProperty('--color-hero-accent', theme.base.heroAccent);
     }
     if (theme.tabs) {
         if (theme.tabs.tab00) root.style.setProperty('--color-tab-00', theme.tabs.tab00);
@@ -646,11 +648,12 @@ function applyTheme(theme) {
         if (theme.tabs.tab04) root.style.setProperty('--color-tab-04', theme.tabs.tab04);
 
         colors = [
-            theme.tabs.tab01 || '#F2AD21',
-            theme.tabs.tab02 || '#A4C723',
-            theme.tabs.tab03 || '#1D9E99',
-            theme.tabs.tab04 || '#7C26CB',
-            theme.tabs.tab00 || '#E63D19'
+            theme.base?.heroAccent || theme.tabs?.tab00 || '#E63D19',
+            theme.tabs?.tab01 || theme.base?.accent || '#F2AD21',
+            theme.tabs?.tab02 || theme.base?.role || '#A4C723',
+            theme.tabs?.tab03 || '#1D9E99',
+            theme.tabs?.tab04 || '#7C26CB',
+            theme.base?.textMain || '#FFFFFF'
         ];
     }
 }
