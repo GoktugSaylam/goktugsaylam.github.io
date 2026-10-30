@@ -1,7 +1,7 @@
 {
   "base": {
     "bg": "#222831",
-    "gridEnabled": false,
+    "gridEnabled": true,
     "gridLine": "#393e46",
     "folder": "#393e46",
     "textMain": "#eeeeee",
