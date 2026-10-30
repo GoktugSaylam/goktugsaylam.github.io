@@ -60,7 +60,7 @@ const symbols = '!@#$%^&*()_+-=<>?/\\';
 
 // 5 Belirlenmiş Renk Havuzu
 const colors = [
-    '#DA9C1E', // Hardal Sarısı
+    '#F2AD21', // Sıcak Altın Sarı
     '#A4C723', // Açık Fıstık Yeşili
     '#1D9E99', // Petrol / Camgöbeği
     '#7C26CB', // Mor

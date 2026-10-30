@@ -84,7 +84,7 @@ body::before {
 }
 
 .text-container span.accent-text {
-    color: #B43014;
+    color: #F2AD21;
 }
 
 .sub-bar {
@@ -105,7 +105,7 @@ body::before {
 }
 
 .handle {
-    color: #B43014;
+    color: #F2AD21;
     font-family: 'JetBrains Mono', monospace;
     font-size: inherit;
     font-weight: 500;
@@ -185,7 +185,7 @@ body::before {
 
 /* Kulakçık Renkleri (Belirlenen 5'li Palet) */
 .tab-00, .tab-red { background: #B43014; color: #FFFFFF; } /* 00: Kiremit Kırmızısı */
-.tab-01, .tab-orange { background: #DA9C1E; color: #FFFFFF; } /* 01: Hardal Sarısı */
+.tab-01, .tab-orange { background: #F2AD21; color: #FFFFFF; } /* 01: Sıcak Altın Sarı */
 .tab-02, .tab-olive { background: #A4C723; color: #FFFFFF; } /* 02: Fıstık Yeşili */
 .tab-03, .tab-teal { background: #1D9E99; color: #FFFFFF; } /* 03: Petrol / Teal */
 .tab-04, .tab-violet { background: #7C26CB; color: #FFFFFF; } /* 04: Mor */
@@ -272,13 +272,13 @@ body::before {
 }
 
 .dossier-code {
-    color: #B43014;
-    font-weight: 500;
+    color: #F2AD21;
+    font-weight: 600;
 }
 
 .section-title {
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 500;
+    color: #F2AD21;
+    font-weight: 600;
 }
 
 .dossier-name {
@@ -293,7 +293,7 @@ body::before {
 }
 
 .dossier-subtitle {
-    color: #B43014;
+    color: #A4C723;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.76rem;
     font-weight: 500;
@@ -302,7 +302,7 @@ body::before {
 }
 
 .dossier-role {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.7);
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.66rem;
     margin-top: 0.3rem;
@@ -472,20 +472,21 @@ body::before {
 .sheet-role {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.65rem;
-    color: #B43014;
-    font-weight: 500;
+    color: #A4C723;
+    font-weight: 600;
 }
 
 .sheet-date {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.62rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.55);
 }
 
 .sheet-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.62rem;
-    color: #A4C723;
+    color: #F2AD21;
+    font-weight: 600;
 }
 
 .sheet-title {
@@ -500,7 +501,7 @@ body::before {
 }
 
 .sheet-sub {
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.65);
     font-size: 0.74rem;
     margin-bottom: 0.35rem;
     text-align: left;
@@ -508,7 +509,7 @@ body::before {
 }
 
 .sheet-text {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.88);
     font-size: clamp(0.74rem, 0.95vw, 0.82rem);
     line-height: 1.55;
     text-align: left;
@@ -652,25 +653,26 @@ body::before {
 }
 
 .contact-desc {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.88);
     font-size: 0.8rem;
     text-align: left;
     width: 100%;
 }
 
 .contact-mail {
-    color: #B43014;
+    color: #F2AD21;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 1.05rem;
     font-weight: 600;
     text-decoration: none;
-    transition: opacity 0.2s;
+    transition: color 0.2s ease, opacity 0.2s ease;
     text-align: left;
     align-self: flex-start;
 }
 
 .contact-mail:hover {
-    opacity: 0.85;
+    color: #FFFFFF;
+    opacity: 1;
 }
 
 .contact-links-plain {
