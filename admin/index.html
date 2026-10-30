@@ -5,9 +5,327 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>Content Management System | Göktuğ Saylam</title>
+  <style>
+    /* Hex Helper & Color Controls Styling */
+    .hex-helper-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      vertical-align: middle;
+      margin-left: 10px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+    .hex-helper-input {
+      width: 90px;
+      height: 34px;
+      padding: 0 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #f1f5f9;
+      background: #1e222b;
+      border: 1px solid #3b4252;
+      border-radius: 6px;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      outline: none;
+      transition: all 0.15s ease;
+    }
+    .hex-helper-input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+      background: #181b22;
+    }
+    .hex-helper-input.is-invalid {
+      border-color: #ef4444;
+      background: #2a1515;
+      color: #fca5a5;
+    }
+    .hex-helper-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      height: 34px;
+      padding: 0 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #e2e8f0;
+      background: #2b3240;
+      border: 1px solid #434c5e;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      box-sizing: border-box;
+      transition: all 0.15s ease;
+    }
+    .hex-helper-btn:hover {
+      background: #3b4455;
+      color: #ffffff;
+      border-color: #5b677e;
+    }
+    .hex-helper-btn:active {
+      transform: scale(0.97);
+    }
+    .hex-helper-btn.is-success {
+      background: #059669 !important;
+      border-color: #10b981 !important;
+      color: #ffffff !important;
+    }
+    .hex-helper-btn svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+    input[type="color"] {
+      cursor: pointer;
+      width: 38px;
+      height: 34px;
+      padding: 2px;
+      border: 1px solid #3b4252;
+      border-radius: 6px;
+      background: #1e222b;
+      box-sizing: border-box;
+      vertical-align: middle;
+    }
+    input[type="color"]::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+    input[type="color"]::-webkit-color-swatch {
+      border: none;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
   <!-- Sveltia CMS: Decap CMS / Netlify CMS ile birebir uyumlu, GitHub Pages'te harici sunucuya ihtiyaç duymadan Token ile giriş destekler -->
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+
+  <!-- Hex Kopyala / Yapıştır & Canlı Senkronizasyon Eklentisi -->
+  <script>
+    (function () {
+      function normalizeHex(val) {
+        if (!val) return '';
+        val = val.trim();
+        if (!val.startsWith('#')) val = '#' + val;
+        // 3 haneli (#fff) hex kodunu 6 haneliye (#FFFFFF) genişlet
+        if (/^#[0-9a-fA-F]{3}$/.test(val)) {
+          val = '#' + val[1] + val[1] + val[2] + val[2] + val[3] + val[3];
+        }
+        return val.toUpperCase();
+      }
+
+      function isValidHex(val) {
+        return /^#[0-9a-fA-F]{6}$/.test(normalizeHex(val));
+      }
+
+      function triggerColorChange(colorInput, hexVal) {
+        const norm = normalizeHex(hexVal);
+        if (/^#[0-9a-fA-F]{6}$/.test(norm)) {
+          const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
+          if (setter) {
+            setter.call(colorInput, norm);
+          } else {
+            colorInput.value = norm;
+          }
+          colorInput.dispatchEvent(new Event('input', { bubbles: true }));
+          colorInput.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+
+      function copyText(text, btn) {
+        const originalContent = btn.innerHTML;
+        const setFeedback = (msg) => {
+          btn.classList.add('is-success');
+          btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ' + msg;
+          setTimeout(() => {
+            btn.classList.remove('is-success');
+            btn.innerHTML = originalContent;
+          }, 1500);
+        };
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text)
+            .then(() => setFeedback('Kopyalandı!'))
+            .catch(() => fallbackCopy(text, setFeedback));
+        } else {
+          fallbackCopy(text, setFeedback);
+        }
+      }
+
+      function fallbackCopy(text, cb) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+          cb('Kopyalandı!');
+        } catch (e) {
+          console.warn('Clipboard copy error', e);
+        }
+        document.body.removeChild(ta);
+      }
+
+      function enhanceColorInput(colorInput) {
+        if (colorInput.dataset.hexEnhanced) return;
+        colorInput.dataset.hexEnhanced = 'true';
+
+        const wrapper = document.createElement('span');
+        wrapper.className = 'hex-helper-wrap';
+
+        // Hex Metin Kutusu (Doğrudan seçilip kopyalanabilir veya hex yapıştırılabilir)
+        const hexInput = document.createElement('input');
+        hexInput.type = 'text';
+        hexInput.className = 'hex-helper-input';
+        hexInput.maxLength = 7;
+        hexInput.spellcheck = false;
+        hexInput.placeholder = '#RRGGBB';
+        hexInput.value = (colorInput.value || '#000000').toUpperCase();
+        hexInput.title = 'Hex kodunu buraya yazabilir, yapıştırabilir veya seçip Ctrl+C ile kopyalayabilirsiniz';
+
+        // Kopyala Butonu
+        const copyBtn = document.createElement('button');
+        copyBtn.type = 'button';
+        copyBtn.className = 'hex-helper-btn';
+        copyBtn.title = 'Hex kodunu panoya kopyala';
+        copyBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Kopyala';
+
+        // Yapıştır Butonu
+        const pasteBtn = document.createElement('button');
+        pasteBtn.type = 'button';
+        pasteBtn.className = 'hex-helper-btn';
+        pasteBtn.title = 'Panodaki hex kodunu yapıştır';
+        pasteBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg> Yapıştır';
+
+        wrapper.appendChild(hexInput);
+        wrapper.appendChild(copyBtn);
+        wrapper.appendChild(pasteBtn);
+
+        colorInput.insertAdjacentElement('afterend', wrapper);
+
+        // 1. Color picker değiştiğinde metin kutusunu güncelle
+        const syncFromColor = () => {
+          hexInput.value = (colorInput.value || '#000000').toUpperCase();
+          hexInput.classList.remove('is-invalid');
+        };
+        colorInput.addEventListener('input', syncFromColor);
+        colorInput.addEventListener('change', syncFromColor);
+
+        // 2. Metin kutusuna odaklanıldığında metni otomatik seç (Ctrl+C için büyük kolaylık)
+        hexInput.addEventListener('focus', () => {
+          hexInput.select();
+        });
+
+        // 3. Metin kutusuna yazılınca veya yapıştırılınca color picker'ı güncelle
+        hexInput.addEventListener('input', () => {
+          let val = hexInput.value.trim();
+          if (!val) return;
+          if (isValidHex(val)) {
+            hexInput.classList.remove('is-invalid');
+            triggerColorChange(colorInput, val);
+          } else {
+            hexInput.classList.add('is-invalid');
+          }
+        });
+
+        hexInput.addEventListener('blur', () => {
+          let val = hexInput.value.trim();
+          if (isValidHex(val)) {
+            const norm = normalizeHex(val);
+            hexInput.value = norm;
+            hexInput.classList.remove('is-invalid');
+            triggerColorChange(colorInput, norm);
+          } else {
+            syncFromColor();
+          }
+        });
+
+        // 4. Kopyala Butonu
+        copyBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const hex = normalizeHex(colorInput.value) || hexInput.value.toUpperCase();
+          copyText(hex, copyBtn);
+        });
+
+        // 5. Yapıştır Butonu
+        pasteBtn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          try {
+            if (navigator.clipboard && navigator.clipboard.readText) {
+              const clip = await navigator.clipboard.readText();
+              if (clip && isValidHex(clip)) {
+                const norm = normalizeHex(clip);
+                hexInput.value = norm;
+                hexInput.classList.remove('is-invalid');
+                triggerColorChange(colorInput, norm);
+
+                const originalContent = pasteBtn.innerHTML;
+                pasteBtn.classList.add('is-success');
+                pasteBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Yapıştırıldı!';
+                setTimeout(() => {
+                  pasteBtn.classList.remove('is-success');
+                  pasteBtn.innerHTML = originalContent;
+                }, 1200);
+                return;
+              }
+            }
+          } catch (err) {
+            // Pano izni engellendiyse metin kutusuna odaklan
+          }
+          hexInput.focus();
+          hexInput.select();
+        });
+
+        // Arka plan senkronizasyonu: Dışarıdan/Sveltia tarafından değer değiştirilirse input'u güncelle
+        let lastVal = colorInput.value;
+        const syncInterval = setInterval(() => {
+          if (!colorInput.isConnected) {
+            clearInterval(syncInterval);
+            return;
+          }
+          if (colorInput.value !== lastVal) {
+            lastVal = colorInput.value;
+            if (document.activeElement !== hexInput) {
+              syncFromColor();
+            }
+          }
+        }, 300);
+      }
+
+      function scanAndEnhance() {
+        const inputs = document.querySelectorAll('input[type="color"]');
+        inputs.forEach(enhanceColorInput);
+      }
+
+      // Dinamik SPA render'larını izle
+      const observer = new MutationObserver(() => {
+        scanAndEnhance();
+      });
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          scanAndEnhance();
+          observer.observe(document.body, { childList: true, subtree: true });
+        });
+      } else {
+        scanAndEnhance();
+        observer.observe(document.body, { childList: true, subtree: true });
+      }
+
+      // Sveltia CMS asenkron yüklenirken ilk birkaç saniye periyodik kontrol
+      let checks = 0;
+      const initCheck = setInterval(() => {
+        scanAndEnhance();
+        checks++;
+        if (checks > 25) clearInterval(initCheck);
+      }, 400);
+    })();
+  </script>
 </body>
 </html>
