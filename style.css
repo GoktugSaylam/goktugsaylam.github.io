@@ -574,30 +574,63 @@ body::before {
     pointer-events: none;
 }
 
-/* Platform Özel Renkleri (Palet: #B43014, #DA9C1E, #A4C723, #1D9E99, #7C26CB, #24272D) */
-.pennant-github, .pennant-x, .pennant-twitter, .pennant-steam {
-    background-color: #24272D;
+/* Platform Kendi Orijinal Marka Renkleri */
+.pennant-github {
+    background-color: #24292E;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.pennant-itch, .pennant-youtube {
-    background-color: #B43014; /* 00: Kiremit Kırmızısı */
+.pennant-linkedin {
+    background-color: #0A66C2;
 }
 
-.pennant-email {
-    background-color: #DA9C1E; /* 01: Hardal Sarısı */
+.pennant-itch {
+    background-color: #FA5C5C;
+}
+
+.pennant-youtube {
+    background-color: #FF0000;
+}
+
+.pennant-x, .pennant-twitter {
+    background-color: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pennant-discord {
+    background-color: #5865F2;
+}
+
+.pennant-instagram {
+    background-color: #E1306C;
 }
 
 .pennant-spotify {
-    background-color: #A4C723; /* 02: Fıstık Yeşili */
+    background-color: #1DB954;
 }
 
-.pennant-linkedin, .pennant-website, .pennant-link, .pennant-bluesky, .pennant-telegram {
-    background-color: #1D9E99; /* 03: Petrol / Teal */
+.pennant-steam {
+    background-color: #171A21;
 }
 
-.pennant-bento, .pennant-socials, .pennant-discord, .pennant-instagram {
-    background-color: #7C26CB; /* 04: Mor */
+.pennant-bluesky {
+    background-color: #0285FF;
+}
+
+.pennant-telegram {
+    background-color: #24A1DE;
+}
+
+.pennant-bento, .pennant-socials {
+    background-color: #7C26CB;
+}
+
+.pennant-email {
+    background-color: #EA4335;
+}
+
+.pennant-website, .pennant-link {
+    background-color: #38404D;
 }
 
 .pennant-bento svg, .pennant-socials svg, .pennant-website svg, .pennant-link svg {
