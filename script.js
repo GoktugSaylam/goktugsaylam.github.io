@@ -317,8 +317,9 @@ function renderPennant(link) {
     if (platform === 'email' && !href.startsWith('mailto:')) {
         href = `mailto:${href}`;
     }
+    const extraClass = platform === 'bento' ? ' pennant-socials' : '';
     return `
-        <a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-${escapeHtml(platform)}" title="${title}">
+        <a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer" class="binder-pennant pennant-${escapeHtml(platform)}${extraClass}" title="${title}">
             ${icon}
         </a>
     `.trim();

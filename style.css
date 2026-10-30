@@ -546,6 +546,7 @@ body::before {
     padding-top: 10px;
     width: 32px;
     height: 44px;
+    background-color: #3F444E;
     color: #FFFFFF;
     text-decoration: none;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 82%, 0% 100%);
@@ -599,8 +600,13 @@ body::before {
     background-color: #CC181E;
 }
 
-.pennant-socials {
+.pennant-bento, .pennant-socials {
     background-color: #6A3D8C;
+}
+
+.pennant-bento svg, .pennant-socials svg, .pennant-website svg, .pennant-link svg {
+    fill: none;
+    stroke: currentColor;
 }
 
 .pennant-email {
