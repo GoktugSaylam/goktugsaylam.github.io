@@ -197,3 +197,33 @@ collections:
                   - { label: "Website", value: "website" }
               - { label: "URL", name: "url", widget: "string" }
               - { label: "Title / Hover Text", name: "title", widget: "string", required: false }
+
+  - name: "settings"
+    label: "Theme & Palette"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "theme"
+        label: "Color Palette & Themes"
+        file: "content/theme.json"
+        format: "json"
+        fields:
+          - label: "1. Temel Arayuz Renkleri (Base UI Colors)"
+            name: "base"
+            widget: "object"
+            fields:
+              - { label: "Sayfa Arka Plani (Page Background)", name: "bg", widget: "color", default: "#030303" }
+              - { label: "Klasor Govdesi Rengi (Folder Binder Body)", name: "folder", widget: "color", default: "#24272D" }
+              - { label: "Ana Metin ve Basliklar (Main Text & Titles)", name: "textMain", widget: "color", default: "#FFFFFF" }
+              - { label: "Birincil Vurgu Rengi (Primary Accent / Headers & Links)", name: "accent", widget: "color", default: "#F2AD21" }
+              - { label: "Rol ve Ikincil Vurgu (Role & Secondary Accent)", name: "role", widget: "color", default: "#A4C723" }
+          - label: "2. Klasor Dizin Sekmeleri (Dossier Tabs & Scramble Pool)"
+            name: "tabs"
+            widget: "object"
+            fields:
+              - { label: "Tab 00 // About Sekmesi (Canli Kirmizi)", name: "tab00", widget: "color", default: "#E63D19" }
+              - { label: "Tab 01 // Organizations Sekmesi (Altin Sari)", name: "tab01", widget: "color", default: "#F2AD21" }
+              - { label: "Tab 02 // Projects Sekmesi (Fistik Yesili)", name: "tab02", widget: "color", default: "#A4C723" }
+              - { label: "Tab 03 // Awards Sekmesi (Teal / Petrol)", name: "tab03", widget: "color", default: "#1D9E99" }
+              - { label: "Tab 04 // Contact Sekmesi (Mor)", name: "tab04", widget: "color", default: "#7C26CB" }

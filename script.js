@@ -59,12 +59,12 @@ let targetText = '@goktugsaylam';
 const symbols = '!@#$%^&*()_+-=<>?/\\';
 
 // 5 Belirlenmiş Renk Havuzu
-const colors = [
-    '#F2AD21', // Sıcak Altın Sarı
-    '#A4C723', // Açık Fıstık Yeşili
-    '#1D9E99', // Petrol / Camgöbeği
+let colors = [
+    '#F2AD21', // Sicak Altin Sari
+    '#A4C723', // Acik Fistik Yesili
+    '#1D9E99', // Petrol / Camgobegi
     '#7C26CB', // Mor
-    '#B43014'  // Kiremit Kırmızısı
+    '#E63D19'  // Canli Kirmizi
 ];
 
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
@@ -627,9 +627,45 @@ function renderContact(data) {
     }
 }
 
+// --- Dynamic Theme & Colors Engine ---
+function applyTheme(theme) {
+    if (!theme) return;
+    const root = document.documentElement;
+    if (theme.base) {
+        if (theme.base.bg) root.style.setProperty('--color-bg', theme.base.bg);
+        if (theme.base.folder) root.style.setProperty('--color-folder', theme.base.folder);
+        if (theme.base.textMain) root.style.setProperty('--color-text-main', theme.base.textMain);
+        if (theme.base.accent) root.style.setProperty('--color-accent', theme.base.accent);
+        if (theme.base.role) root.style.setProperty('--color-role', theme.base.role);
+    }
+    if (theme.tabs) {
+        if (theme.tabs.tab00) root.style.setProperty('--color-tab-00', theme.tabs.tab00);
+        if (theme.tabs.tab01) root.style.setProperty('--color-tab-01', theme.tabs.tab01);
+        if (theme.tabs.tab02) root.style.setProperty('--color-tab-02', theme.tabs.tab02);
+        if (theme.tabs.tab03) root.style.setProperty('--color-tab-03', theme.tabs.tab03);
+        if (theme.tabs.tab04) root.style.setProperty('--color-tab-04', theme.tabs.tab04);
+
+        colors = [
+            theme.tabs.tab01 || '#F2AD21',
+            theme.tabs.tab02 || '#A4C723',
+            theme.tabs.tab03 || '#1D9E99',
+            theme.tabs.tab04 || '#7C26CB',
+            theme.tabs.tab00 || '#E63D19'
+        ];
+    }
+}
+
 // --- Sync Dynamic Content from Decap / Sveltia CMS JSONs ---
 async function syncDynamicContent() {
     const timestamp = Date.now();
+
+    // Theme & Palette
+    try {
+        const res = await fetch(`content/theme.json?t=${timestamp}`);
+        if (res.ok) applyTheme(await res.json());
+    } catch (err) {
+        console.warn('Could not load theme.json', err);
+    }
 
     // 00: About
     try {

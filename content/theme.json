@@ -1,0 +1,16 @@
+{
+  "base": {
+    "bg": "#030303",
+    "folder": "#24272D",
+    "textMain": "#FFFFFF",
+    "accent": "#F2AD21",
+    "role": "#A4C723"
+  },
+  "tabs": {
+    "tab00": "#E63D19",
+    "tab01": "#F2AD21",
+    "tab02": "#A4C723",
+    "tab03": "#1D9E99",
+    "tab04": "#7C26CB"
+  }
+}
