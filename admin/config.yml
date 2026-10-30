@@ -3,9 +3,6 @@ backend:
   repo: GoktugSaylam/goktugsaylam.github.io
   branch: main
 
-# Local backend support (local test with npx decap-server)
-local_backend: true
-
 # Media Uploads
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
@@ -27,84 +24,174 @@ collections:
         file: "content/about.json"
         format: "json"
         fields:
+          - { label: "Dossier Code", name: "code", widget: "string", default: "00 // ABOUT", required: false }
           - { label: "Name", name: "name", widget: "string", default: "Göktuğ Saylam" }
-          - { label: "Subtitle", name: "subtitle", widget: "string", default: "Industrial Engineering" }
-          - { label: "Role / Focus Area", name: "role", widget: "string", default: "Hackathon & Game Jam • Organization • Pixel Art" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", default: "Industrial Engineering Student and Game Enthusiast" }
+          - { label: "Role / Tagline", name: "role", widget: "string", required: false }
           - { label: "Section Title", name: "sectionTitle", widget: "string", default: "BIOGRAPHY" }
           - { label: "Biography Text", name: "bio", widget: "text" }
+          - { label: "Handle (@username)", name: "handle", widget: "string", default: "@goktugsaylam", required: false }
+          - { label: "Handle Subtitle", name: "handleSub", widget: "string", default: "mostly online as", required: false }
 
       - name: "organizations"
         label: "01 // Organizations"
         file: "content/organizations.json"
         format: "json"
         fields:
-          - label: "Organizations List"
+          - label: "Left Page Header"
+            name: "header"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Dossier Code", name: "code", widget: "string", default: "01 // ORGANIZATIONS" }
+              - { label: "Section Name", name: "title", widget: "string", default: "Organizations" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Community Events" }
+              - { label: "Role / Tagline", name: "role", widget: "string", default: "Jam & Community Coordination" }
+          - label: "Organizations List (Dossier Files)"
             name: "items"
             widget: "list"
             fields:
-              - { label: "Event Name", name: "title", widget: "string" }
+              - { label: "Event Name (Tab Title)", name: "title", widget: "string" }
               - { label: "Role", name: "role", widget: "string" }
               - { label: "Date", name: "date", widget: "string" }
               - { label: "Club / Organizer", name: "sub", widget: "string" }
-              - label: "Links"
+              - label: "Links / Pennants"
                 name: "links"
-                widget: "object"
+                widget: "list"
                 required: false
                 fields:
-                  - { label: "Itch.io Link", name: "itch", widget: "string", required: false }
-                  - { label: "LinkedIn Link", name: "linkedin", widget: "string", required: false }
+                  - label: "Platform"
+                    name: "platform"
+                    widget: "select"
+                    options:
+                      - { label: "Itch.io", value: "itch" }
+                      - { label: "LinkedIn", value: "linkedin" }
+                      - { label: "GitHub", value: "github" }
+                      - { label: "YouTube", value: "youtube" }
+                      - { label: "Website", value: "website" }
+                      - { label: "X / Twitter", value: "x" }
+                      - { label: "Discord", value: "discord" }
+                      - { label: "Instagram", value: "instagram" }
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Title / Hover Text", name: "title", widget: "string", required: false }
 
       - name: "projects"
         label: "02 // Personal Projects"
         file: "content/projects.json"
         format: "json"
         fields:
-          - label: "Projects List"
+          - label: "Left Page Header"
+            name: "header"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Dossier Code", name: "code", widget: "string", default: "02 // PERSONAL PROJECTS" }
+              - { label: "Section Name", name: "title", widget: "string", default: "Personal Projects" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Game & Content Design" }
+              - { label: "Role / Tagline", name: "role", widget: "string", default: "Game Art • Podcast • Board Game" }
+          - label: "Projects List (Dossier Files)"
             name: "items"
             widget: "list"
             fields:
-              - { label: "Project Name", name: "title", widget: "string" }
+              - { label: "Project Name (Tab Title)", name: "title", widget: "string" }
               - { label: "Role", name: "role", widget: "string" }
-              - { label: "Status / Tag", name: "tag", widget: "string", default: "Coming Soon" }
+              - { label: "Status / Tag", name: "tag", widget: "string", default: "Coming Soon", required: false }
               - { label: "Description", name: "description", widget: "text" }
-              - label: "Links"
+              - label: "Links / Pennants"
                 name: "links"
-                widget: "object"
+                widget: "list"
                 required: false
                 fields:
-                  - { label: "GitHub Link", name: "github", widget: "string", required: false }
-                  - { label: "YouTube Link", name: "youtube", widget: "string", required: false }
+                  - label: "Platform"
+                    name: "platform"
+                    widget: "select"
+                    options:
+                      - { label: "GitHub", value: "github" }
+                      - { label: "YouTube", value: "youtube" }
+                      - { label: "Itch.io", value: "itch" }
+                      - { label: "Website", value: "website" }
+                      - { label: "LinkedIn", value: "linkedin" }
+                      - { label: "X / Twitter", value: "x" }
+                      - { label: "Discord", value: "discord" }
+                      - { label: "Steam", value: "steam" }
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Title / Hover Text", name: "title", widget: "string", required: false }
 
       - name: "awards"
         label: "03 // Awards"
         file: "content/awards.json"
         format: "json"
         fields:
-          - label: "Awards List"
+          - label: "Left Page Header"
+            name: "header"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Dossier Code", name: "code", widget: "string", default: "03 // AWARDS" }
+              - { label: "Section Name", name: "title", widget: "string", default: "Awards" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Honors & Achievements" }
+              - { label: "Role / Tagline", name: "role", widget: "string", default: "Game Jam Placements" }
+          - label: "Awards List (Dossier Files)"
             name: "items"
             widget: "list"
             fields:
-              - { label: "Competition / Game Jam Name", name: "title", widget: "string" }
+              - { label: "Competition Name (Tab Title)", name: "title", widget: "string" }
               - { label: "Role & Date", name: "role", widget: "string" }
               - { label: "Award / Achievement Description", name: "description", widget: "text" }
-              - label: "Links"
+              - label: "Links / Pennants"
                 name: "links"
-                widget: "object"
+                widget: "list"
                 required: false
                 fields:
-                  - { label: "Itch.io Link", name: "itch", widget: "string", required: false }
+                  - label: "Platform"
+                    name: "platform"
+                    widget: "select"
+                    options:
+                      - { label: "Itch.io", value: "itch" }
+                      - { label: "GitHub", value: "github" }
+                      - { label: "YouTube", value: "youtube" }
+                      - { label: "LinkedIn", value: "linkedin" }
+                      - { label: "Website", value: "website" }
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Title / Hover Text", name: "title", widget: "string", required: false }
 
       - name: "contact"
         label: "04 // Contact"
         file: "content/contact.json"
         format: "json"
         fields:
+          - label: "Left Page Header"
+            name: "header"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Dossier Code", name: "code", widget: "string", default: "04 // CONTACT" }
+              - { label: "Section Name", name: "title", widget: "string", default: "Contact" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Links & Inquiries" }
+              - { label: "Location / Role", name: "role", widget: "string", default: "Ankara, Turkey" }
+          - { label: "Section Title", name: "sectionTitle", widget: "string", default: "CONTACT", required: false }
           - { label: "Description Text", name: "description", widget: "string", default: "Feel free to reach out for projects, collaborations, or just to say hi." }
           - { label: "Email Address", name: "email", widget: "string", default: "hello@goktugsaylam.com" }
-          - label: "Links"
-            name: "links"
-            widget: "object"
+          - label: "Social Links / Pennants"
+            name: "socials"
+            widget: "list"
             fields:
-              - { label: "Bento / Links URL", name: "bento", widget: "string", default: "https://links.goktugsaylam.com/" }
-              - { label: "GitHub URL", name: "github", widget: "string", default: "https://github.com/GoktugSaylam" }
-              - { label: "LinkedIn URL", name: "linkedin", widget: "string", default: "https://www.linkedin.com/in/goktugsaylam/" }
+              - label: "Platform"
+                name: "platform"
+                widget: "select"
+                options:
+                  - { label: "Bento / Links", value: "bento" }
+                  - { label: "GitHub", value: "github" }
+                  - { label: "LinkedIn", value: "linkedin" }
+                  - { label: "Itch.io", value: "itch" }
+                  - { label: "YouTube", value: "youtube" }
+                  - { label: "X / Twitter", value: "x" }
+                  - { label: "Discord", value: "discord" }
+                  - { label: "Instagram", value: "instagram" }
+                  - { label: "Bluesky", value: "bluesky" }
+                  - { label: "Telegram", value: "telegram" }
+                  - { label: "Spotify", value: "spotify" }
+                  - { label: "Steam", value: "steam" }
+                  - { label: "Website", value: "website" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Title / Hover Text", name: "title", widget: "string", required: false }

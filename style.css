@@ -513,6 +513,7 @@ body::before {
     line-height: 1.55;
     text-align: left;
     width: 100%;
+    white-space: pre-line;
 }
 
 /* --- Klasörün En Aşağısından Sarkan Kırlangıç Flama Post-it'leri --- */
@@ -604,6 +605,31 @@ body::before {
 
 .pennant-email {
     background-color: #C86428;
+}
+
+.pennant-x, .pennant-twitter {
+    background-color: #111111;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pennant-discord {
+    background-color: #5865F2;
+}
+
+.pennant-instagram {
+    background-color: #E1306C;
+}
+
+.pennant-steam {
+    background-color: #171A21;
+}
+
+.pennant-spotify {
+    background-color: #1DB954;
+}
+
+.pennant-website, .pennant-link {
+    background-color: #3F444E;
 }
 
 /* İletişim */

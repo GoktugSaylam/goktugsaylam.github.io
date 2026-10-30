@@ -1,9 +1,28 @@
 {
+  "header": {
+    "code": "04 // CONTACT",
+    "title": "Contact",
+    "subtitle": "Links & Inquiries",
+    "role": "Ankara, Turkey"
+  },
+  "sectionTitle": "CONTACT",
   "description": "Feel free to reach out for projects, collaborations, or just to say hi.",
   "email": "hello@goktugsaylam.com",
-  "links": {
-    "bento": "https://links.goktugsaylam.com/",
-    "github": "https://github.com/GoktugSaylam",
-    "linkedin": "https://www.linkedin.com/in/goktugsaylam/"
-  }
+  "socials": [
+    {
+      "platform": "bento",
+      "url": "https://links.goktugsaylam.com/",
+      "title": "Bento / Social Links"
+    },
+    {
+      "platform": "github",
+      "url": "https://github.com/GoktugSaylam",
+      "title": "GitHub"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/in/goktugsaylam/",
+      "title": "LinkedIn"
+    }
+  ]
 }

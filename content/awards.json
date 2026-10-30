@@ -1,20 +1,34 @@
 {
+  "header": {
+    "code": "03 // AWARDS",
+    "title": "Awards",
+    "subtitle": "Honors & Achievements",
+    "role": "Game Jam Placements"
+  },
   "items": [
     {
       "title": "Turkic Game Jam 2026",
       "role": "Pixel Artist • June 2026",
       "description": "1st Place Award with the project Halay Yılanı.",
-      "links": {
-        "itch": "https://goktugsaylam.itch.io/halay-yilani"
-      }
+      "links": [
+        {
+          "platform": "itch",
+          "url": "https://goktugsaylam.itch.io/halay-yilani",
+          "title": "Itch.io"
+        }
+      ]
     },
     {
       "title": "TEDU Jam 2025",
       "role": "Pixel Artist • February 2025",
       "description": "2nd Place and Most Original Game Mechanic Award with SaboteLight.",
-      "links": {
-        "itch": "https://glassofwhiskey.itch.io/sabotelight"
-      }
+      "links": [
+        {
+          "platform": "itch",
+          "url": "https://glassofwhiskey.itch.io/sabotelight",
+          "title": "Itch.io"
+        }
+      ]
     }
   ]
 }

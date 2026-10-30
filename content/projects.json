@@ -1,24 +1,36 @@
 {
+  "header": {
+    "code": "02 // PERSONAL PROJECTS",
+    "title": "Personal Projects",
+    "subtitle": "Game & Content Design",
+    "role": "Game Art • Podcast • Board Game"
+  },
   "items": [
     {
       "title": "Hooks & Books",
       "role": "Game Designer",
       "tag": "Coming Soon",
       "description": "A competitive board game featuring magical fishing, dice rolling, and a ruthless market economy.",
-      "links": {
-        "github": "https://github.com/GoktugSaylam/hooks-and-books",
-        "youtube": ""
-      }
+      "links": [
+        {
+          "platform": "github",
+          "url": "https://github.com/GoktugSaylam/hooks-and-books",
+          "title": "GitHub"
+        }
+      ]
     },
     {
       "title": "İksir ve Kahve",
       "role": "Producer & Host",
       "tag": "Coming Soon",
       "description": "An independent podcast exploring game development, game design, and gaming culture.",
-      "links": {
-        "github": "",
-        "youtube": "https://www.youtube.com/@iksirvekahve"
-      }
+      "links": [
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@iksirvekahve",
+          "title": "YouTube"
+        }
+      ]
     }
   ]
 }
