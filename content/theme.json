@@ -1,20 +1,20 @@
 {
   "base": {
-    "bg": "#030303",
+    "bg": "#121212",
     "gridEnabled": true,
     "gridLine": "rgba(255, 255, 255, 0.12)",
-    "folder": "#24272D",
-    "textMain": "#FFFFFF",
-    "heroAccent": "#E63D19",
-    "accent": "#F2AD21",
-    "role": "#A4C723"
+    "folder": "#30475e",
+    "textMain": "#f5f5f5",
+    "heroAccent": "#f05454",
+    "accent": "#f05454",
+    "role": "#f05454"
   },
   "tabs": {
-    "tab00": "#e63d19",
-    "tab01": "#e63d19",
-    "tab02": "#e63d19",
-    "tab03": "#e63d19",
-    "tab04": "#e63d19"
+    "tab00": "#f05454",
+    "tab01": "#f05454",
+    "tab02": "#f05454",
+    "tab03": "#f05454",
+    "tab04": "#f05454"
   },
   "scramble": {
     "color1": "#E63D19",
