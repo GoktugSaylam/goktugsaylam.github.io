@@ -26,10 +26,10 @@ collections:
         fields:
           - { label: "Dossier Code", name: "code", widget: "string", default: "00 // ABOUT", required: false }
           - { label: "Name", name: "name", widget: "string", default: "Göktuğ Saylam" }
-          - { label: "Subtitle", name: "subtitle", widget: "string", default: "Industrial Engineering Student and Game Enthusiast" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", default: "Industrial Engineering Student and Game Enthusiast", required: false }
           - { label: "Role / Tagline", name: "role", widget: "string", required: false }
-          - { label: "Section Title", name: "sectionTitle", widget: "string", default: "BIOGRAPHY" }
-          - { label: "Biography Text", name: "bio", widget: "text" }
+          - { label: "Section Title", name: "sectionTitle", widget: "string", default: "BIOGRAPHY", required: false }
+          - { label: "Biography Text", name: "bio", widget: "text", required: false }
           - { label: "Handle (@username)", name: "handle", widget: "string", default: "@goktugsaylam", required: false }
           - { label: "Handle Subtitle", name: "handleSub", widget: "string", default: "mostly online as", required: false }
 
@@ -43,18 +43,18 @@ collections:
             widget: "object"
             required: false
             fields:
-              - { label: "Dossier Code", name: "code", widget: "string", default: "01 // ORGANIZATIONS" }
+              - { label: "Dossier Code", name: "code", widget: "string", default: "01 // ORGANIZATIONS", required: false }
               - { label: "Section Name", name: "title", widget: "string", default: "Organizations" }
-              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Community Events" }
-              - { label: "Role / Tagline", name: "role", widget: "string", default: "Jam & Community Coordination" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Community Events", required: false }
+              - { label: "Role / Tagline", name: "role", widget: "string", default: "Jam & Community Coordination", required: false }
           - label: "Organizations List (Dossier Files)"
             name: "items"
             widget: "list"
             fields:
               - { label: "Event Name (Tab Title)", name: "title", widget: "string" }
-              - { label: "Role", name: "role", widget: "string" }
-              - { label: "Date", name: "date", widget: "string" }
-              - { label: "Club / Organizer", name: "sub", widget: "string" }
+              - { label: "Role", name: "role", widget: "string", required: false }
+              - { label: "Date", name: "date", widget: "string", required: false }
+              - { label: "Club / Organizer", name: "sub", widget: "string", required: false }
               - label: "Links / Pennants"
                 name: "links"
                 widget: "list"
@@ -85,18 +85,18 @@ collections:
             widget: "object"
             required: false
             fields:
-              - { label: "Dossier Code", name: "code", widget: "string", default: "02 // PERSONAL PROJECTS" }
+              - { label: "Dossier Code", name: "code", widget: "string", default: "02 // PERSONAL PROJECTS", required: false }
               - { label: "Section Name", name: "title", widget: "string", default: "Personal Projects" }
-              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Game & Content Design" }
-              - { label: "Role / Tagline", name: "role", widget: "string", default: "Game Art • Podcast • Board Game" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Game & Content Design", required: false }
+              - { label: "Role / Tagline", name: "role", widget: "string", default: "Game Art • Podcast • Board Game", required: false }
           - label: "Projects List (Dossier Files)"
             name: "items"
             widget: "list"
             fields:
               - { label: "Project Name (Tab Title)", name: "title", widget: "string" }
-              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Role", name: "role", widget: "string", required: false }
               - { label: "Status / Tag", name: "tag", widget: "string", default: "Coming Soon", required: false }
-              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Description", name: "description", widget: "text", required: false }
               - label: "Links / Pennants"
                 name: "links"
                 widget: "list"
@@ -127,18 +127,18 @@ collections:
             widget: "object"
             required: false
             fields:
-              - { label: "Dossier Code", name: "code", widget: "string", default: "03 // AWARDS" }
+              - { label: "Dossier Code", name: "code", widget: "string", default: "03 // AWARDS", required: false }
               - { label: "Section Name", name: "title", widget: "string", default: "Awards" }
-              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Honors & Achievements" }
-              - { label: "Role / Tagline", name: "role", widget: "string", default: "Game Jam Placements" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Honors & Achievements", required: false }
+              - { label: "Role / Tagline", name: "role", widget: "string", default: "Game Jam Placements", required: false }
           - label: "Awards List (Dossier Files)"
             name: "items"
             widget: "list"
             fields:
               - { label: "Competition Name (Tab Title)", name: "title", widget: "string" }
-              - { label: "Role", name: "role", widget: "string" }
-              - { label: "Date", name: "date", widget: "string" }
-              - { label: "Award / Achievement Description", name: "description", widget: "text" }
+              - { label: "Role", name: "role", widget: "string", required: false }
+              - { label: "Date", name: "date", widget: "string", required: false }
+              - { label: "Award / Achievement Description", name: "description", widget: "text", required: false }
               - label: "Links / Pennants"
                 name: "links"
                 widget: "list"
@@ -166,16 +166,17 @@ collections:
             widget: "object"
             required: false
             fields:
-              - { label: "Dossier Code", name: "code", widget: "string", default: "04 // CONTACT" }
+              - { label: "Dossier Code", name: "code", widget: "string", default: "04 // CONTACT", required: false }
               - { label: "Section Name", name: "title", widget: "string", default: "Contact" }
-              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Links & Inquiries" }
-              - { label: "Location / Role", name: "role", widget: "string", default: "Ankara, Turkey" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", default: "Links & Inquiries", required: false }
+              - { label: "Location / Role", name: "role", widget: "string", default: "Ankara, Turkey", required: false }
           - { label: "Section Title", name: "sectionTitle", widget: "string", default: "CONTACT", required: false }
-          - { label: "Description Text", name: "description", widget: "string", default: "Feel free to reach out for projects, collaborations, or just to say hi." }
+          - { label: "Description Text", name: "description", widget: "string", default: "Feel free to reach out for projects, collaborations, or just to say hi.", required: false }
           - { label: "Email Address", name: "email", widget: "string", default: "hello@goktugsaylam.com" }
           - label: "Social Links / Pennants"
             name: "socials"
             widget: "list"
+            required: false
             fields:
               - label: "Platform"
                 name: "platform"

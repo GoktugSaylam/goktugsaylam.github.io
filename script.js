@@ -337,10 +337,34 @@ function renderListSection(spreadId, data, prefix) {
         const subEl = spread.querySelector('.dossier-subtitle');
         const roleEl = spread.querySelector('.dossier-role');
 
-        if (codeEl && data.header.code) codeEl.textContent = data.header.code;
+        if (codeEl) {
+            if (data.header.code && data.header.code.trim() !== '') {
+                codeEl.textContent = data.header.code;
+                codeEl.style.display = '';
+            } else {
+                codeEl.textContent = '';
+                codeEl.style.display = 'none';
+            }
+        }
         if (nameEl && data.header.title) nameEl.textContent = data.header.title;
-        if (subEl && data.header.subtitle) subEl.textContent = data.header.subtitle;
-        if (roleEl && data.header.role) roleEl.textContent = data.header.role;
+        if (subEl) {
+            if (data.header.subtitle && data.header.subtitle.trim() !== '') {
+                subEl.textContent = data.header.subtitle;
+                subEl.style.display = '';
+            } else {
+                subEl.textContent = '';
+                subEl.style.display = 'none';
+            }
+        }
+        if (roleEl) {
+            if (data.header.role && data.header.role !== '---' && data.header.role.trim() !== '') {
+                roleEl.textContent = data.header.role;
+                roleEl.style.display = '';
+            } else {
+                roleEl.textContent = '';
+                roleEl.style.display = 'none';
+            }
+        }
 
         // Also update binder tab title if matching
         const tabKey = spreadId.replace('sheet-', '');
@@ -434,21 +458,56 @@ function renderAbout(data) {
         const sectionTitleEl = sheetAbout.querySelector('.section-title');
         const bioEl = sheetAbout.querySelector('.bio-text');
 
-        if (codeEl && data.code) codeEl.textContent = data.code;
+        if (codeEl) {
+            if (data.code && data.code.trim() !== '') {
+                codeEl.textContent = data.code;
+                codeEl.style.display = '';
+            } else {
+                codeEl.textContent = '';
+                codeEl.style.display = 'none';
+            }
+        }
         if (nameEl && data.name) nameEl.textContent = data.name;
-        if (subEl && data.subtitle) subEl.textContent = data.subtitle;
+
+        if (subEl) {
+            if (data.subtitle && data.subtitle.trim() !== '') {
+                subEl.textContent = data.subtitle;
+                subEl.style.display = '';
+            } else {
+                subEl.textContent = '';
+                subEl.style.display = 'none';
+            }
+        }
 
         if (roleEl) {
             if (data.role && data.role !== '---' && data.role.trim() !== '') {
                 roleEl.textContent = data.role;
                 roleEl.style.display = '';
             } else {
+                roleEl.textContent = '';
                 roleEl.style.display = 'none';
             }
         }
 
-        if (sectionTitleEl && data.sectionTitle) sectionTitleEl.textContent = data.sectionTitle;
-        if (bioEl && data.bio) bioEl.textContent = data.bio;
+        if (sectionTitleEl) {
+            if (data.sectionTitle && data.sectionTitle.trim() !== '') {
+                sectionTitleEl.textContent = data.sectionTitle;
+                sectionTitleEl.style.display = '';
+            } else {
+                sectionTitleEl.textContent = '';
+                sectionTitleEl.style.display = 'none';
+            }
+        }
+
+        if (bioEl) {
+            if (data.bio && data.bio.trim() !== '') {
+                bioEl.textContent = data.bio;
+                bioEl.style.display = '';
+            } else {
+                bioEl.textContent = '';
+                bioEl.style.display = 'none';
+            }
+        }
 
         // Update binder tab 00 title
         const binderTab = document.querySelector('.binder-tab[data-tab="about"]');
@@ -477,10 +536,36 @@ function renderContact(data) {
         const subEl = sheetContact.querySelector('.dossier-subtitle');
         const roleEl = sheetContact.querySelector('.dossier-role');
 
-        if (codeEl && data.header.code) codeEl.textContent = data.header.code;
+        if (codeEl) {
+            if (data.header.code && data.header.code.trim() !== '') {
+                codeEl.textContent = data.header.code;
+                codeEl.style.display = '';
+            } else {
+                codeEl.textContent = '';
+                codeEl.style.display = 'none';
+            }
+        }
         if (nameEl && data.header.title) nameEl.textContent = data.header.title;
-        if (subEl && data.header.subtitle) subEl.textContent = data.header.subtitle;
-        if (roleEl && data.header.role) roleEl.textContent = data.header.role;
+
+        if (subEl) {
+            if (data.header.subtitle && data.header.subtitle.trim() !== '') {
+                subEl.textContent = data.header.subtitle;
+                subEl.style.display = '';
+            } else {
+                subEl.textContent = '';
+                subEl.style.display = 'none';
+            }
+        }
+
+        if (roleEl) {
+            if (data.header.role && data.header.role !== '---' && data.header.role.trim() !== '') {
+                roleEl.textContent = data.header.role;
+                roleEl.style.display = '';
+            } else {
+                roleEl.textContent = '';
+                roleEl.style.display = 'none';
+            }
+        }
 
         const binderTab = document.querySelector('.binder-tab[data-tab="contact"]');
         if (binderTab && data.header.code) binderTab.setAttribute('title', data.header.code);
@@ -491,11 +576,35 @@ function renderContact(data) {
     const descEl = sheetContact.querySelector('.contact-desc');
     const mailEl = sheetContact.querySelector('.contact-mail');
 
-    if (sectionTitleEl && data.sectionTitle) sectionTitleEl.textContent = data.sectionTitle;
-    if (descEl && data.description) descEl.textContent = data.description;
-    if (mailEl && data.email) {
-        mailEl.textContent = data.email;
-        mailEl.href = `mailto:${data.email}`;
+    if (sectionTitleEl) {
+        if (data.sectionTitle && data.sectionTitle.trim() !== '') {
+            sectionTitleEl.textContent = data.sectionTitle;
+            sectionTitleEl.style.display = '';
+        } else {
+            sectionTitleEl.textContent = '';
+            sectionTitleEl.style.display = 'none';
+        }
+    }
+
+    if (descEl) {
+        if (data.description && data.description.trim() !== '') {
+            descEl.textContent = data.description;
+            descEl.style.display = '';
+        } else {
+            descEl.textContent = '';
+            descEl.style.display = 'none';
+        }
+    }
+
+    if (mailEl) {
+        if (data.email && data.email.trim() !== '') {
+            mailEl.textContent = data.email;
+            mailEl.href = `mailto:${data.email.trim()}`;
+            mailEl.style.display = '';
+        } else {
+            mailEl.textContent = '';
+            mailEl.style.display = 'none';
+        }
     }
 
     // Bottom Social Pennants
