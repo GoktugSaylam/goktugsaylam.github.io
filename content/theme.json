@@ -2,7 +2,7 @@
   "base": {
     "bg": "#121212",
     "gridEnabled": true,
-    "gridLine": "rgba(255, 255, 255, 0.12)",
+    "gridLine": "#222222",
     "folder": "#30475e",
     "textMain": "#f5f5f5",
     "heroAccent": "#f05454",

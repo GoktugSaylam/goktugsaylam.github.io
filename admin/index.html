@@ -104,7 +104,7 @@
   <!-- Sveltia CMS: Decap CMS / Netlify CMS ile birebir uyumlu, GitHub Pages'te harici sunucuya ihtiyaç duymadan Token ile giriş destekler -->
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 
-  <!-- Hex Kopyala / Yapıştır & Canlı Senkronizasyon Eklentisi -->
+  <!-- Hex Kopyala / Yapıştır & Canlı LocalStorage Senkronizasyon Eklentisi -->
   <script>
     (function () {
       function normalizeHex(val) {
@@ -122,6 +122,69 @@
         return /^#[0-9a-fA-F]{6}$/.test(normalizeHex(val));
       }
 
+      function getThemeFieldKey(input) {
+        const directId = (input.id || '') + ' ' + (input.name || '') + ' ' + (input.getAttribute('aria-label') || '');
+        let contextText = directId;
+        let p = input.parentElement;
+        for (let i = 0; i < 4 && p; i++) {
+          const lbl = p.querySelector('label, [class*="label"], [class*="header"], [class*="title"]');
+          if (lbl) contextText += ' ' + lbl.textContent;
+          p = p.parentElement;
+        }
+        const t = contextText.toLowerCase();
+
+        // Base colors
+        if (t.includes('sayfa arka plan') || t.includes('page background') || t.includes('base-bg')) return ['base', 'bg'];
+        if (t.includes('izgara cizgi') || t.includes('grid line') || t.includes('gridline')) return ['base', 'gridLine'];
+        if (t.includes('klasor govde') || t.includes('folder binder') || t.includes('base-folder')) return ['base', 'folder'];
+        if (t.includes('ana metin') || t.includes('main text') || t.includes('textmain')) return ['base', 'textMain'];
+        if (t.includes('hero') || t.includes('heroaccent')) return ['base', 'heroAccent'];
+        if (t.includes('birincil vurgu') || t.includes('primary accent')) return ['base', 'accent'];
+        if (t.includes('rol') || t.includes('role')) return ['base', 'role'];
+
+        // Tabs
+        if (t.includes('tab 00') || t.includes('about sekme') || t.includes('tab00')) return ['tabs', 'tab00'];
+        if (t.includes('tab 01') || t.includes('organization') || t.includes('tab01')) return ['tabs', 'tab01'];
+        if (t.includes('tab 02') || t.includes('project') || t.includes('tab02')) return ['tabs', 'tab02'];
+        if (t.includes('tab 03') || t.includes('award') || t.includes('tab03')) return ['tabs', 'tab03'];
+        if (t.includes('tab 04') || t.includes('contact') || t.includes('tab04')) return ['tabs', 'tab04'];
+
+        // Scramble
+        if (t.includes('efekt rengi 1') || t.includes('color1')) return ['scramble', 'color1'];
+        if (t.includes('efekt rengi 2') || t.includes('color2')) return ['scramble', 'color2'];
+        if (t.includes('efekt rengi 3') || t.includes('color3')) return ['scramble', 'color3'];
+        if (t.includes('efekt rengi 4') || t.includes('color4')) return ['scramble', 'color4'];
+        if (t.includes('efekt rengi 5') || t.includes('color5')) return ['scramble', 'color5'];
+
+        return null;
+      }
+
+      function syncAdminThemeToLocalStorage() {
+        try {
+          let t = JSON.parse(localStorage.getItem('site_theme') || '{}');
+          if (!t.base) t.base = {};
+          if (!t.tabs) t.tabs = {};
+          if (!t.scramble) t.scramble = {};
+
+          let hasChange = false;
+          document.querySelectorAll('input[type="color"]').forEach(input => {
+            const key = getThemeFieldKey(input);
+            if (key && input.value) {
+              const [sec, prop] = key;
+              const hex = input.value.toUpperCase();
+              if (t[sec][prop] !== hex) {
+                t[sec][prop] = hex;
+                hasChange = true;
+              }
+            }
+          });
+
+          if (hasChange) {
+            localStorage.setItem('site_theme', JSON.stringify(t));
+          }
+        } catch(e){}
+      }
+
       function triggerColorChange(colorInput, hexVal) {
         const norm = normalizeHex(hexVal);
         if (/^#[0-9a-fA-F]{6}$/.test(norm)) {
@@ -133,6 +196,7 @@
           }
           colorInput.dispatchEvent(new Event('input', { bubbles: true }));
           colorInput.dispatchEvent(new Event('change', { bubbles: true }));
+          syncAdminThemeToLocalStorage();
         }
       }
 
@@ -209,10 +273,11 @@
 
         colorInput.insertAdjacentElement('afterend', wrapper);
 
-        // 1. Color picker değiştiğinde metin kutusunu güncelle
+        // 1. Color picker değiştiğinde metin kutusunu ve localstorage'ı güncelle
         const syncFromColor = () => {
           hexInput.value = (colorInput.value || '#000000').toUpperCase();
           hexInput.classList.remove('is-invalid');
+          syncAdminThemeToLocalStorage();
         };
         colorInput.addEventListener('input', syncFromColor);
         colorInput.addEventListener('change', syncFromColor);
@@ -301,6 +366,7 @@
       function scanAndEnhance() {
         const inputs = document.querySelectorAll('input[type="color"]');
         inputs.forEach(enhanceColorInput);
+        syncAdminThemeToLocalStorage();
       }
 
       // Dinamik SPA render'larını izle
@@ -325,6 +391,17 @@
         checks++;
         if (checks > 25) clearInterval(initCheck);
       }, 400);
+
+      // Kaydet / Publish butonuna basıldığında temayı hemen LocalStorage'a kaydet
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('button, [role="button"]');
+        if (btn) {
+          setTimeout(syncAdminThemeToLocalStorage, 150);
+          setTimeout(syncAdminThemeToLocalStorage, 600);
+        }
+      }, true);
+
+      window.addEventListener('beforeunload', syncAdminThemeToLocalStorage);
     })();
   </script>
 </body>

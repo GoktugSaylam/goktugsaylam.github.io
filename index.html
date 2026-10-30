@@ -7,14 +7,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=50">
+    <link rel="stylesheet" href="style.css?v=51">
+    <link rel="preload" href="content/theme.json" as="fetch" crossorigin>
+    <style>
+        html.theme-pending body {
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+    </style>
     <script>
         // Pre-paint hydration cache: zero flicker for custom title & theme
         (function() {
-            try {
-                const t = JSON.parse(localStorage.getItem('site_theme') || 'null');
-                if (t && t.base) {
-                    const r = document.documentElement.style;
+            function applyThemeVars(t) {
+                if (!t) return;
+                const r = document.documentElement.style;
+                if (t.base) {
                     if (t.base.bg) r.setProperty('--color-bg', t.base.bg);
                     if (t.base.heroAccent) r.setProperty('--color-hero-accent', t.base.heroAccent);
                     if (t.base.accent) r.setProperty('--color-accent', t.base.accent);
@@ -24,7 +31,43 @@
                     if (t.base.gridEnabled !== undefined) r.setProperty('--grid-display', t.base.gridEnabled ? 'block' : 'none');
                     if (t.base.gridLine) r.setProperty('--color-grid-line', t.base.gridLine);
                 }
+                if (t.tabs) {
+                    if (t.tabs.tab00) r.setProperty('--color-tab-00', t.tabs.tab00);
+                    if (t.tabs.tab01) r.setProperty('--color-tab-01', t.tabs.tab01);
+                    if (t.tabs.tab02) r.setProperty('--color-tab-02', t.tabs.tab02);
+                    if (t.tabs.tab03) r.setProperty('--color-tab-03', t.tabs.tab03);
+                    if (t.tabs.tab04) r.setProperty('--color-tab-04', t.tabs.tab04);
+                }
+            }
+
+            // 1. Anında (0ms) senkron pre-paint: LocalStorage'dan uygula
+            let hasCache = false;
+            try {
+                const cached = JSON.parse(localStorage.getItem('site_theme') || 'null');
+                if (cached && (cached.base || cached.tabs)) {
+                    applyThemeVars(cached);
+                    hasCache = true;
+                }
             } catch(e){}
+
+            // 2. Önbellek yoksa eski CSS renklerinin parlamasını engellemek için kısa bekleme
+            if (!hasCache) {
+                document.documentElement.classList.add('theme-pending');
+                setTimeout(() => document.documentElement.classList.remove('theme-pending'), 250);
+            }
+
+            // 3. Head içinde hızlı paralel fetch: theme.json güncel ise yenile
+            fetch('content/theme.json?t=' + Date.now())
+                .then(r => r.ok ? r.json() : null)
+                .then(t => {
+                    if (!t) return;
+                    try { localStorage.setItem('site_theme', JSON.stringify(t)); } catch(e){}
+                    applyThemeVars(t);
+                    document.documentElement.classList.remove('theme-pending');
+                })
+                .catch(() => {
+                    document.documentElement.classList.remove('theme-pending');
+                });
         })();
     </script>
 </head>

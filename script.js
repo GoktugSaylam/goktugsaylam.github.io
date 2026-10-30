@@ -677,11 +677,6 @@ function applyTheme(theme) {
         if (theme.base.gridEnabled !== undefined) {
             root.style.setProperty('--grid-display', theme.base.gridEnabled ? 'block' : 'none');
         }
-        if (theme.base.gridEnabled !== undefined) {
-
-            root.style.setProperty('--grid-display', theme.base.gridEnabled ? 'block' : 'none');
-
-        }
 
         if (theme.base.gridLine) root.style.setProperty('--color-grid-line', theme.base.gridLine);
         if (theme.base.folder) root.style.setProperty('--color-folder', theme.base.folder);
