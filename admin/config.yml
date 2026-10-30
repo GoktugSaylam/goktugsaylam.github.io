@@ -24,6 +24,8 @@ collections:
         file: "content/about.json"
         format: "json"
         fields:
+          - { label: "Hero Greeting (Beyaz Başlık)", name: "heroGreeting", widget: "string", default: "Hello, I'm", required: false }
+          - { label: "Hero Name (Kırmızı Vurgulu İsim)", name: "heroName", widget: "string", default: "Göktuğ Saylam", required: false }
           - { label: "Dossier Code", name: "code", widget: "string", default: "00 // ABOUT", required: false }
           - { label: "Name", name: "name", widget: "string", default: "Göktuğ Saylam" }
           - { label: "Subtitle", name: "subtitle", widget: "string", default: "Industrial Engineering Student and Game Enthusiast", required: false }
@@ -214,6 +216,7 @@ collections:
             widget: "object"
             fields:
               - { label: "Sayfa Arka Plani (Page Background)", name: "bg", widget: "color", default: "#030303" }
+              - { label: "Arka Plan Izgara Cizgisi (Grid Line)", name: "gridLine", widget: "string", default: "rgba(255, 255, 255, 0.12)" }
               - { label: "Klasor Govdesi Rengi (Folder Binder Body)", name: "folder", widget: "color", default: "#24272D" }
               - { label: "Ana Metin ve Basliklar (Main Text & Titles)", name: "textMain", widget: "color", default: "#FFFFFF" }
 
@@ -229,3 +232,12 @@ collections:
               - { label: "Tab 02 // Projects Sekmesi (Fistik Yesili)", name: "tab02", widget: "color", default: "#A4C723" }
               - { label: "Tab 03 // Awards Sekmesi (Teal / Petrol)", name: "tab03", widget: "color", default: "#1D9E99" }
               - { label: "Tab 04 // Contact Sekmesi (Mor)", name: "tab04", widget: "color", default: "#7C26CB" }
+          - label: "3. @goktugsaylam Harf Efekti Renkleri (Scramble Colors)"
+            name: "scramble"
+            widget: "object"
+            fields:
+              - { label: "Efekt Rengi 1 (Kırmızı)", name: "color1", widget: "color", default: "#E63D19" }
+              - { label: "Efekt Rengi 2 (Sarı)", name: "color2", widget: "color", default: "#F2AD21" }
+              - { label: "Efekt Rengi 3 (Yeşil)", name: "color3", widget: "color", default: "#A4C723" }
+              - { label: "Efekt Rengi 4 (Teal / Petrol)", name: "color4", widget: "color", default: "#1D9E99" }
+              - { label: "Efekt Rengi 5 (Mor)", name: "color5", widget: "color", default: "#7C26CB" }

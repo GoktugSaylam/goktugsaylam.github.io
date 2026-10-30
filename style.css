@@ -5,7 +5,8 @@
     --dossier-meta-size: 0.70rem;  /* 3. Etiketler, Kodlar & Roller (.dossier-code, .section-title, .sub-tab, .sheet-role, .sheet-date, .sheet-tag, .dossier-role) */
 
     /* 1. Temel Arayüz Renkleri (Base UI Colors) */
-    --color-bg: #030303;          /* Sayfa Arka Planı (Derin Siyah) */
+    --color-bg: #030303;
+    --color-grid-line: rgba(255, 255, 255, 0.12);          /* Sayfa Arka Planı (Derin Siyah) */
     --color-folder: #24272D;      /* Klasör & Dosya Rengi (Koyu Gri) */
     --color-text-main: #FFFFFF;
     --color-hero-accent: #E63D19;   /* Ana Metin & Başlıklar (Beyaz) */
@@ -45,8 +46,8 @@ body::before {
     z-index: 0;
     pointer-events: none;
     background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+        linear-gradient(var(--color-grid-line, rgba(255, 255, 255, 0.12)) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-grid-line, rgba(255, 255, 255, 0.12)) 1px, transparent 1px);
     background-size: 44px 44px;
     background-position: center center;
 }
@@ -602,8 +603,7 @@ body::before {
 /* Platform Kendi Orijinal Marka Renkleri */
 .pennant-github {
     background-color: #24292E;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
+    }
 
 .pennant-linkedin {
     background-color: #0A66C2;
@@ -619,8 +619,7 @@ body::before {
 
 .pennant-x, .pennant-twitter {
     background-color: #000000;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
+    }
 
 .pennant-discord {
     background-color: #5865F2;

@@ -6,5 +6,7 @@
   "sectionTitle": "BIOGRAPHY",
   "bio": "I am a third-year Industrial Engineering student. I develop projects in hackathons and game jams, organize events with university clubs, and create pixel art in my spare time.\nI'm also a fan of 70s prog rock and tabletop games.",
   "handle": "@goktugsaylam",
-  "handleSub": "mostly online as"
+  "handleSub": "mostly online as",
+  "heroGreeting": "Hello, I'm",
+  "heroName": "Göktuğ Saylam"
 }

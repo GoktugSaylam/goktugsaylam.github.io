@@ -1,7 +1,7 @@
 const lerp = (a, b, t) => a + (b - a) * t;
 
 const container = document.querySelector('.text-container');
-const spans = document.querySelectorAll('.text-container span');
+let spans = document.querySelectorAll('.text-container span');
 
 const cursor = { x: -9999, y: -9999 };
 const eased = { x: -9999, y: -9999 };
@@ -64,8 +64,7 @@ let colors = [
     '#F2AD21', // Sicak Altin Sari
     '#A4C723', // Acik Fistik Yesili
     '#1D9E99', // Petrol / Camgobegi
-    '#7C26CB', // Mor
-    '#FFFFFF'  // Beyaz
+    '#7C26CB'  // Mor
 ];
 
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
@@ -448,8 +447,42 @@ function renderListSection(spreadId, data, prefix) {
     initSubTabsForSpread(spread);
 }
 
+function renderHero(greeting, name) {
+    const textContainer = document.querySelector('.text-container');
+    if (!textContainer) return;
+
+    greeting = (greeting !== undefined && greeting !== null) ? greeting : "Hello, I'm";
+    name = (name !== undefined && name !== null) ? name : "Göktuğ Saylam";
+
+    let html = '';
+    for (let i = 0; i < greeting.length; i++) {
+        const char = greeting[i];
+        if (char === ' ') {
+            html += '<span>&nbsp;</span>';
+        } else {
+            html += `<span class="white-text">${escapeHtml(char)}</span>`;
+        }
+    }
+    if (greeting && name) {
+        html += '<span>&nbsp;</span>';
+    }
+    for (let i = 0; i < name.length; i++) {
+        const char = name[i];
+        if (char === ' ') {
+            html += '<span>&nbsp;</span>';
+        } else {
+            html += `<span class="accent-text">${escapeHtml(char)}</span>`;
+        }
+    }
+    textContainer.innerHTML = html;
+    spans = document.querySelectorAll('.text-container span');
+}
+
 function renderAbout(data) {
     if (!data) return;
+    if (data.heroGreeting !== undefined || data.heroName !== undefined) {
+        renderHero(data.heroGreeting, data.heroName);
+    }
     const sheetAbout = document.getElementById('sheet-about');
     if (sheetAbout) {
         const codeEl = sheetAbout.querySelector('.dossier-code');
@@ -634,6 +667,7 @@ function applyTheme(theme) {
     const root = document.documentElement;
     if (theme.base) {
         if (theme.base.bg) root.style.setProperty('--color-bg', theme.base.bg);
+        if (theme.base.gridLine) root.style.setProperty('--color-grid-line', theme.base.gridLine);
         if (theme.base.folder) root.style.setProperty('--color-folder', theme.base.folder);
         if (theme.base.textMain) root.style.setProperty('--color-text-main', theme.base.textMain);
         if (theme.base.accent) root.style.setProperty('--color-accent', theme.base.accent);
@@ -646,14 +680,18 @@ function applyTheme(theme) {
         if (theme.tabs.tab02) root.style.setProperty('--color-tab-02', theme.tabs.tab02);
         if (theme.tabs.tab03) root.style.setProperty('--color-tab-03', theme.tabs.tab03);
         if (theme.tabs.tab04) root.style.setProperty('--color-tab-04', theme.tabs.tab04);
-
+    }
+    if (theme.scramble) {
+        const s = theme.scramble;
+        const list = [s.color1, s.color2, s.color3, s.color4, s.color5].filter(c => c && c.trim() !== '');
+        if (list.length > 0) colors = list;
+    } else if (theme.tabs) {
         colors = [
             theme.base?.heroAccent || theme.tabs?.tab00 || '#E63D19',
             theme.tabs?.tab01 || theme.base?.accent || '#F2AD21',
             theme.tabs?.tab02 || theme.base?.role || '#A4C723',
             theme.tabs?.tab03 || '#1D9E99',
-            theme.tabs?.tab04 || '#7C26CB',
-            theme.base?.textMain || '#FFFFFF'
+            theme.tabs?.tab04 || '#7C26CB'
         ];
     }
 }
