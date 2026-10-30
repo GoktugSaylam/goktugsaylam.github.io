@@ -370,15 +370,25 @@ function renderListSection(spreadId, data, prefix) {
 
     // 2. Build Layered Stack Sheets
     stack.innerHTML = data.items.map((item, idx) => {
+        let role = (item.role || '').trim();
+        let date = (item.date || '').trim();
+
+        // Auto-split if date is missing but role contains '•'
+        if (!date && role.includes('•')) {
+            const parts = role.split('•');
+            role = parts[0].trim();
+            date = parts[1].trim();
+        }
+
         let metaHtml = '';
-        if (item.date && item.role) {
-            metaHtml = `<span class="sheet-role">${escapeHtml(item.role)}</span><span class="sheet-date">${escapeHtml(item.date)}</span>`;
-        } else if (item.tag && item.role) {
-            metaHtml = `<span class="sheet-role">${escapeHtml(item.role)}</span><span class="sheet-tag">${escapeHtml(item.tag)}</span>`;
-        } else if (item.role) {
-            metaHtml = `<span class="sheet-role">${escapeHtml(item.role)}</span>`;
-        } else if (item.date) {
-            metaHtml = `<span class="sheet-date">${escapeHtml(item.date)}</span>`;
+        if (date && role) {
+            metaHtml = `<span class="sheet-role">${escapeHtml(role)}</span><span class="sheet-date">${escapeHtml(date)}</span>`;
+        } else if (item.tag && role) {
+            metaHtml = `<span class="sheet-role">${escapeHtml(role)}</span><span class="sheet-tag">${escapeHtml(item.tag)}</span>`;
+        } else if (role) {
+            metaHtml = `<span class="sheet-role">${escapeHtml(role)}</span>`;
+        } else if (date) {
+            metaHtml = `<span class="sheet-date">${escapeHtml(date)}</span>`;
         } else if (item.tag) {
             metaHtml = `<span class="sheet-tag">${escapeHtml(item.tag)}</span>`;
         }

@@ -136,7 +136,8 @@ collections:
             widget: "list"
             fields:
               - { label: "Competition Name (Tab Title)", name: "title", widget: "string" }
-              - { label: "Role & Date", name: "role", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
               - { label: "Award / Achievement Description", name: "description", widget: "text" }
               - label: "Links / Pennants"
                 name: "links"
