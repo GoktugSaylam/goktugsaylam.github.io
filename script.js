@@ -667,6 +667,15 @@ function applyTheme(theme) {
     const root = document.documentElement;
     if (theme.base) {
         if (theme.base.bg) root.style.setProperty('--color-bg', theme.base.bg);
+        if (theme.base.gridEnabled !== undefined) {
+            root.style.setProperty('--grid-display', theme.base.gridEnabled ? 'block' : 'none');
+        }
+        if (theme.base.gridEnabled !== undefined) {
+
+            root.style.setProperty('--grid-display', theme.base.gridEnabled ? 'block' : 'none');
+
+        }
+
         if (theme.base.gridLine) root.style.setProperty('--color-grid-line', theme.base.gridLine);
         if (theme.base.folder) root.style.setProperty('--color-folder', theme.base.folder);
         if (theme.base.textMain) root.style.setProperty('--color-text-main', theme.base.textMain);

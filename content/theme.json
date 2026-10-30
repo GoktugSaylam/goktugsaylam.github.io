@@ -6,7 +6,8 @@
     "textMain": "#FFFFFF",
     "heroAccent": "#E63D19",
     "accent": "#F2AD21",
-    "role": "#A4C723"
+    "role": "#A4C723",
+    "gridEnabled": true
   },
   "tabs": {
     "tab00": "#E63D19",

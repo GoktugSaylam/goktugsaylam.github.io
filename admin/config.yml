@@ -216,6 +216,8 @@ collections:
             widget: "object"
             fields:
               - { label: "Sayfa Arka Plani (Page Background)", name: "bg", widget: "color", default: "#030303" }
+              - { label: "Arka Plan Kare Izgarayi Göster (Grid On/Off)", name: "gridEnabled", widget: "boolean", default: true }
+              - { label: "Arka Plan Kare Izgarayi Göster (Grid On/Off)", name: "gridEnabled", widget: "boolean", default: true }
               - { label: "Arka Plan Izgara Cizgisi (Grid Line)", name: "gridLine", widget: "string", default: "rgba(255, 255, 255, 0.12)" }
               - { label: "Klasor Govdesi Rengi (Folder Binder Body)", name: "folder", widget: "color", default: "#24272D" }
               - { label: "Ana Metin ve Basliklar (Main Text & Titles)", name: "textMain", widget: "color", default: "#FFFFFF" }

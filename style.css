@@ -6,7 +6,8 @@
 
     /* 1. Temel Arayüz Renkleri (Base UI Colors) */
     --color-bg: #030303;
-    --color-grid-line: rgba(255, 255, 255, 0.12);          /* Sayfa Arka Planı (Derin Siyah) */
+    --color-grid-line: rgba(255, 255, 255, 0.12);
+    --grid-display: block;          /* Sayfa Arka Planı (Derin Siyah) */
     --color-folder: #24272D;      /* Klasör & Dosya Rengi (Koyu Gri) */
     --color-text-main: #FFFFFF;
     --color-hero-accent: #E63D19;   /* Ana Metin & Başlıklar (Beyaz) */
@@ -29,9 +30,10 @@
 
 html, body {
     width: 100%;
-    height: 100vh;
-    height: 100dvh;
-    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: var(--color-bg, #030303);
     display: flex;
     justify-content: center;
@@ -45,6 +47,7 @@ body::before {
     inset: 0;
     z-index: 0;
     pointer-events: none;
+    display: var(--grid-display, block);
     background-image: 
         linear-gradient(var(--color-grid-line, rgba(255, 255, 255, 0.12)) 1px, transparent 1px),
         linear-gradient(90deg, var(--color-grid-line, rgba(255, 255, 255, 0.12)) 1px, transparent 1px);
@@ -61,9 +64,10 @@ body::before {
     gap: clamp(1rem, 2.5vh, 1.8rem);
     width: 100%;
     max-width: 900px;
-    padding: 0 1.5rem;
+    padding: 1.5rem 1.2rem;
     position: relative;
     z-index: 1;
+    margin: auto;
 }
 
 /* Hero Section */
@@ -80,13 +84,15 @@ body::before {
 
 .text-container {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(2rem, 5.2vw, 4.4rem);
+    font-size: clamp(1.85rem, 4.6vw, 3.8rem);
     letter-spacing: -0.02em;
     display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
     justify-content: flex-start;
     user-select: none;
     font-weight: 300;
-    line-height: 1.1;
+    line-height: 1.15;
     width: 100%;
     text-align: left;
 }
@@ -706,71 +712,211 @@ body::before {
     margin-top: 0.2rem;
 }
 
-/* Ekran Uyumluluğu */
-@media (max-width: 720px) {
+/* --- Responsiveness & Screen Adaptability --- */
+
+/* 1. Tablet & Shrinking Browser Window (< 880px) */
+@media (max-width: 880px) {
+    .binder-wrapper {
+        margin-top: 2.6rem;
+        max-width: 100%;
+    }
+
     .binder-tabs {
-        left: 0;
+        left: 10px;
         right: auto;
-        top: -42px;
+        top: -40px;
         flex-direction: row;
-        width: 100%;
+        width: auto;
         align-items: flex-end;
-        gap: 5px;
+        gap: 6px;
     }
 
     .binder-tab {
-        width: 40px;
-        height: 36px;
+        width: 44px;
+        height: 38px;
         border-radius: 6px 6px 0 0;
-        opacity: 1;
-        transform: translateY(-4px);
-        transition: height 0.24s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1), margin-bottom 0.24s ease;
+        transform: translateY(0);
+        transition: height 0.2s ease, transform 0.2s ease;
     }
 
     .binder-tab:hover {
         height: 42px;
-        width: 40px;
         transform: translateY(-2px);
     }
 
     .binder-tab.active {
-        height: 46px;
-        width: 40px;
-        margin-bottom: -6px;
+        height: 44px;
         transform: translateY(0);
-        opacity: 1;
+    }
+}
+
+/* 2. Mobile & Narrow Viewports (< 768px) */
+@media (max-width: 768px) {
+    html, body {
+        display: block;
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
-    .binder-bottom-pennants {
-        top: 100%;
-        margin-top: -4px;
-        bottom: auto;
-        right: 10px;
-        gap: 5px;
+    .page-layout {
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 1.2rem 0.85rem 4.5rem;
+        justify-content: flex-start;
+        gap: 1.2rem;
     }
 
-    .binder-pennant {
-        width: 27px;
+    .hero {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .text-container {
+        font-size: clamp(1.75rem, 7.5vw, 2.6rem);
+        flex-wrap: wrap;
+        line-height: 1.18;
+    }
+
+    .sub-bar {
+        margin-top: 6px;
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+    }
+
+    .binder-wrapper {
+        margin-top: 2.6rem;
+        width: 100%;
+    }
+
+    .binder-tabs {
+        top: -38px;
+        left: 6px;
+        gap: 4px;
+    }
+
+    .binder-tab {
+        width: 38px;
         height: 36px;
-        padding-top: 7px;
+        border-radius: 6px 6px 0 0;
     }
 
-    .binder-pennant:hover {
-        height: 46px;
-        padding-top: 15px;
+    .binder-tab.active {
+        height: 40px;
     }
 
-    .binder-pennant svg {
-        width: 13px;
-        height: 13px;
+    .tab-code {
+        font-size: 0.75rem;
+    }
+
+    .binder-book {
+        padding: 6px;
+        border-radius: 8px;
+    }
+
+    .binder-spread {
+        height: auto;
+        min-height: auto;
+        position: relative;
+        overflow: visible;
     }
 
     .sheet-spread {
+        position: relative;
+        inset: auto;
+        height: auto;
         flex-direction: column;
+        opacity: 0;
+        display: none;
+        transform: none;
+    }
+
+    .sheet-spread.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+        transform: none;
+    }
+
+    .page-half {
+        width: 100%;
+        flex: none;
+        height: auto;
+        padding: 0.9rem 0.85rem;
     }
 
     .left-page {
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 0.85rem;
+    }
+
+    .right-page {
+        padding-top: 0.85rem;
+    }
+
+    .layered-stack {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        display: block;
+    }
+
+    .layered-sheet {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        display: none;
+        opacity: 0;
+        transform: none;
+        padding: 0;
+    }
+
+    .layered-sheet.active {
+        display: flex;
+        opacity: 1;
+        transform: none;
+        position: relative;
+    }
+
+    .sub-tabs-wrapper {
+        margin-bottom: 0.7rem;
+    }
+
+    .sub-tabs {
+        gap: 4px;
+        padding-bottom: 2px;
+    }
+
+    .sub-tab {
+        padding: 3px 7px;
+        font-size: 0.7rem;
+    }
+
+    .binder-bottom-pennants {
+        top: 100%;
+        margin-top: 0;
+        right: 14px;
+        gap: 6px;
+    }
+
+    .binder-pennant {
+        width: 29px;
+        height: 38px;
+        padding-top: 8px;
+    }
+
+    .binder-pennant:hover,
+    .binder-pennant:active {
+        height: 48px;
+        padding-top: 16px;
+    }
+
+    .binder-pennant svg {
+        width: 14px;
+        height: 14px;
     }
 }
