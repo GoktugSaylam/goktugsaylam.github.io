@@ -9,7 +9,7 @@ html, body {
     height: 100vh;
     height: 100dvh;
     overflow: hidden;
-    background-color: #121213;
+    background-color: #0E0E0E;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,7 +84,7 @@ body::before {
 }
 
 .text-container span.accent-text {
-    color: #BA331D;
+    color: #B43014;
 }
 
 .sub-bar {
@@ -272,7 +272,7 @@ body::before {
 }
 
 .dossier-code {
-    color: #BA331D;
+    color: #B43014;
     font-weight: 500;
 }
 
@@ -293,7 +293,7 @@ body::before {
 }
 
 .dossier-subtitle {
-    color: #BA331D;
+    color: #B43014;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.76rem;
     font-weight: 500;
@@ -472,7 +472,7 @@ body::before {
 .sheet-role {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.65rem;
-    color: #BA331D;
+    color: #B43014;
     font-weight: 500;
 }
 
@@ -485,7 +485,7 @@ body::before {
 .sheet-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.62rem;
-    color: #7D8C2E;
+    color: #A4C723;
 }
 
 .sheet-title {
@@ -546,7 +546,7 @@ body::before {
     padding-top: 10px;
     width: 32px;
     height: 44px;
-    background-color: #3F444E;
+    background-color: #24272D;
     color: #FFFFFF;
     text-decoration: none;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 82%, 0% 100%);
@@ -574,68 +574,35 @@ body::before {
     pointer-events: none;
 }
 
-/* Platform Özel Renkleri */
-.pennant-github {
-    background-color: #2D3139;
+/* Platform Özel Renkleri (Palet: #B43014, #DA9C1E, #A4C723, #1D9E99, #7C26CB, #24272D) */
+.pennant-github, .pennant-x, .pennant-twitter, .pennant-steam {
+    background-color: #24272D;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.pennant-linkedin {
-    background-color: #1D9E99;
+.pennant-itch, .pennant-youtube {
+    background-color: #B43014; /* 00: Kiremit Kırmızısı */
 }
 
-.pennant-itch {
-    background-color: #BA331D;
+.pennant-email {
+    background-color: #DA9C1E; /* 01: Hardal Sarısı */
 }
 
-.pennant-bluesky {
-    background-color: #0285FF;
+.pennant-spotify {
+    background-color: #A4C723; /* 02: Fıstık Yeşili */
 }
 
-.pennant-telegram {
-    background-color: #24A1DE;
+.pennant-linkedin, .pennant-website, .pennant-link, .pennant-bluesky, .pennant-telegram {
+    background-color: #1D9E99; /* 03: Petrol / Teal */
 }
 
-.pennant-youtube {
-    background-color: #CC181E;
-}
-
-.pennant-bento, .pennant-socials {
-    background-color: #6A3D8C;
+.pennant-bento, .pennant-socials, .pennant-discord, .pennant-instagram {
+    background-color: #7C26CB; /* 04: Mor */
 }
 
 .pennant-bento svg, .pennant-socials svg, .pennant-website svg, .pennant-link svg {
     fill: none;
     stroke: currentColor;
-}
-
-.pennant-email {
-    background-color: #C86428;
-}
-
-.pennant-x, .pennant-twitter {
-    background-color: #111111;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.pennant-discord {
-    background-color: #5865F2;
-}
-
-.pennant-instagram {
-    background-color: #E1306C;
-}
-
-.pennant-steam {
-    background-color: #171A21;
-}
-
-.pennant-spotify {
-    background-color: #1DB954;
-}
-
-.pennant-website, .pennant-link {
-    background-color: #3F444E;
 }
 
 /* İletişim */
@@ -659,7 +626,7 @@ body::before {
 }
 
 .contact-mail {
-    color: #BA331D;
+    color: #B43014;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 1.05rem;
     font-weight: 600;
